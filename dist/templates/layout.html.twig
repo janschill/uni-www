@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% block head %}
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script language="javascript" type="text/javascript" src="js/responsiveNav.js"></script>
+  <title>{% block title %}{% endblock %}</title>
+  {% endblock %}
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <nav id="navigation">
+        <ul>
+          <li><a href="/">Index</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="responsiveNav()">&#9776;</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer class="footer">
+      {% block footer %}
+      <p>Jan Schill</p>
+      {% endblock %}
+    </footer>
+
+
+  </div>
+</body>
+</html>
