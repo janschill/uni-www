@@ -5,6 +5,9 @@ use Symfony\Component\Routing\RouteCollection;
 
 $routes = new RouteCollection();
 
+/**
+ * main page routes
+ */
 $routes->add(
   'default',
   new Route(
@@ -40,6 +43,26 @@ $routes->add(
     ['_controller' => 'App\Controller::showBlog']
     )
   );
+$routes->add(
+  'blogID',
+  new Route(
+    '/blog/{id}',
+    ['_controller' => 'App\Controller::showBlog']
+    )
+  );
+
+/**
+ * admin panel
+ */
+$routes->add(
+  'admin',
+  new Route(
+    '/admin',
+    ['_controller' => 'App\Controllter::showAdmin' ]
+  )
+);
+
+
 
 
 return $routes;

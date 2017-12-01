@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Montserrat", sans-serif;
+}
+
+body {}
+
+.wrapper {
+    display: grid;
+    grid-template-areas: "nav" "content" "footer";
+    border: 1px purple solid;
+    @media (min-width: 500px) {
+        grid-template-columns: 1fr;
+        grid-template-areas: "nav nav" "content content" "footer footer";
+    }
+}
+
+.content {
+    grid-area: content;
+    border: 1px red solid;
+}

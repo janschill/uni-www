@@ -40,4 +40,10 @@ class Controller
         $html = $this->container['twig']->render('blog.html.twig');
         return new Response($html);
     }
+
+    public function showAdmin($request)
+    {
+        $html = $this->container['twig']->render('admin.html.twig');
+        return new Response($html);
+    }
 }
