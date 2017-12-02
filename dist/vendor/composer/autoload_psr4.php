@@ -14,4 +14,5 @@ return array(
     'Projects\\' => array($baseDir . '/src/Projects'),
     'Blog\\' => array($baseDir . '/src/Blog'),
     'App\\' => array($baseDir . '/src/App'),
+    'Admin\\' => array($baseDir . '/src/Admin'),
 );

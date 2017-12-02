@@ -1,6 +1,8 @@
-@import "Blocks/Footer.scss";
-@import "Blocks/Navigation.scss";
-@import "Blocks/ProjectItem.scss";
-@import "Configuration/BrowserReset.scss";
-@import "Configuration/Reset.scss";
-@import "Configuration/Variables.scss";
+@import "Configuration/Variables";
+@import "Configuration/BrowserReset";
+@import "Configuration/Reset";
+@import "Configuration/Mixins";
+@import "Blocks/Footer";
+@import "Blocks/Navigation";
+@import "Blocks/ProjectItem";
+@import "Blocks/LoginForm";

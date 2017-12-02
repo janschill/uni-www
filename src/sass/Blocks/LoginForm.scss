@@ -1,0 +1,68 @@
+.formholder {
+    width: 360px;
+    padding: 10% 0;
+    margin: auto;
+}
+
+.form {
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 35px 40px;
+}
+
+.form--shadow {
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+@include placeholder {
+    color: darken($black-haze, 20);
+    font-weight: 100;
+}
+
+.form__header {
+    margin: 0 0 15px 0;
+}
+
+.form__header--align {
+    text-align: center;
+}
+
+.form__header--weight {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form__header--blue {
+    color: $blue;
+}
+
+.form__input {
+    width: 100%;
+    padding: 15px;
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    border: 0;
+    outline: 0;
+}
+
+.form__input--simple {
+    background: $black-haze;
+}
+
+.form__submit {
+    width: 100%;
+    padding: 15px;
+    font-size: 14px;
+    border: 0;
+    font-weight: 100;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.form__submit--blue {
+    background-color: $blue;
+    color: white;
+    &:hover {
+        background-color: darken($blue, 15);
+    }
+}

@@ -58,7 +58,7 @@ $routes->add(
   'admin',
   new Route(
     '/admin',
-    ['_controller' => 'App\Controllter::showAdmin' ]
+    ['_controller' => 'App\Controller::showAdmin' ]
   )
 );
 

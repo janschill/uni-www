@@ -8,10 +8,12 @@ let autoprefixer = require('gulp-autoprefixer');
 let concat = require('gulp-concat');
 let uglify = require('gulp-uglify');
 let gutil = require('gulp-util');
+let rename = require('gulp-rename');
 
 gulp.task('styles', function() {
-    gulp.src('./src/sass/master.scss')
-        .pipe(sourcemaps.init())
+    gulp.src('src/sass/main.scss')
+
+    .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
@@ -19,8 +21,9 @@ gulp.task('styles', function() {
         }))
         .pipe(cssnano())
         .pipe(sourcemaps.write('./'))
+        .pipe(rename('combined.min.css'))
 
-    .pipe(gulp.dest('./dist/public/css'))
+    .pipe(gulp.dest('dist/public/css/'))
 });
 
 gulp.task('scripts', function() {

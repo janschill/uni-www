@@ -62,11 +62,17 @@ class UserModel
     return false;
   }
 
+  /**
+   * temporarily like this – later with db permission table
+   */
   public function getPermissions($username)
   {
+    if($username == "Jan")
+    {
+      return ['view', 'add'];
+    }
     
-    
-    return null;
+    return ['view'];
   }
 
 }
