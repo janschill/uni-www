@@ -49,3 +49,6 @@
 - Die Nutzung von CSS-Frameworks ist möglich (Bootstrap / Foundation) – aber keine Nutzung der dazugehörigen JS-Komponenten.
 - Impressum
 - Dokumentation als HTML-Seite(n)
+
+## Dokumentation
+Wir haben uns entschieden die Hausarbeit aus dem letzten Semester in GOM (Frontend) weiterzufuehren, damit wir ein komplettes realistisches Webseiten-Projekt umsetzen koennen. Da dort das Frontend entwickelt wurde, muessen wir bei diesem Projekt nicht von 0 anfangen und koennen uns auf das Neugelernte konzentrieren und anwenden.
