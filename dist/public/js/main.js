@@ -1,1 +1,0 @@
-function responsiveNav(){var a=document.getElementById("navigation");"navigation"===a.className?a.className+=" responsive":a.className="navigation"}

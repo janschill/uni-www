@@ -16,6 +16,21 @@ class User
     $this->isAuthenticated = false;
   }
 
+  public function getUsername()
+  {
+    return $this->username;
+  }
+
+  public function isAuthenticated()
+  {
+    return $this->isAuthenticated;
+  }
+
+  public function hasPermission()
+  {
+    return (array_search($permissions, $this->permissions) !== false);
+  }
+
 /**
  * 
  */
@@ -35,6 +50,11 @@ class User
       }
     }
     return $user;
+  }
+
+  private function anonPermission()
+  {
+    return ['view'];
   }
 
 }
