@@ -9,7 +9,7 @@ use Symfony\Component\Routing;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
 
-class FrontController
+class FrontController implements \App\FrontControllerInterface
 {
     protected $uri;
     protected $container;
@@ -32,7 +32,7 @@ class FrontController
         $this->matcher = new UrlMatcher($this->routes, $context);
     }
 
-    protected function setControllerAction($parameters)
+    public function setControllerAction($parameters)
     {
         if (!is_null($parameters)) {
             foreach ($parameters as $key => $value) {
@@ -47,7 +47,7 @@ class FrontController
         }
     }
 
-    protected function callAction($method)
+    public function callAction($method)
     {
         if (class_exists($this->controllerClass) && $method) {
             $controller = new $this->controllerClass($this->container);

@@ -11,6 +11,10 @@ class ComposerStaticInitd18db539d96be834813a5a886a729344
     );
 
     public static $prefixLengthsPsr4 = array (
+        'U' => 
+        array (
+            'User\\' => 5,
+        ),
         'T' => 
         array (
             'Twig\\' => 5,
@@ -21,6 +25,14 @@ class ComposerStaticInitd18db539d96be834813a5a886a729344
             'Symfony\\Component\\Routing\\' => 26,
             'Symfony\\Component\\HttpFoundation\\' => 33,
         ),
+        'P' => 
+        array (
+            'Projects\\' => 9,
+        ),
+        'B' => 
+        array (
+            'Blog\\' => 5,
+        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -28,6 +40,10 @@ class ComposerStaticInitd18db539d96be834813a5a886a729344
     );
 
     public static $prefixDirsPsr4 = array (
+        'User\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/User',
+        ),
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
@@ -43,6 +59,14 @@ class ComposerStaticInitd18db539d96be834813a5a886a729344
         'Symfony\\Component\\HttpFoundation\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/http-foundation',
+        ),
+        'Projects\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Projects',
+        ),
+        'Blog\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Blog',
         ),
         'App\\' => 
         array (
