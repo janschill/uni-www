@@ -5,7 +5,7 @@ namespace App;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\Routing;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
@@ -69,8 +69,7 @@ class FrontController implements \App\FrontControllerInterface
         $user = $this->request->attributes->get('user');
         if(isset($options['_permission'])) {
             if(!$user->hasPermission($options['_permission'])) {
-                //throw createAccessDeniedException('You cannot access this page!');
-                return false;
+                throw new \AccessDeniedHttpException('Denied', null, 403);
             }
         }
         return true;
@@ -80,14 +79,13 @@ class FrontController implements \App\FrontControllerInterface
     {
         try {
             $parameters = $this->matcher->match($this->uri);
-            if(!$this->checkPermission($parameters)) {
-                echo "false";
-                $response = new Response('Permission denied', 403);
-            }             
+            $this->checkPermission($parameters);
             $this->setControllerAction($parameters);
             $response = $this->callAction($this->action);
         } catch (\Routing\Exception\ResourceNotFoundException $e) {
             $response = new Response('Not found', 404);
+        } catch (\HttpKernel\Exception\AccessDeniedHttpException $e) { 
+            $response = new Response('Permission denied', 403);
         }
 
         $response->send();
