@@ -4,6 +4,8 @@
 <head>
   {% block head %}
   <link rel="stylesheet" href="css/combined.min.css" />
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/main.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <title>{% block title %}{% endblock %}</title>
   {% endblock %}
@@ -12,14 +14,14 @@
 <body>
   <div class="wrapper">
     <header>
-      <nav id="navigation">
-        <ul>
-          <li><a href="/">Index</a></li>
+      <nav class="nav nav--appear">
+        <ul class"nav--active">
+          <li class="current-item" class="nav__home"><a href="/">JS</a></li>
           <li><a href="/blog">Blog</a></li>
           <li><a href="/projects">Projects</a></li>
           <li><a href="/about">About</a></li>
-          <li><a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="responsiveNav()">&#9776;</a></li>
         </ul>
+          <a href="#" class="nav--toggle">&#9776;</a>
       </nav>
     </header>
 

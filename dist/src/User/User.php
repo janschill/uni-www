@@ -2,6 +2,8 @@
 
 namespace User;
 
+use Symfony\Component\HttpFoundation\Session\Session;
+
 class User
 {
   private $username;
@@ -26,7 +28,7 @@ class User
     return $this->isAuthenticated;
   }
 
-  public function hasPermission()
+  public function hasPermission($permissions)
   {
     return (array_search($permissions, $this->permissions) !== false);
   }
@@ -52,7 +54,7 @@ class User
     return $user;
   }
 
-  private function anonPermission()
+  private function anonPermissions()
   {
     return ['view'];
   }

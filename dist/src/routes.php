@@ -58,10 +58,16 @@ $routes->add(
   'admin',
   new Route(
     '/admin',
-    ['_controller' => 'App\Controller::showAdmin' ]
+    ['_controller' => 'Admin\LoginFormController::showFormAction' ]
   )
 );
-
+$routes->add(
+  'adminconf',
+  new Route(
+    '/admin/conf',
+    ['_controller' => 'App\Controller::showAdmin'], [], ['_permission' => 'add']
+  )
+);
 
 
 

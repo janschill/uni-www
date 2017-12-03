@@ -67,7 +67,7 @@ class UserModel
    */
   public function getPermissions($username)
   {
-    if($username == "Jan")
+    if($username == "janschill")
     {
       return ['view', 'add'];
     }

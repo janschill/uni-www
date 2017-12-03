@@ -41,9 +41,12 @@ class Controller
         return new Response($html);
     }
 
+    /**
+     * deprecated
+     */
     public function showAdmin($request)
     {
-        $html = $this->container['twig']->render('admin.html.twig');
+        $html = $this->container['twig']->render('about.html.twig');
         return new Response($html);
     }
 }

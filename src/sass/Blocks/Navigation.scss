@@ -1,11 +1,110 @@
-nav {
-    .responsive {}
-    @media (min-width: 500px) {
-        grid-area: nav;
-        border: 1px yellow solid;
-        ul {
-            display: flex;
-            justify-content: space-between;
-        }
+.nav {
+    list-style-type: none;
+}
+
+.nav a {
+    text-decoration: none;
+}
+
+.nav--toggle {
+    display: none;
+}
+
+.nav--appear {
+    background: #FFF;
+    opacity: .95;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.nav__home {
+    padding: 0 10rem 0 0;
+}
+
+@media screen and (min-width: 860px) {
+    .nav {
+        width: 100%;
+        padding: 10px 18px;
+    }
+}
+
+.nav ul {
+    display: inline-block;
+}
+
+.nav li {
+    margin: 0px 50px 0px 0px;
+    float: left;
+    list-style: none;
+}
+
+.nav li:last-child {
+    margin-right: 0px;
+}
+
+.nav a {
+    color: $bunker;
+    transition: color linear 0.15s;
+}
+
+.nav a:hover,
+.nav .current-item a {
+    color: $blue;
+}
+
+@media screen and (max-width: 860px) {
+    .nav {
+        position: relative;
+        display: inline-block;
+    }
+    .nav ul.nav--active {
+        display: none;
+    }
+    .nav ul {
+        //width: 100%;
+        position: absolute;
+        top: 120%;
+        left: 0px;
+        padding: 10px 18px;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+        background: #FFF;
+        opacity: .95;
+    }
+    .nav ul:after {
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        top: 0%;
+        left: 22px;
+        content: '';
+        transform: translate(0%, -100%);
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        //border-bottom: 7px solid #303030;
+    }
+    .nav li {
+        margin: 5px 0px 5px 0px;
+        float: none;
+        display: block;
+        padding: 7px;
+    }
+    .nav a {
+        display: block;
+    }
+    .nav--toggle {
+        padding: 20px;
+        float: left;
+        //display: inline-block;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+        text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
+        color: #777;
+        font-size: 20px;
+        transition: color linear 0.15s;
+        background: #FFF;
+        opacity: .95;
+    }
+    .nav--toggle:hover,
+    .nav--toggle.nav--nav--active {
+        color: #66a992;
     }
 }

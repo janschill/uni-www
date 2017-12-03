@@ -33,7 +33,7 @@ gulp.task('scripts', function() {
         .on('error', function(err) {
             gutil.log(gutil.colors.red('[Error]'), err.toString());
         })
-        .pipe(gulp.dest('dist/public/js'));
+        .pipe(gulp.dest('dist/public/js/'));
 });
 
 gulp.task('watch', function() {
