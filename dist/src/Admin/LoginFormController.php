@@ -26,7 +26,6 @@ class LoginFormController
    */
   public function showFormAction(Request $request)
   {
-    echo "showFormAction";
     $formData = [];
     $formError = [];
     $valid = false;
