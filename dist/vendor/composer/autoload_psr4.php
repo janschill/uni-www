@@ -12,6 +12,7 @@ return array(
     'Symfony\\Component\\Routing\\' => array($vendorDir . '/symfony/routing'),
     'Symfony\\Component\\HttpFoundation\\' => array($vendorDir . '/symfony/http-foundation'),
     'Projects\\' => array($baseDir . '/src/Projects'),
+    'Controller\\' => array($baseDir . '/src/Controller'),
     'Blog\\' => array($baseDir . '/src/Blog'),
     'App\\' => array($baseDir . '/src/App'),
     'Admin\\' => array($baseDir . '/src/Admin'),

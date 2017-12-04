@@ -12,42 +12,42 @@ $routes->add(
   'default',
   new Route(
     '/',
-    ['_controller' => 'App\Controller::showIndex']
+    ['_controller' => 'Controller\ViewController::showIndex']
     )
   );
 $routes->add(
   'about',
   new Route(
     '/about',
-    ['_controller' => 'App\Controller::showAbout']
+    ['_controller' => 'Controller\ViewController::showAbout']
     )
   );
 $routes->add(
   'projects',
   new Route(
     '/projects',
-    ['_controller' => 'App\Controller::showProjects']
+    ['_controller' => 'Controller\ViewController::showProjects']
     )
   );
 $routes->add(
   'projectsID',
   new Route(
     '/projects/{id}',
-    ['_controller' => 'App\Controller::showProjects']
+    ['_controller' => 'Controller\ViewController::showProjects']
     )
   );
 $routes->add(
   'blog',
   new Route(
     '/blog',
-    ['_controller' => 'App\Controller::showBlog']
+    ['_controller' => 'Controller\ViewController::showBlog']
     )
   );
 $routes->add(
   'blogID',
   new Route(
     '/blog/{id}',
-    ['_controller' => 'App\Controller::showBlog']
+    ['_controller' => 'Controller\ViewController::showBlog']
     )
   );
 
@@ -58,14 +58,14 @@ $routes->add(
   'admin',
   new Route(
     '/admin',
-    ['_controller' => 'Admin\LoginFormController::showFormAction' ]
+    ['_controller' => 'Controller\FormController::showFormAction' ]
   )
 );
 $routes->add(
   'adminconf',
   new Route(
     '/admin/conf',
-    ['_controller' => 'App\Controller::showAdmin'], [], ['_permission' => 'add']
+    ['_controller' => 'Controller\ViewController::showConf'], [], ['_permission' => 'add']
   )
 );
 

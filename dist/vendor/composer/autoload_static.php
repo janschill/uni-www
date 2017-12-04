@@ -29,6 +29,10 @@ class ComposerStaticInitd18db539d96be834813a5a886a729344
         array (
             'Projects\\' => 9,
         ),
+        'C' => 
+        array (
+            'Controller\\' => 11,
+        ),
         'B' => 
         array (
             'Blog\\' => 5,
@@ -64,6 +68,10 @@ class ComposerStaticInitd18db539d96be834813a5a886a729344
         'Projects\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/Projects',
+        ),
+        'Controller\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Controller',
         ),
         'Blog\\' => 
         array (

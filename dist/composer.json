@@ -10,7 +10,8 @@
             "User\\": "src\\User",
             "Blog\\": "src\\Blog",
             "Projects\\": "src\\Projects",
-            "Admin\\": "src\\Admin"
+            "Admin\\": "src\\Admin",
+            "Controller\\": "src\\Controller"
         }
     }
 }

@@ -1,24 +1,19 @@
 <?php
 
-namespace Admin;
+namespace Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Session\Session;
 
-class LoginFormController
+class FormController extends Controller
 {
-  protected $container, $formData;
+  protected $formData;
 
   public function __construct($container)
   {
-    $this->container = $container;
-    
-    // really necessary??
-    //$this->model = new \Admin\LoginFormModel($this->container['db']);
-    // really necessary??
-
+    parent::__construct($container);
   }
 
   /**

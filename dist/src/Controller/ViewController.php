@@ -1,14 +1,15 @@
 <?php
-namespace App;
+
+namespace Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class Controller
+class ViewController extends Controller
 {
     public function __construct($container)
     {
-        $this->container = $container;
+        parent::__construct($container);
         $this->model = new \App\Model($this->container['db']);
     }
 
@@ -44,9 +45,9 @@ class Controller
     /**
      * deprecated
      */
-    public function showAdmin($request)
+    public function showConf($request)
     {
-        $html = $this->container['twig']->render('about.html.twig');
+        $html = $this->container['twig']->render('conf.html.twig');
         return new Response($html);
     }
 }
