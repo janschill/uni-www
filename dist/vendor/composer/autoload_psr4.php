@@ -15,9 +15,6 @@ return array(
     'Symfony\\Component\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher'),
     'Symfony\\Component\\Debug\\' => array($vendorDir . '/symfony/debug'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
-    'Projects\\' => array($baseDir . '/src/Projects'),
+    'Model\\' => array($baseDir . '/src/Model'),
     'Controller\\' => array($baseDir . '/src/Controller'),
-    'Blog\\' => array($baseDir . '/src/Blog'),
-    'App\\' => array($baseDir . '/src/App'),
-    'Admin\\' => array($baseDir . '/src/Admin'),
 );

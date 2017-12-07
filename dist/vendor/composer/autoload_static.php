@@ -31,20 +31,14 @@ class ComposerStaticInitd18db539d96be834813a5a886a729344
         'P' => 
         array (
             'Psr\\Log\\' => 8,
-            'Projects\\' => 9,
+        ),
+        'M' => 
+        array (
+            'Model\\' => 6,
         ),
         'C' => 
         array (
             'Controller\\' => 11,
-        ),
-        'B' => 
-        array (
-            'Blog\\' => 5,
-        ),
-        'A' => 
-        array (
-            'App\\' => 4,
-            'Admin\\' => 6,
         ),
     );
 
@@ -85,25 +79,13 @@ class ComposerStaticInitd18db539d96be834813a5a886a729344
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
-        'Projects\\' => 
+        'Model\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src/Projects',
+            0 => __DIR__ . '/../..' . '/src/Model',
         ),
         'Controller\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/Controller',
-        ),
-        'Blog\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/Blog',
-        ),
-        'App\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/App',
-        ),
-        'Admin\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/Admin',
         ),
     );
 

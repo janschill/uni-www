@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Session\Session;
 
-class FormController extends Controller
+class LoginController extends Controller
 {
   protected $formData;
 
@@ -21,6 +21,10 @@ class FormController extends Controller
    */
   public function showFormAction(Request $request)
   {
+    if ($request->attributes->get('user')->isAuthenticated()) {
+      return new RedirectResponse('/admin/conf');      
+    }
+
     $formData = [];
     $formError = [];
     $valid = false;

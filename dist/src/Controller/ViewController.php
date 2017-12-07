@@ -6,31 +6,34 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class ViewController extends Controller
-{
+{    
     public function __construct($container)
     {
         parent::__construct($container);
-        $this->model = new \App\Model($this->container['db']);
+        // $this->model = new \App\Model($this->container['db']);
     }
 
     public function showIndex($request)
     {
-        $html = $this->container['twig']->render('index.html.twig');
+        $user = $request->attributes->get('user');
+        $html = $this->container['twig']->render('index.html.twig', ['user' => $user]);
         return new Response($html);
     }
 
     public function showAbout($request)
     {
-        $html = $this->container['twig']->render('about.html.twig');
+        $user = $request->attributes->get('user');
+        $html = $this->container['twig']->render('about.html.twig', ['user' => $user]);
         return new Response($html);
     }
 
     public function showProjects($request)
     {
+        $user = $request->attributes->get('user');
         $id = $request->attributes->get('id');
 
         if (!isset($id)) {
-            $html = $this->container['twig']->render('projects.html.twig');
+            $html = $this->container['twig']->render('projects.html.twig', ['user' => $user]);
             return new Response($html);
         } else {
             echo "Project";
@@ -38,16 +41,15 @@ class ViewController extends Controller
     }
     public function showBlog($request)
     {
-        $html = $this->container['twig']->render('blog.html.twig');
+        $user = $request->attributes->get('user');
+        $html = $this->container['twig']->render('blog.html.twig', ['user' => $user]);
         return new Response($html);
     }
 
-    /**
-     * deprecated
-     */
     public function showConf($request)
     {
-        $html = $this->container['twig']->render('conf.html.twig');
+        $user = $request->attributes->get('user');
+        $html = $this->container['twig']->render('conf.html.twig', ['user' => $user]);
         return new Response($html);
     }
 }

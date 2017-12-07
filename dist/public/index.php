@@ -21,7 +21,7 @@ if (!$session)
 $user = User\User::getFromSession($container, $session);
 $request->attributes->set('user', $user);
 
-$frontcontroller = new \App\FrontController($request, $routes, $container);
+$frontcontroller = new \Controller\FrontController($request, $routes, $container);
 $frontcontroller->run();
 
-var_dump($user);
+//var_dump($user);

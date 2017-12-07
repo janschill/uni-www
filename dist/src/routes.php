@@ -40,7 +40,7 @@ $routes->add(
   'blog',
   new Route(
     '/blog',
-    ['_controller' => 'Controller\ViewController::showBlog']
+    ['_controller' => 'Controller\BlogController::showAllPosts']
     )
   );
 $routes->add(
@@ -58,7 +58,7 @@ $routes->add(
   'admin',
   new Route(
     '/admin',
-    ['_controller' => 'Controller\FormController::showFormAction' ]
+    ['_controller' => 'Controller\LoginController::showFormAction' ]
   )
 );
 $routes->add(

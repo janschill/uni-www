@@ -7,12 +7,9 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src\\App",
             "User\\": "src\\User",
-            "Blog\\": "src\\Blog",
-            "Projects\\": "src\\Projects",
-            "Admin\\": "src\\Admin",
-            "Controller\\": "src\\Controller"
+            "Controller\\": "src\\Controller",
+            "Model\\": "src\\Model"
         }
     }
 }
