@@ -69,7 +69,7 @@ class FrontController implements \App\FrontControllerInterface
         $user = $this->request->attributes->get('user');
         if(isset($options['_permission'])) {
             if(!$user->hasPermission($options['_permission'])) {
-                throw new \Exception;
+                throw new AccessDeniedHttpException;
             }
         }
     }
@@ -83,7 +83,7 @@ class FrontController implements \App\FrontControllerInterface
             $response = $this->callAction($this->action);
         } catch (\Routing\Exception\ResourceNotFoundException $e) {
             $response = new Response('Not found', 404);
-        } catch (\Exception $e) { 
+        } catch (AccessDeniedHttpException $e) { 
             $response = new Response('Access denied', 403);
         }
 
