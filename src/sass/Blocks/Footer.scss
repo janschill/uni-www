@@ -1,3 +1,32 @@
 .footer {
     grid-area: footer;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+}
+
+.social__item {
+    padding: 0 15px;
+    border-right: 2px solid $blue;
+    &:last-child {
+        border: none;
+    }
+}
+
+.social__link {
+    text-decoration: none;
+    color: $endeavour;
+    font-weight: 500;
+    -o-transition: .2s;
+    -ms-transition: .2s;
+    -moz-transition: .2s;
+    -webkit-transition: .2s;
+    transition: .2s;
+    &:hover {
+        color: $blue;
+    }
 }

@@ -2,14 +2,15 @@
 
 namespace Model;
 
-class BlogModel extends \Model\Model {
+class BlogModel extends Model
+{
+    public function __construct($db)
+    {
+        parent::__construct($db);
+    }
 
-  public function __construct($db) {
-    parent::__construct($db);
-  }
-
-  public function getAllPosts($request) {
-    return $this->getRow("SELECT * FROM posts");
-  }
-
+    public function getAllPosts()
+    {
+        return $this->getRow("SELECT * FROM posts");
+    }
 }
