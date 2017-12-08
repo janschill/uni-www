@@ -5,9 +5,17 @@
 }
 
 .form {
+    padding: 35px 40px;
+}
+
+.form--small {
     max-width: 360px;
     margin: 0 auto 100px;
-    padding: 35px 40px;
+}
+
+.form--large {
+    max-width: 560px;
+    margin: 0 auto 100px;
 }
 
 .form--shadow {

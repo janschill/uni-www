@@ -9,15 +9,16 @@
 <a href="">New Blog Post</a>
 <a href="">New Project Post</a>
 
-<form class="form form--shadow" action="#" method="post">
+<form class="form form--shadow form--large" action="#" method="post">
     <h2 class="form__header form__header--align form__header--weight form__header--blue">New Blog Post</h2>
     <input class="form__input form__input--simple" type="text" id="form_title" name="form[title]" value="{{ form['title'] }}" placeholder="Title">
     {% if error['title'] %}<p>{{ error['title'] }}</p>{% endif %}
+    <select>
     <textarea rows="4" cols="50" class="form__input form__input--simple" type="text" id="form_text" name="form[text]" value="{{ form['text'] }}" placeholder="Text"></textarea>
     <input class="form__submit form__submit--blue" type="submit" id="form_submit" value="Post">
 </form>
 
-<form class="form form--shadow" action="#" method="post">
+<form class="form form--shadow form--large" action="#" method="post">
     <h2 class="form__header form__header--align form__header--weight form__header--blue">New Project Post</h2>
     <input class="form__input form__input--simple" type="text" id="form_title" name="form[title]" value="{{ form['title'] }}" placeholder="Title">
     {% if error['title'] %}<p>{{ error['title'] }}</p>{% endif %}
