@@ -4,8 +4,8 @@
 <head>
   {% block head %}
   <link rel="stylesheet" href="/css/combined.min.css" />
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="/js/jquery-3.2.1.min.js"></script>
+  <script src="/js/main.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <title>{% block title %}{% endblock %}</title>
   {% endblock %}
@@ -21,7 +21,7 @@
           <li><a href="/projects">Projects</a></li>
           <li><a href="/about">About</a></li>
           {% if user.isAuthenticated() %}
-            <li><a href="/admin/conf">Admin</a></li>
+            <li><a href="/admin/config">Admin</a></li>
           {% endif %}
         </ul>
           <a href="#" class="nav--toggle">&#9776;</a>

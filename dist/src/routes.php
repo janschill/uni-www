@@ -58,14 +58,14 @@ $routes->add(
   'admin',
   new Route(
     '/admin',
-    ['_controller' => 'Controller\LoginController::showFormAction' ]
+    ['_controller' => 'Controller\AdminController::showFormAction' ]
   )
 );
 $routes->add(
   'adminconf',
   new Route(
-    '/admin/conf',
-    ['_controller' => 'Controller\ViewController::showConf'], [], ['_permission' => 'add']
+    '/admin/config',
+    ['_controller' => 'Controller\AdminController::showBlogForm'], [], ['_permission' => 'add']
   )
 );
 

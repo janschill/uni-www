@@ -39,17 +39,21 @@ class ViewController extends Controller
             echo "Project";
         }
     }
-    public function showBlog($request)
-    {
-        $user = $request->attributes->get('user');
-        $html = $this->container['twig']->render('blog.html.twig', ['user' => $user]);
-        return new Response($html);
-    }
+    // public function showBlog($request)
+    // {
+    //     $user = $request->attributes->get('user');
+    //     $html = $this->container['twig']->render('blog.html.twig', ['user' => $user]);
+    //     return new Response($html);
+    // }
 
     public function showConf($request)
     {
         $user = $request->attributes->get('user');
-        $html = $this->container['twig']->render('conf.html.twig', ['user' => $user]);
+        $categories = $request->attributes->get('categories');
+        $html = $this->container['twig']->render('conf.html.twig', [
+            'user' => $user, 
+            'categories' => $categories
+            ]);
         return new Response($html);
     }
 }

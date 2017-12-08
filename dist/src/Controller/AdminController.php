@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Session\Session;
 
-class LoginController extends Controller
+class AdminController extends Controller
 {
   protected $formData;
 
@@ -21,13 +21,14 @@ class LoginController extends Controller
    */
   public function showFormAction(Request $request)
   {
-    if ($request->attributes->get('user')->isAuthenticated()) {
-      return new RedirectResponse('/admin/conf');      
-    }
+    // if ($request->attributes->get('user')->isAuthenticated()) {
+    //   return new RedirectResponse('/admin/conf');      
+    // }
 
     $formData = [];
     $formError = [];
     $valid = false;
+    $user = $request->attributes->get('user');
 
     if($request->getMethod() !== 'POST') {
       $formData = $this->getFormDefaults();
@@ -39,10 +40,14 @@ class LoginController extends Controller
     if ($request->getMethod() == 'POST' && $valid) {
       $this->saveFormData($request, $formData);
 
-      return new RedirectResponse('/admin/conf');
+      //return new RedirectResponse('/admin/config');
     }
 
-    $html = $this->container['twig']->render('admin.html.twig', ['form' => $formData, 'error' => $formError]);
+    $html = $this->container['twig']->render('admin.html.twig', [
+      'form' => $formData, 
+      'error' => $formError, 
+      'user' => $user
+      ]);
 
     return new Response($html);
   }
