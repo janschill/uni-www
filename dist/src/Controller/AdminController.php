@@ -22,7 +22,7 @@ class AdminController extends Controller
   public function showFormAction(Request $request)
   {
     // if ($request->attributes->get('user')->isAuthenticated()) {
-    //   return new RedirectResponse('/admin/conf');      
+    //   return new RedirectResponse('/admin');      
     // }
 
     $formData = [];
@@ -40,7 +40,7 @@ class AdminController extends Controller
     if ($request->getMethod() == 'POST' && $valid) {
       $this->saveFormData($request, $formData);
 
-      //return new RedirectResponse('/admin/config');
+      return new RedirectResponse('/admin');
     }
 
     $html = $this->container['twig']->render('admin.html.twig', [
