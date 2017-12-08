@@ -21,14 +21,11 @@ class AdminController extends Controller
    */
   public function showFormAction(Request $request)
   {
-    // if ($request->attributes->get('user')->isAuthenticated()) {
-    //   return new RedirectResponse('/admin');      
-    // }
-
     $formData = [];
     $formError = [];
     $valid = false;
     $user = $request->attributes->get('user');
+    $posts = [];
 
     if($request->getMethod() !== 'POST') {
       $formData = $this->getFormDefaults();
@@ -42,11 +39,16 @@ class AdminController extends Controller
 
       return new RedirectResponse('/admin');
     }
+    
+    if($user->isAuthenticated()) {
+      $posts = $this->getBlogPosts();
+    }
 
     $html = $this->container['twig']->render('admin.html.twig', [
       'form' => $formData, 
       'error' => $formError, 
-      'user' => $user
+      'user' => $user,
+      'posts' => $posts
       ]);
 
     return new Response($html);
@@ -99,4 +101,11 @@ class AdminController extends Controller
       $session->remove('username');
     } 
   }
+
+  private function getBlogPosts()
+  {
+    $model = new \Model\BlogModel($this->container['db']);
+    return $model->getAllPosts();
+  }
+
 }

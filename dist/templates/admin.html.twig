@@ -8,19 +8,25 @@
 
 {% if user.isAuthenticated() %}
     <section class="admindashboard">
-        <aside class="admindashboard__aside">
-        <a href="#">Blog</a>
-        <a href="#">Projects</a>
+        <aside class="adminaside">
+            <ul>
+                <li class="adminaside__nav"><a href="#">Blog</a></li>
+                <li class="adminaside__nav"><a href="#">Projects</a></li>
+            </ul>
         </aside>
 
         <article class="admindashboard__article">
+            <h3>Blog posts</h3>
             <ul class="blogposts">                
                 {% for post in posts %}
-                    <li>
-                        <a href="">{{ post.title }}</a>
+                    <li class="blogpost">
+                        <a class="blogpost__title" href="admin/blog/edit/post/{{ post.id }}">{{ post.title }}</a>
+                        <a class="blogpost__edit" href="admin/blog/edit/post/{{ post.id }}">Edit</a>
+                        <a class="blogpost__delete" href="admin/blog/edit/post/{{ post.id }}">Delete</a>
                     </li>
                 {% endfor %}
             </ul>
+            <h3>Projects</h3>
             <ul class="projects">
                 {% for project in projects %}
                 {% endfor %}
