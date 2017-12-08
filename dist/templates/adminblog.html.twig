@@ -1,0 +1,24 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Admin Panel{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <script src="/js/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src="/js/tinymce.js"></script>
+{% endblock %}
+{% block content %}
+
+<form class="form form--box" action="#" method="post">
+    <h2 class="form__header">New Blog Post</h2>
+    <input class="form__input form__input--box" type="text" id="form_title" name="form[title]" value="{{ form['title'] }}" placeholder="Title">
+    {% if error['title'] %}<p>{{ error['title'] }}</p>{% endif %}
+    <select>
+      {% for category in categories %}
+        <option name="form[category]"value="{{ category.name }}">{{ category.name }}</option>
+      {% endfor %}
+    </select>
+    <textarea rows="4" cols="50" class="form__input form__input--simple" type="text" id="form_text" name="form[text]" value="{{ form['text'] }}" placeholder="Text"></textarea>
+    <input class="form__submit" type="submit" id="form_submit" value="Post">
+</form>
+
+{% endblock %}

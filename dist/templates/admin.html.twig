@@ -10,25 +10,36 @@
     <section class="admindashboard">
         <aside class="adminaside">
             <ul>
-                <li class="adminaside__nav"><a href="#">Blog</a></li>
-                <li class="adminaside__nav"><a href="#">Projects</a></li>
+                <li class="adminaside__nav"><a href="/admin/blog">Blog</a></li>
+                <li class="adminaside__nav"><a href="/admin/project">Projects</a></li>
             </ul>
         </aside>
 
         <article class="admindashboard__article">
-            <h3>Blog posts</h3>
+            <h3>
+                Blog posts
+                <span><a href="/admin/blog/new">new Post</a></span>
+            </h3>
             <ul class="blogposts">                
                 {% for post in posts %}
                     <li class="blogpost">
-                        <a class="blogpost__title" href="admin/blog/edit/post/{{ post.id }}">{{ post.title }}</a>
-                        <a class="blogpost__edit" href="admin/blog/edit/post/{{ post.id }}">Edit</a>
-                        <a class="blogpost__delete" href="admin/blog/edit/post/{{ post.id }}">Delete</a>
+                        <a class="blogpost__title" href="admin/blog/edit/{{ post.id }}">{{ post.title }}</a>
+                        <a class="blogpost__edit" href="admin/blog/edit/{{ post.id }}">Edit</a>
+                        <a class="blogpost__delete" href="admin/blog/delete/{{ post.id }}">Delete</a>
                     </li>
                 {% endfor %}
             </ul>
-            <h3>Projects</h3>
+            <h3>
+                Projects
+                <span><a href="/admin/project/new">new Project</a></span>
+            </h3>
             <ul class="projects">
                 {% for project in projects %}
+                    <li class="project">
+                        <a class="project__title" href="admin/project/edit/{{ project.id }}">{{ project.title }}</a>
+                        <a class="project__edit" href="admin/project/edit/{{ project.id }}">Edit</a>
+                        <a class="project__delete" href="admin/project/delete/{{ project.id }}">Delete</a>
+                    </li>
                 {% endfor %}
             </ul>
         </article>

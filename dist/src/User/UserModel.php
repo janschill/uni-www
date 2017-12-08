@@ -11,6 +11,7 @@ class UserModel
     $this->db = $db;
   }
 
+
   /**
    * add new user to the database
    */
@@ -47,6 +48,18 @@ class UserModel
     return $row;
   }
 
+  public function getUserID($username)
+  {
+    $query = "SELECT id FROM users WHERE username = :username";
+    $stmt = $this->db->prepare($query);
+    $stmt->bindParam(':username', $username);
+    
+    $stmt->execute();
+    $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+    
+    return $row;
+  }
+
   /**
    * check if user and password matches
    */
@@ -69,7 +82,7 @@ class UserModel
   {
     if($username == "janschill")
     {
-      return ['view', 'add'];
+      return ['view', 'add', 'edit'];
     }
     
     return ['view'];

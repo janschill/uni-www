@@ -9,6 +9,20 @@ class BlogModel extends Model
         parent::__construct($db);
     }
 
+
+  public function addPost($post)
+  {
+    $sql = $this->db->prepare("INSERT INTO posts (title, text, date, author, category) VALUES (:title, :text, :date, :author, :category)");
+
+    $sql->bindParam(':title', $post['title']);
+    $sql->bindParam(':text', $post['date']);
+    $sql->bindParam(':date', $post['text']);
+    $sql->bindParam(':author', $post['author']);
+    $sql->bindParam(':category', $post['category']);
+
+    $sql->execute();
+  }
+
     public function getAllPosts()
     {
         return $this->getRow("SELECT * FROM posts");

@@ -7,14 +7,13 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Session\Session;
 
-class AdminController extends Controller
+class AdminLoginController extends Controller
 {
-  protected $formData, $model;
+  protected $formData;
 
   public function __construct($container)
   {
     parent::__construct($container);
-    $this->model = new \Model\BlogModel($this->container['db']);
   }
 
   /**
@@ -30,17 +29,17 @@ class AdminController extends Controller
 
     if($request->getMethod() == 'POST') {
       $formData = $request->get('form');
-      list($valid, $formError) = $this->isFormDataValid($request, $formData);
+      list($valid, $formError) = $this->isLoginFormDataValid($request, $formData);
     }
 
     if ($request->getMethod() == 'POST' && $valid) {
       $this->saveFormData($request, $formData);
 
-      return new RedirectResponse('/admin/blog');
+      return new RedirectResponse('/admin');
     }
     
     if($user->isAuthenticated()) {
-      $posts = $this->model->getAllPosts();      
+      $posts = $this->getBlogPosts();
     }
 
     $html = $this->container['twig']->render('admin.html.twig', [
@@ -53,15 +52,24 @@ class AdminController extends Controller
     return new Response($html);
   }
 
-  protected function isFormDataValid(Request $request, $formData)
+  /**
+   * check if username/password is entered
+   */
+  protected function isLoginFormDataValid(Request $request, $formData)
   {
     $valid = true;
     $formError = [];
 
-    if((!isset($formData['title'])) || (!isset($formData['text']))) 
+    if((!isset($formData['username']))) 
     {
       $valid = false;
-      $formError['title'] = "Please fill out all input fields";
+      $formError['username'] = "Invalid username";
+    }
+
+    if((!isset($formData['password'])))
+    {
+      $valid = false;
+      $formError['password'] = "Invalid password";
     }
 
     return [$valid, $formError];
@@ -72,32 +80,23 @@ class AdminController extends Controller
    */
   protected function saveFormData(Request $request, $formData)
   {
-    $task['title'] = $formData['title'];
-    $task['text'] = $formData['text'];
-    
-    if (date_default_timezone_get() != 'CET') {
-      date_default_timezone_set('CET');
+    $session = $request->getSession();
+    if(!$session) {
+      $session = new Session();
     }
 
-    $task['date'] = date('m/d/Y h:i:s a', time());
-    
-    $user = $request->attributes->get('user');
-    $id = $this->model->getUserID($user);    
-    $task['author'] = $id;
-
-    $task['category'] = $formData['category'];
-
-    $this->model->addPost($task);
+    $userModel = new \User\UserModel($this->container['db']);
+    if($userModel->isValidUser($formData['username'], $formData['password']))
+    {
+      $session->set('username', $formData['username']);
+    } else {
+      $session->remove('username');
+    } 
   }
 
-  public function showBlog($request) {
-    $categories = $this->model->getAllCategories($request);
-    $html = $this->container['twig']->render('adminblog.html.twig',[
-      // 'error' => $formError,
-      // 'user' => $user,
-      'categories' => $categories
-    ]);
-    return new Response($html);
+  private function getBlogPosts()
+  {
+    $model = new \Model\BlogModel($this->container['db']);
+    return $model->getAllPosts();
   }
-
 }
