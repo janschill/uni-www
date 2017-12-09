@@ -2,30 +2,31 @@
 <html>
 
 <head>
-  {% block head %}
-  <link rel="stylesheet" href="/css/combined.min.css" />
-  <script src="/js/jquery-3.2.1.min.js"></script>
-  <script src="/js/main.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <title>{% block title %}{% endblock %}</title>
-  {% endblock %}
+    {% block head %}
+        <link rel="stylesheet" href="/css/combined.min.css"/>
+        <script src="/js/jquery-3.2.1.min.js"></script>
+        <script src="/js/main.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
 </head>
 
 <body>
-  <div class="wrapper">
+<div class="wrapper">
     <header>
-      <nav class="nav nav--appear">
-        <ul class"nav--active">
-          <li class="current-item" class="nav__home"><a href="/">JS</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/about">About</a></li>
-          {% if user.isAuthenticated() %}
-            <li><a href="/admin">Admin</a></li>
-          {% endif %}
-        </ul>
-          <a href="#" class="nav--toggle">&#9776;</a>
-      </nav>
+        <nav class="nav nav--appear">
+            <ul class
+            "nav--active">
+            <li class="current-item" class="nav__home"><a href="/">JS</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/about">About</a></li>
+            {% if user.isAuthenticated() %}
+                <li><a href="/admin">Admin</a></li>
+            {% endif %}
+            </ul>
+            <a href="#" class="nav--toggle">&#9776;</a>
+        </nav>
     </header>
 
     <div class="content">
@@ -33,16 +34,16 @@
     </div>
 
     <footer class="footer">
-      {% block footer %}
-      <ul class="social">
-        <li class="social__item"><a href="" class="social__link">Twitter</a></li>
-        <li class="social__item"><a href="" class="social__link">Github</a></li>
-      </ul>
-      
-      {% endblock %}
+        {% block footer %}
+            <ul class="social">
+                <li class="social__item"><a href="" class="social__link">Twitter</a></li>
+                <li class="social__item"><a href="" class="social__link">Github</a></li>
+            </ul>
+
+        {% endblock %}
     </footer>
 
 
-  </div>
+</div>
 </body>
 </html>

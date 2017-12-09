@@ -1,15 +1,16 @@
-<?php 
+<?php
 
 namespace Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class Controller 
+class Controller
 {
   protected $container;
 
-  public function __construct($container) {
+  public function __construct($container)
+  {
     $this->container = $container;
   }
 }

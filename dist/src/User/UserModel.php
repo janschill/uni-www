@@ -2,7 +2,7 @@
 
 namespace User;
 
-class UserModel 
+class UserModel
 {
   protected $db;
 
@@ -17,8 +17,7 @@ class UserModel
    */
   public function addUser($user)
   {
-    if($this->getUser($user['username']) == null)
-    {
+    if ($this->getUser($user['username']) == null) {
       $query = "INSERT INTO users
       ('username', 'password') VALUES (:username, :password)";
 
@@ -41,10 +40,10 @@ class UserModel
     $query = "SELECT * FROM users WHERE username = :username";
     $stmt = $this->db->prepare($query);
     $stmt->bindParam(':username', $username);
-    
+
     $stmt->execute();
     $row = $stmt->fetch(\PDO::FETCH_ASSOC);
-    
+
     return $row;
   }
 
@@ -54,12 +53,11 @@ class UserModel
   public function isValidUser($username, $password)
   {
     $user = $this->getUser($username);
-    
-    if(isset($user['username'])) 
-    {
+
+    if (isset($user['username'])) {
       return password_verify($password, $user['password']);
     }
-    
+
     return false;
   }
 
@@ -68,11 +66,10 @@ class UserModel
    */
   public function getPermissions($username)
   {
-    if($username == "janschill")
-    {
+    if ($username == "janschill") {
       return ['view', 'add', 'edit'];
     }
-    
+
     return ['view'];
   }
 

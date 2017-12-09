@@ -33,19 +33,17 @@ class User
     return (array_search($permissions, $this->permissions) !== false);
   }
 
-/**
- * 
- */
+  /**
+   *
+   */
   static function getFromSession($container, Session $session)
   {
     $user = new User();
     $username = $session->get('username');
-    if($username)
-    {
+    if ($username) {
       $userModel = new \User\UserModel($container['db']);
       $userData = $userModel->getUser($username);
-      if($userData)
-      {
+      if ($userData) {
         $user->username = $username;
         $user->isAuthenticated = true;
         $user->permissions = $userModel->getPermissions($username);

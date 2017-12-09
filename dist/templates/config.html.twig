@@ -6,37 +6,39 @@
     {# <link href="/dist/public/js/tinymce/skins/lightgray/skin.min.css" rel="stylesheet"> #}
     <script src="/js/tinymce/tinymce.min.js"></script>
     <script type="text/javascript">
-  tinymce.init({
-    selector: 'textarea',
-    theme: 'modern',
-    width: 600,
-    height: 300,
-    plugins: [
-      'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
-      'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-      'save table contextmenu directionality emoticons template paste textcolor'
-    ],
-    content_css: '/js/tinymce/skins/lightgray/css/content.min.css',
-    toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons'
-  });
-  </script>
+        tinymce.init({
+            selector: 'textarea',
+            theme: 'modern',
+            width: 600,
+            height: 300,
+            plugins: [
+                'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+                'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+                'save table contextmenu directionality emoticons template paste textcolor'
+            ],
+            content_css: '/js/tinymce/skins/lightgray/css/content.min.css',
+            toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons'
+        });
+    </script>
 {% endblock %}
 {% block content %}
 
-<a href="">New Blog Post</a>
-<a href="">New Project Post</a>
+    <a href="">New Blog Post</a>
+    <a href="">New Project Post</a>
 
-<form class="form form--box" action="#" method="post">
-    <h2 class="form__header">New Blog Post</h2>
-    <input class="form__input form__input--box" type="text" id="form_title" name="form[title]" value="{{ form['title'] }}" placeholder="Title">
-    {% if error['title'] %}<p>{{ error['title'] }}</p>{% endif %}
-    <select>
-      {% for category in categories %}
-        <option value="{{ category.name }}">{{ category.name }}</option>
-      {% endfor %}
-    </select>
-    <textarea rows="4" cols="50" class="form__input form__input--simple" type="text" id="form_text" name="form[text]" value="{{ form['text'] }}" placeholder="Text"></textarea>
-    <input class="form__submit" type="submit" id="form_submit" value="Post">
-</form>
+    <form class="form form--box" action="#" method="post">
+        <h2 class="form__header">New Blog Post</h2>
+        <input class="form__input form__input--box" type="text" id="form_title" name="form[title]"
+               value="{{ form['title'] }}" placeholder="Title">
+        {% if error['title'] %}<p>{{ error['title'] }}</p>{% endif %}
+        <select>
+            {% for category in categories %}
+                <option value="{{ category.name }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+        <textarea rows="4" cols="50" class="form__input form__input--simple" type="text" id="form_text"
+                  name="form[text]" value="{{ form['text'] }}" placeholder="Text"></textarea>
+        <input class="form__submit" type="submit" id="form_submit" value="Post">
+    </form>
 
 {% endblock %}

@@ -26,30 +26,30 @@ class AdminController extends Controller
     $formData = [];
     $formError = [];
     $valid = false;
-    
-    if($request->getMethod() !== 'POST') {
+
+    if ($request->getMethod() !== 'POST') {
       $formData = $this->getFormDefaults();
     } else {
       $formData = $request->get('form');
       list($valid, $formError) = $this->isFormDataValid($request, $formData);
     }
-    
+
     if ($request->getMethod() == 'POST' && $valid) {
       $this->saveFormData($request, $formData);
-      
+
       return new RedirectResponse('/admin');
     }
-    
+
     $user = $request->attributes->get('user');
     $categories = $this->blogModel->getAllCategories($request);
 
     $html = $this->container['twig']->render('adminblog.html.twig', [
-      'form' => $formData, 
-      'error' => $formError, 
+      'form' => $formData,
+      'error' => $formError,
       'user' => $user,
       'categories' => $categories,
 
-      ]);
+    ]);
 
     return new Response($html);
   }
@@ -63,13 +63,12 @@ class AdminController extends Controller
     if ((!isset($formData['token'])) || (!hash_equals($token,
         $formData['token']))
     ) {
-        $valid = false;
-        $formError['token'] = 'Bad token';
-        throw new \Exception('Bad CSRF token.');
+      $valid = false;
+      $formError['token'] = 'Bad token';
+      throw new \Exception('Bad CSRF token.');
     }
 
-    if((!isset($formData['title'])) || (strlen($formData['title']) < 3) || (!isset($formData['text']))) 
-    {
+    if ((!isset($formData['title'])) || (strlen($formData['title']) < 3) || (!isset($formData['text']))) {
       $valid = false;
       $formError['title'] = "Please fill out all input fields";
     }
@@ -92,14 +91,14 @@ class AdminController extends Controller
   private function getToken()
   {
     if ($this->is_session_started() === false) {
-        //session_start();
+      //session_start();
     }
     if (empty($_SESSION['token'])) {
-        if (function_exists('random_bytes')) {
-            $_SESSION['token'] = bin2hex(random_bytes(32));
-        } else {
-            $_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(32));
-        }
+      if (function_exists('random_bytes')) {
+        $_SESSION['token'] = bin2hex(random_bytes(32));
+      } else {
+        $_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(32));
+      }
     }
     $token = $_SESSION['token'];
 
@@ -108,10 +107,8 @@ class AdminController extends Controller
 
   private function is_session_started()
   {
-    if (php_sapi_name() !== 'cli') 
-    {
-      if (version_compare(phpversion(), '5.4.0', '>=')) 
-      {
+    if (php_sapi_name() !== 'cli') {
+      if (version_compare(phpversion(), '5.4.0', '>=')) {
         return session_status() === PHP_SESSION_ACTIVE ? true : false;
       } else {
         return session_id() === '' ? false : true;
@@ -126,15 +123,15 @@ class AdminController extends Controller
   {
     $task['title'] = $formData['title'];
     $task['text'] = $formData['text'];
-    
+
     if (date_default_timezone_get() != 'CET') {
       date_default_timezone_set('CET');
     }
 
     $task['date'] = date('m/d/Y h:i:s a', time());
-    
+
     $user = $request->attributes->get('user');
-    $id = $this->userModel->getUser($user->getUsername());  
+    $id = $this->userModel->getUser($user->getUsername());
     $task['author'] = $id['id'];
 
     $task['category'] = $formData['category'];

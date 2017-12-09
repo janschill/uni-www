@@ -24,7 +24,7 @@
 ### Mindestanforderungen (Backend)
 - :white_check_mark: Objektorientierung
 - :white_check_mark: PHP-Version 5.6.x oder 7.x
-- Codestyle nach PSR-1 und PSR-2
+- :white_check_mark: Codestyle nach PSR-1 und PSR-2
 - :white_check_mark: Verwendung des Front-Controller-Musters
 - :white_check_mark: Kapselung von Request/Response in Objekte (z.B. Symfony/HTTPFoundation)
 - :white_check_mark: Nur Frontend-Controller und Resourcen über HTTP erreichbar (/public als Documentroot)

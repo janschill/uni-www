@@ -27,7 +27,7 @@ class AdminLoginController extends Controller
     $user = $request->attributes->get('user');
     $posts = [];
 
-    if($request->getMethod() == 'POST') {
+    if ($request->getMethod() == 'POST') {
       $formData = $request->get('form');
       list($valid, $formError) = $this->isLoginFormDataValid($request, $formData);
     }
@@ -37,17 +37,17 @@ class AdminLoginController extends Controller
 
       return new RedirectResponse('/admin');
     }
-    
-    if($user->isAuthenticated()) {
+
+    if ($user->isAuthenticated()) {
       $posts = $this->getBlogPosts();
     }
 
     $html = $this->container['twig']->render('admin.html.twig', [
-      'form' => $formData, 
-      'error' => $formError, 
+      'form' => $formData,
+      'error' => $formError,
       'user' => $user,
       'posts' => $posts
-      ]);
+    ]);
 
     return new Response($html);
   }
@@ -60,14 +60,12 @@ class AdminLoginController extends Controller
     $valid = true;
     $formError = [];
 
-    if((!isset($formData['username']))) 
-    {
+    if ((!isset($formData['username']))) {
       $valid = false;
       $formError['username'] = "Invalid username";
     }
 
-    if((!isset($formData['password'])))
-    {
+    if ((!isset($formData['password']))) {
       $valid = false;
       $formError['password'] = "Invalid password";
     }
@@ -81,17 +79,16 @@ class AdminLoginController extends Controller
   protected function saveFormData(Request $request, $formData)
   {
     $session = $request->getSession();
-    if(!$session) {
+    if (!$session) {
       $session = new Session();
     }
 
     $userModel = new \User\UserModel($this->container['db']);
-    if($userModel->isValidUser($formData['username'], $formData['password']))
-    {
+    if ($userModel->isValidUser($formData['username'], $formData['password'])) {
       $session->set('username', $formData['username']);
     } else {
       $session->remove('username');
-    } 
+    }
   }
 
   private function getBlogPosts()

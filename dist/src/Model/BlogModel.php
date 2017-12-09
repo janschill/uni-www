@@ -4,10 +4,10 @@ namespace Model;
 
 class BlogModel extends Model
 {
-    public function __construct($db)
-    {
-        parent::__construct($db);
-    }
+  public function __construct($db)
+  {
+    parent::__construct($db);
+  }
 
 
   public function addPost($post)
@@ -23,13 +23,13 @@ class BlogModel extends Model
     $sql->execute();
   }
 
-    public function getAllPosts()
-    {
-        return $this->getRow("SELECT * FROM posts");
-    }
+  public function getAllPosts()
+  {
+    return $this->getRow("SELECT * FROM posts");
+  }
 
-    public function getAllCategories()
-    {
-        return $this->getRow("SELECT * FROM categories");
-    }
+  public function getAllCategories()
+  {
+    return $this->getRow("SELECT * FROM categories");
+  }
 }
