@@ -1,5 +1,23 @@
 .formtoolbar {
-    padding: 1rem 0 0 0;
+    margin: 1rem 0 0 0;
+    padding: 2px;
+    display: flex;
+    background-color: $black-haze;
+    border-bottom: 1px solid $bunker;
+    // box-shadow: 0 2px 5px $bunker;
 }
 
-.formtoolbar__bold {}
+.formtoolbar__modifier {}
+
+.formtoolbar__modifier a {
+    font-size: 90%;
+    padding: .5rem;
+    display: block;
+    border: 1px solid $black-haze;
+    text-decoration: none;
+    &:hover {
+        border: 1px solid $bunker;
+    }
+}
+
+.formtoolbar__modifier--bold {}
