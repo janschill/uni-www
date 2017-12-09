@@ -73,8 +73,8 @@ class UserModel
     
     $stmt = $this->db->prepare($query);
     $stmt->bindParam(':username', $username);
-    $stmt->execute();
-    $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+    $stmt->execute();    
+    $row = $stmt->fetchAll(\PDO::FETCH_COLUMN, 0);
 
     return $row;
   }
