@@ -11,9 +11,9 @@
 
 <form class="form form--box" action="#" method="post">
     <h2 class="form__header">New Blog Post</h2>
-    
+    <input type="hidden" name="form[token]" value="{{ form['token'] }}">
+    {% if error['title'] %}<p class="form__error form__error--danger">{{ error['title'] }}</p>{% endif %}
     <input class="form__input form__input--box" type="text" id="form_title" name="form[title]" value="{{ form['title'] }}" placeholder="Title">
-    {% if error['title'] %}<p>{{ error['title'] }}</p>{% endif %}
     
     <select name="form[category]">
       {% for category in categories %}

@@ -1,9 +1,11 @@
 $(document).ready(function() {
     console.log('ready');
-    $('.formtoolbar__modifier').click(function() {
+    $('.formtoolbar__modifier').click(function(e) {
         console.log('clickmodifier');
         var text = getTag($(this).text());
         $('#form_text').append(text);
+
+        e.preventDefault();
     });
 });
 

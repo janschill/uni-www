@@ -21,7 +21,10 @@ if (!$session)
 $user = User\User::getFromSession($container, $session);
 $request->attributes->set('user', $user);
 
+$flash = $session->get('flash');
+$request->attributes->set('flash', $flash);
+$session->remove('flash');
+
 $frontcontroller = new \Controller\FrontController($request, $routes, $container);
 $frontcontroller->run();
 
-//var_dump($user);
