@@ -1,0 +1,20 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Login{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+
+        <div class="formholder">
+            <form class="form form--shadow form--small" action="#" method="post">
+                <h2 class="form__header form__header--align form__header--weight form__header--blue">Admin-Login</h2>
+                <input class="form__input form__input--simple" type="text" id="form_username" name="form[username]"
+                       value="{{ form['username'] }}" placeholder="username">
+                <input class="form__input form__input--simple" type="password" id="form_password" name="form[password]"
+                       value="{{ form['password'] }}" placeholder="password">
+                <input class="form__submit form__submit--blue" type="submit" id="form_submit" value="Login">
+            </form>
+        </div>
+
+{% endblock %}

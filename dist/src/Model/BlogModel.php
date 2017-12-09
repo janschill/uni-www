@@ -28,6 +28,11 @@ class BlogModel extends Model
     return $this->getRow("SELECT * FROM posts");
   }
 
+  public function getFewPosts()
+  {
+    return $this->getRow("SELECT * FROM posts ORDER BY date desc LIMIT 3");
+  }
+
   public function getAllCategories()
   {
     return $this->getRow("SELECT * FROM categories");

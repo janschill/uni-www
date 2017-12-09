@@ -169,6 +169,18 @@ class AdminController extends Controller
     }
   }
 
+  public function showAdminAction($request)
+  {
+    $posts = $this->blogModel->getFewPosts();  
+    $user = $request->attributes->get('user');
+    $html = $this->container['twig']->render('admin.html.twig', [
+      'user' => $user,
+      'posts' => $posts
+    ]);
+
+    return new Response($html);
+  }
+
   // public function showBlog($request) {
   //   $categories = $this->model->getAllCategories($request);
   //   $html = $this->container['twig']->render('adminblog.html.twig',[

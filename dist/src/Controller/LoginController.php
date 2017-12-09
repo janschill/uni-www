@@ -6,8 +6,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Session\Session;
+use User\UserModel;
 
-class AdminLoginController extends Controller
+class LoginController extends Controller
 {
   protected $formData;
 
@@ -24,8 +25,6 @@ class AdminLoginController extends Controller
     $formData = [];
     $formError = [];
     $valid = false;
-    $user = $request->attributes->get('user');
-    $posts = [];
 
     if ($request->getMethod() == 'POST') {
       $formData = $request->get('form');
@@ -38,15 +37,9 @@ class AdminLoginController extends Controller
       return new RedirectResponse('/admin');
     }
 
-    if ($user->isAuthenticated()) {
-      $posts = $this->getBlogPosts();
-    }
-
-    $html = $this->container['twig']->render('admin.html.twig', [
+    $html = $this->container['twig']->render('login.html.twig', [
       'form' => $formData,
       'error' => $formError,
-      'user' => $user,
-      'posts' => $posts
     ]);
 
     return new Response($html);
@@ -83,17 +76,11 @@ class AdminLoginController extends Controller
       $session = new Session();
     }
 
-    $userModel = new \User\UserModel($this->container['db']);
+    $userModel = new UserModel($this->container['db']);
     if ($userModel->isValidUser($formData['username'], $formData['password'])) {
       $session->set('username', $formData['username']);
     } else {
       $session->remove('username');
     }
-  }
-
-  private function getBlogPosts()
-  {
-    $model = new \Model\BlogModel($this->container['db']);
-    return $model->getAllPosts();
   }
 }

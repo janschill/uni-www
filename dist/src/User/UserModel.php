@@ -75,7 +75,6 @@ class UserModel
     $stmt->execute();    
     /* to format the return array – fetches first item from every row – would otherwise return 2d array */
     $row = $stmt->fetchAll(\PDO::FETCH_COLUMN, 0);
-
     return $row;
   }
 }

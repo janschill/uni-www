@@ -16,48 +16,7 @@ $routes->add(
   )
 );
 
-$routes->add(
-  'about',
-  new Route(
-    '/about',
-    ['_controller' => 'Controller\ViewController::showAbout']
-  )
-);
-
-$routes->add(
-  'projects',
-  new Route(
-    '/projects',
-    ['_controller' => 'Controller\ViewController::showProjects']
-  )
-);
-
-$routes->add(
-  'projectsID',
-  new Route(
-    '/projects/{id}',
-    ['_controller' => 'Controller\ViewController::showProjects']
-  )
-);
-$routes->add(
-  'blog',
-  new Route(
-    '/blog',
-    ['_controller' => 'Controller\BlogController::showAllPosts']
-  )
-);
-
-$routes->add(
-  'blogID',
-  new Route(
-    '/blog/{id}',
-    ['_controller' => 'Controller\ViewController::showBlog']
-  )
-);
-
-/**
- * logout
- */
+/* **************************** login/logout **************************** */
 $routes->add(
   'logout',
   new Route(
@@ -66,20 +25,28 @@ $routes->add(
   )
 );
 
-/**
- * admin panel
- */
+$routes->add(
+  'login',
+  new Route(
+    '/login',
+    ['_controller' => 'Controller\LoginController::showFormAction']
+  )
+);
+
+
+
+/* **************************** admin **************************** */
 $routes->add(
   'admin',
   new Route(
     '/admin',
-    ['_controller' => 'Controller\AdminLoginController::showFormAction']
+    ['_controller' => 'Controller\AdminController::showAdminAction'],
+    [],
+    ['_permission' => 'edit']
   )
 );
-/**
- * admin blog
- */
 
+/* **************************** admin / blog / new **************************** */
 $routes->add(
   'adminblognew',
   new Route(
@@ -90,6 +57,7 @@ $routes->add(
   )
 );
 
+/* **************************** admin / blog / delete **************************** */
 $routes->add(
   'adminblogdelete',
   new Route(
@@ -100,6 +68,7 @@ $routes->add(
   )
 );
 
+/* **************************** admin / blog / edit **************************** */
 $routes->add(
   'adminblogid',
   new Route(
@@ -110,6 +79,7 @@ $routes->add(
   )
 );
 
+/* **************************** admin / blog **************************** */
 $routes->add(
   'adminblog',
   new Route(
@@ -163,6 +133,54 @@ $routes->add(
     ['_permission' => 'edit']
   )
 );
+
+
+
+
+
+$routes->add(
+  'about',
+  new Route(
+    '/about',
+    ['_controller' => 'Controller\ViewController::showAbout']
+  )
+);
+
+$routes->add(
+  'projects',
+  new Route(
+    '/projects',
+    ['_controller' => 'Controller\ViewController::showProjects']
+  )
+);
+
+$routes->add(
+  'projectsID',
+  new Route(
+    '/projects/{id}',
+    ['_controller' => 'Controller\ViewController::showProjects']
+  )
+);
+$routes->add(
+  'blog',
+  new Route(
+    '/blog',
+    ['_controller' => 'Controller\BlogController::showAllPosts']
+  )
+);
+
+$routes->add(
+  'blogID',
+  new Route(
+    '/blog/{id}',
+    ['_controller' => 'Controller\ViewController::showBlog']
+  )
+);
+
+
+
+
+
 
 
 return $routes;
