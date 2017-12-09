@@ -25,7 +25,7 @@ class BlogModel extends Model
 
   public function getAllPosts()
   {
-    return $this->getRow("SELECT * FROM posts");
+    return $this->getRow("SELECT * FROM posts ORDER BY date desc");
   }
 
   public function getFewPosts()
