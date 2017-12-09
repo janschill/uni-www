@@ -12,7 +12,9 @@
                     <div class="post__header">
                         <h2 class="post__heading">{{ post.title }}</h2>
                     </div>
-                    <p class="post__text">{{ post.text }}</p>
+                    <p class="post__text">
+                        {{ post.text | raw }}
+                    </p>
                 </article>
             {% endfor %}
     </section>

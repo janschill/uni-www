@@ -15,8 +15,8 @@ class BlogModel extends Model
     $sql = $this->db->prepare("INSERT INTO posts (title, text, date, author, category) VALUES (:title, :text, :date, :author, :category)");
 
     $sql->bindParam(':title', $post['title']);
-    $sql->bindParam(':text', $post['date']);
-    $sql->bindParam(':date', $post['text']);
+    $sql->bindParam(':text', $post['text']);
+    $sql->bindParam(':date', $post['date']);
     $sql->bindParam(':author', $post['author']);
     $sql->bindParam(':category', $post['category']);
 

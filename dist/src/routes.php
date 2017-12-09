@@ -64,89 +64,90 @@ $routes->add(
 /**
  * admin blog
  */
-$routes->add(
-  'adminblog',
-  new Route(
-    '/admin/blog',
-    ['_controller' => 'Controller\AdminController::showBlog'],
-    [],
-    ['permission' => 'edit']
-  )
-);
 
-$routes->add(
-  'adminblogid',
-  new Route(
-    '/admin/blog/{id}',
-        ['_controller' => 'Controller\AdminController::showBlog'],
-    [],
-    ['permission' => 'edit']
-  )
-);
 
 $routes->add(
   'adminblognew',
   new Route(
     '/admin/blog/new',
-        ['_controller' => 'Controller\AdminController::showBlog'],
+    ['_controller' => 'Controller\AdminController::showFormAction'],
     [],
-    ['permission' => 'edit']
-  )
-);
+    ['_permission' => 'edit']
+    )
+  );
+  
+  $routes->add(
+    'adminblogid',
+    new Route(
+      '/admin/blog/{id}',
+      ['_controller' => 'Controller\AdminController::showBlog'],
+      [],
+      ['_permission' => 'edit']
+      )
+    );
+// $routes->add(
+//   'adminblog',
+//   new Route(
+//     '/admin/blog',
+//     ['_controller' => 'Controller\AdminController::showBlog'],
+//     [],
+//     ['_permission' => 'edit']
+//   )
+// );
 
-$routes->add(
-  'adminblogdelete',
-  new Route(
-    '/admin/blog/delete',
-        ['_controller' => 'Controller\AdminController::showBlog'],
-    [],
-    ['permission' => 'edit']
-  )
-);
+// $routes->add(
+//   'adminblogdelete',
+//   new Route(
+//     '/admin/blog/delete',
+//     ['_controller' => 'Controller\AdminController::showBlog'],
+//     [],
+//     ['_permission' => 'edit']
+//   )
+// );
 
-/**
- * admin project
- */
+// /**
+//  * admin project
+//  */
 
- $routes->add(
-  'adminproject',
-  new Route(
-    '/admin/project',
-        ['_controller' => 'Controller\AdminController::showBlog'],
-    [],
-    ['permission' => 'edit']
-  )
-);
+//  $routes->add(
+//   'adminproject',
+//   new Route(
+//     '/admin/project',
+//     ['_controller' => 'Controller\AdminController::showBlog'],
+//     [],
+//     ['_permission' => 'edit']
+//   )
+// );
 
-$routes->add(
-  'adminprojectid',
-  new Route(
-    '/admin/project/{id}',
-        ['_controller' => 'Controller\AdminController::showBlog'],
-    [],
-    ['permission' => 'edit']
-  )
-);
+// $routes->add(
+//   'adminprojectid',
+//   new Route(
+//     '/admin/project/{id}',
+//     ['_controller' => 'Controller\AdminController::showBlog'],
+//     [],
+//     ['_permission' => 'edit']
+//   )
+// );
 
- $routes->add(
-  'adminprojectnew',
-  new Route(
-    '/admin/project/new',
-        ['_controller' => 'Controller\AdminController::showBlog'],
-    [],
-    ['permission' => 'edit']
-  )
-);
+//  $routes->add(
+//   'adminprojectnew',
+//   new Route(
+//     '/admin/project/new',
+//     ['_controller' => 'Controller\AdminController::showBlog'],
+//     [],
+//     ['_permission' => 'edit']
+//   )
+// );
 
-$routes->add(
-  'adminprojectdelete',
-  new Route(
-    '/admin/project/delete',
-        ['_controller' => 'Controller\AdminController::showBlog'],
-    [],
-    ['permission' => 'edit']
-  )
-);
+// $routes->add(
+//   'adminprojectdelete',
+//   new Route(
+//     '/admin/project/delete',
+//     ['_controller' => 'Controller\AdminController::showBlog'],
+//     [],
+//     ['__permission' => 'edit']
+//   )
+// );
 
 
 

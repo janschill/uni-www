@@ -9,12 +9,13 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 class AdminController extends Controller
 {
-  protected $formData, $model;
+  protected $formData, $blogModel, $userModel;
 
   public function __construct($container)
   {
     parent::__construct($container);
-    $this->model = new \Model\BlogModel($this->container['db']);
+    $this->blogModel = new \Model\BlogModel($this->container['db']);
+    $this->userModel = new \User\UserModel($this->container['db']);
   }
 
   /**
@@ -27,6 +28,7 @@ class AdminController extends Controller
     $valid = false;
     $user = $request->attributes->get('user');
     $posts = [];
+    $categories = $this->blogModel->getAllCategories($request);
 
     if($request->getMethod() == 'POST') {
       $formData = $request->get('form');
@@ -36,18 +38,19 @@ class AdminController extends Controller
     if ($request->getMethod() == 'POST' && $valid) {
       $this->saveFormData($request, $formData);
 
-      return new RedirectResponse('/admin/blog');
+      return new RedirectResponse('/admin');
     }
     
-    if($user->isAuthenticated()) {
-      $posts = $this->model->getAllPosts();      
-    }
+    // if($user->isAuthenticated()) {
+    //   $posts = $this->model->getAllPosts();      
+    // }
 
-    $html = $this->container['twig']->render('admin.html.twig', [
+    $html = $this->container['twig']->render('adminblog.html.twig', [
       'form' => $formData, 
       'error' => $formError, 
       'user' => $user,
-      'posts' => $posts
+      'posts' => $posts,
+      'categories' => $categories
       ]);
 
     return new Response($html);
@@ -68,10 +71,10 @@ class AdminController extends Controller
   }
 
   /**
-   * put username/password into session, also check if combo is valid
    */
   protected function saveFormData(Request $request, $formData)
   {
+    var_dump($formData);
     $task['title'] = $formData['title'];
     $task['text'] = $formData['text'];
     
@@ -82,22 +85,23 @@ class AdminController extends Controller
     $task['date'] = date('m/d/Y h:i:s a', time());
     
     $user = $request->attributes->get('user');
-    $id = $this->model->getUserID($user);    
-    $task['author'] = $id;
+    $id = $this->userModel->getUser($user->getUsername());  
+    $task['author'] = $id['id'];
 
     $task['category'] = $formData['category'];
 
-    $this->model->addPost($task);
+    var_dump($task);
+    $this->blogModel->addPost($task);
   }
 
-  public function showBlog($request) {
-    $categories = $this->model->getAllCategories($request);
-    $html = $this->container['twig']->render('adminblog.html.twig',[
-      // 'error' => $formError,
-      // 'user' => $user,
-      'categories' => $categories
-    ]);
-    return new Response($html);
-  }
+  // public function showBlog($request) {
+  //   $categories = $this->model->getAllCategories($request);
+  //   $html = $this->container['twig']->render('adminblog.html.twig',[
+  //     // 'error' => $formError,
+  //     // 'user' => $user,
+  //     'categories' => $categories
+  //   ]);
+  //   return new Response($html);
+  // }
 
 }
