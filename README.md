@@ -22,20 +22,20 @@
 - Ggf. eine Erklärung, dass sie über die nötigen Rechte für externe Inhalte, Bilder und Komponenten verfügen, ggf. mit URIs. Keine Ausdrucke der AGBs beifügen!
 
 ### Mindestanforderungen (Backend)
-- Objektorientierung
-- PHP-Version 5.6.x oder 7.x
+- :white_check_mark: Objektorientierung
+- :white_check_mark: PHP-Version 5.6.x oder 7.x
 - Codestyle nach PSR-1 und PSR-2
-- Verwendung des Front-Controller-Musters
-- Kapselung von Request/Response in Objekte (z.B. Symfony/HTTPFoundation)
-- Nur Frontend-Controller und Resourcen über HTTP erreichbar (/public als Documentroot)
-- Keine Nutzung von globalen Variablen oder Singletons in Klassen und Funktionen
-- Aufgabentrennung: z.B. Model (Datenverarbeitung), Kontroller, Template
-- Verwendung einer Template-Engine mit Autoescaping (z.B. Twig)
+- :white_check_mark: Verwendung des Front-Controller-Musters
+- :white_check_mark: Kapselung von Request/Response in Objekte (z.B. Symfony/HTTPFoundation)
+- :white_check_mark: Nur Frontend-Controller und Resourcen über HTTP erreichbar (/public als Documentroot)
+- :white_check_mark: Keine Nutzung von globalen Variablen oder Singletons in Klassen und Funktionen
+- :white_check_mark: Aufgabentrennung: z.B. Model (Datenverarbeitung), Kontroller, Template
+- :white_check_mark: Verwendung einer Template-Engine mit Autoescaping (z.B. Twig)
 - Formulare mit Überprüfung der Eingaben und Fehlermeldungen
-- Nutzer-Login
-- Speicherung der Daten in einer Datenbank
-- Datenbank: SQLite (Kein Postgres, MySQL o.ä.)
-- Nutzung des eingebauten Entwicklungs-Servers
+- :white_check_mark: Nutzer-Login
+- :white_check_mark: Speicherung der Daten in einer Datenbank
+- :white_check_mark: Datenbank: SQLite (Kein Postgres, MySQL o.ä.)
+- :white_check_mark: Nutzung des eingebauten Entwicklungs-Servers
 - Die Abgabe muss alle genutzten Resourcen enthalten
 
 ### Mindestanforderungen (Frontend)
