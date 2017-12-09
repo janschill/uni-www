@@ -52,6 +52,17 @@ $routes->add(
 );
 
 /**
+ * logout
+ */
+$routes->add(
+  'logout',
+  new Route(
+    '/logout',
+    ['_controller' => 'Controller\AdminController::logoutAction']
+  )
+);
+
+/**
  * admin panel
  */
 $routes->add(

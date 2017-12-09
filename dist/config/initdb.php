@@ -16,4 +16,6 @@ $row = $stmt->fetch(\PDO::FETCH_ASSOC);
 
 var_dump($row);
 
-// $db->exec("INSERT INTO users (username, password) VALUES ('janschill', $pw)");
+// $pw = password_hash('password', PASSWORD_DEFAULT);
+// echo $pw;
+// $db->exec("INSERT INTO users (username, password) VALUES ('lukas', $pw)");

@@ -57,4 +57,17 @@ class User
     return ['view'];
   }
 
+  function logout($request)
+  {
+    $session = $request->getSession();
+    if (!$session) 
+    {
+      $session = new Session();
+    }
+    $session->remove('username');
+    $this->username = null;
+    $this->isAuthenticated = false;
+    $this->permissions = $this->anonPermissions();
+  }
+
 }

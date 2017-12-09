@@ -66,11 +66,17 @@ class UserModel
    */
   public function getPermissions($username)
   {
-    if ($username == "janschill") {
-      return ['view', 'add', 'edit'];
-    }
+    $query = "SELECT permissions.permission FROM permissions 
+    JOIN user2permission ON permissions.id = user2permission.permissionid
+    JOIN users ON users.id = user2permission.userid
+    WHERE users.username = :username";
+    
+    $stmt = $this->db->prepare($query);
+    $stmt->bindParam(':username', $username);
+    $stmt->execute();
+    $row = $stmt->fetch(\PDO::FETCH_ASSOC);
 
-    return ['view'];
+    return $row;
   }
 
 }

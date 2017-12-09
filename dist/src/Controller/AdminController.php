@@ -139,6 +139,14 @@ class AdminController extends Controller
     $this->blogModel->addPost($task);
   }
 
+  public function logoutAction($request)
+  {
+    $user = $request->attributes->get('user');
+    $user->logout($request);
+    return new RedirectResponse('/');
+  }
+
+
   // public function showBlog($request) {
   //   $categories = $this->model->getAllCategories($request);
   //   $html = $this->container['twig']->render('adminblog.html.twig',[

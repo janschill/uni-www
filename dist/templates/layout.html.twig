@@ -23,6 +23,7 @@
             <li><a href="/about">About</a></li>
             {% if user.isAuthenticated() %}
                 <li><a href="/admin">Admin</a></li>
+                <li><a href="/logout">Logout</a></li>
             {% endif %}
             </ul>
             <a href="#" class="nav--toggle">&#9776;</a>
