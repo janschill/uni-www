@@ -5,6 +5,8 @@
     background-color: $black-haze;
     border-bottom: 1px solid $bunker;
     // box-shadow: 0 2px 5px $bunker;
+    align-self: stretch;
+    justify-content: space-between;
 }
 
 .formtoolbar__modifier {}
