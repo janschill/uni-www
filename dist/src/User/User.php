@@ -2,6 +2,7 @@
 
 namespace User;
 
+use User\UserModel;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 class User
@@ -41,7 +42,7 @@ class User
     $user = new User();
     $username = $session->get('username');
     if ($username) {
-      $userModel = new \User\UserModel($container['db']);
+      $userModel = new UserModel($container['db']);
       $userData = $userModel->getUser($username);
       if ($userData) {
         $user->username = $username;

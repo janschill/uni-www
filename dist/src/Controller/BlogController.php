@@ -4,6 +4,7 @@ namespace Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Model\BlogModel;
 
 class BlogController extends Controller
 {
@@ -12,7 +13,7 @@ class BlogController extends Controller
   public function __construct($container)
   {
     parent::__construct($container);
-    $this->model = new \Model\BlogModel($this->container['db']);
+    $this->model = new BlogModel($this->container['db']);
   }
 
   public function showAllPosts($request)

@@ -1,11 +1,13 @@
+// var text;
+
 $(document).ready(function() {
     console.log('ready');
-    $('.formtoolbar__modifier').click(function(e) {
-        console.log('clickmodifier');
-        var text = getTag($(this).text());
-        $('#form_text').append(text);
+    $('.formtoolbar__modifier').click(function() {
 
-        e.preventDefault();
+        console.log(getTag($(this).text()));
+        $('#form_text').val($('#form_text').val() + getTag($(this).text()));
+
+        // e.preventDefault();
     });
 });
 
@@ -14,8 +16,37 @@ function getTag(text) {
     switch (text) {
         case "B":
             tagClass = "'formtoolbar__modifier--bold'"
+            break;
+        case "I":
+            tagClass = "'formtoolbar__modifier--italic'"
+            break;
+        case "AL":
+            tagClass = "'formtoolbar__modifier--al'"
+            break;
+        case "AC":
+            tagClass = "'formtoolbar__modifier--ac'"
+            break;
+        case "AR":
+            tagClass = "'formtoolbar__modifier--ar'"
+            break;
+        case "JU":
+            tagClass = "'formtoolbar__modifier--ju'"
+            break;
+        case "UL":
+            tagClass = "'formtoolbar__modifier--ul'"
+            break;
+        case "OL":
+            tagClass = "'formtoolbar__modifier--ol'"
+            break;
+        case "<>":
+            tagClass = "'formtoolbar__modifier--code'"
+            break;
+        case "Image":
+            tagClass = "'formtoolbar__modifier--image'"
+            break;
     }
     console.log("<span class=" + tagClass + "></span>")
+
     return "<span class=" + tagClass + "></span>";
 }
 

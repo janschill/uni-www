@@ -6,6 +6,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Session\Session;
+use Model\BlogModel;
+use User\UserModel;
 
 class AdminController extends Controller
 {
@@ -14,8 +16,8 @@ class AdminController extends Controller
   public function __construct($container)
   {
     parent::__construct($container);
-    $this->blogModel = new \Model\BlogModel($this->container['db']);
-    $this->userModel = new \User\UserModel($this->container['db']);
+    $this->blogModel = new BlogModel($this->container['db']);
+    $this->userModel = new UserModel($this->container['db']);
   }
 
   /**
@@ -27,6 +29,13 @@ class AdminController extends Controller
     $formError = [];
     $valid = false;
 
+    /**
+     * when page is loaded with GET this will trigger and fill out
+     * the form defaults – like get the categories
+     * 
+     * when page is loaded with POST we will check all form inputs
+     * and set $valid to true to save the formData to the database
+     */
     if ($request->getMethod() !== 'POST') {
       $formData = $this->getFormDefaults();
     } else {
@@ -146,6 +155,19 @@ class AdminController extends Controller
     return new RedirectResponse('/');
   }
 
+
+  public function deleteBlogPost($request)
+  {
+    $id = $request->attributes->get('id');
+
+    if (isset($id))
+    {
+      if ($this->blogModel->deletePost($id))
+      {
+        return new RedirectResponse('/admin');
+      }
+    }
+  }
 
   // public function showBlog($request) {
   //   $categories = $this->model->getAllCategories($request);

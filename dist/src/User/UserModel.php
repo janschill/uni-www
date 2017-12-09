@@ -11,7 +11,6 @@ class UserModel
     $this->db = $db;
   }
 
-
   /**
    * add new user to the database
    */
@@ -62,7 +61,7 @@ class UserModel
   }
 
   /**
-   * temporarily like this – later with db permission table
+   * fetch permission from database table
    */
   public function getPermissions($username)
   {
@@ -74,9 +73,9 @@ class UserModel
     $stmt = $this->db->prepare($query);
     $stmt->bindParam(':username', $username);
     $stmt->execute();    
+    /* to format the return array – fetches first item from every row – would otherwise return 2d array */
     $row = $stmt->fetchAll(\PDO::FETCH_COLUMN, 0);
 
     return $row;
   }
-
 }

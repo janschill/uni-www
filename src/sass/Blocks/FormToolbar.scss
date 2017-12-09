@@ -22,4 +22,10 @@
     }
 }
 
-.formtoolbar__modifier--bold {}
+.formtoolbar__modifier--bold {
+    font-weight: bold;
+}
+
+.formtoolbar__modifier--italic {
+    font-style: italic;
+}

@@ -15,6 +15,7 @@ $routes->add(
     ['_controller' => 'Controller\ViewController::showIndex']
   )
 );
+
 $routes->add(
   'about',
   new Route(
@@ -22,6 +23,7 @@ $routes->add(
     ['_controller' => 'Controller\ViewController::showAbout']
   )
 );
+
 $routes->add(
   'projects',
   new Route(
@@ -29,6 +31,7 @@ $routes->add(
     ['_controller' => 'Controller\ViewController::showProjects']
   )
 );
+
 $routes->add(
   'projectsID',
   new Route(
@@ -43,6 +46,7 @@ $routes->add(
     ['_controller' => 'Controller\BlogController::showAllPosts']
   )
 );
+
 $routes->add(
   'blogID',
   new Route(
@@ -89,10 +93,10 @@ $routes->add(
 $routes->add(
   'adminblogdelete',
   new Route(
-    '/admin/blog/delete',
-    ['_controller' => 'Controller\AdminController::showBlog'],
-    [],
-    ['_permission' => 'edit']
+    '/admin/blog/delete/{id}',
+    ['_controller' => 'Controller\AdminController::deleteBlogPost'],
+    ['id' => '\d+'],
+    ['_permission' => 'delete']
   )
 );
 
