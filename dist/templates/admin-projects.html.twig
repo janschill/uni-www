@@ -1,0 +1,29 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Projects{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+
+        <section class="admindashboard">
+            {% include 'admin-aside.html.twig' %}
+
+            <article class="admindashboard__article">
+                <h3>
+                    Projects
+                    <span><a href="/admin/project/new">new Project</a></span>
+                </h3>
+                <ul class="projects">
+                    {% for post in posts %}
+                        <li class="project">
+                            <a class="project__title" href="admin/project/edit/{{ post.id }}">{{ post.title }}</a>
+                            <a class="project__edit" href="admin/project/edit/{{ post.id }}">Edit</a>
+                            <a class="project__delete" href="admin/project/delete/{{ post.id }}">Delete</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+              </article>
+        </section>
+
+{% endblock %}

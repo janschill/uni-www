@@ -20,15 +20,16 @@ class AdminController extends Controller
     $this->userModel = new UserModel($this->container['db']);
   }
 
-  /**
-   * entry point for data form submission
-   */
+  /* **************************** admin **************************** */
   public function showFormAction(Request $request)
   {
     $formData = [];
     $formError = [];
     $valid = false;
-
+    $edit = false;
+    $route = $request->attributes->get('_route');
+    $id = $request->attributes->get('id');
+  
     /**
      * when page is loaded with GET this will trigger and fill out
      * the form defaults – like get the categories
@@ -36,28 +37,30 @@ class AdminController extends Controller
      * when page is loaded with POST we will check all form inputs
      * and set $valid to true to save the formData to the database
      */
+    if (strcmp($route, 'adminblogid') === 0) {
+      $edit = true;
+    }
     if ($request->getMethod() !== 'POST') {
-      $formData = $this->getFormDefaults();
+      $formData = $this->getFormDefaults($edit, $id);
     } else {
       $formData = $request->get('form');
       list($valid, $formError) = $this->isFormDataValid($request, $formData);
     }
 
     if ($request->getMethod() == 'POST' && $valid) {
-      $this->saveFormData($request, $formData);
+      $this->saveFormData($request, $formData, $edit, $id);
 
-      return new RedirectResponse('/admin');
+      return new RedirectResponse('/blog');
     }
 
-    $user = $request->attributes->get('user');
+    $user = $this->getUserFromRequest($request);
     $categories = $this->blogModel->getAllCategories($request);
 
-    $html = $this->container['twig']->render('adminblog.html.twig', [
+    $html = $this->container['twig']->render('admin-blog-new.html.twig', [
       'form' => $formData,
       'error' => $formError,
       'user' => $user,
       'categories' => $categories,
-
     ]);
 
     return new Response($html);
@@ -85,15 +88,38 @@ class AdminController extends Controller
     return [$valid, $formError];
   }
 
-  protected function getFormDefaults()
+  protected function getFormDefaults($edit, $id)
   {
-    $formData['title'] = null;
-    $formData['text'] = null;
-    $formData['date'] = null;
-    $formData['author'] = null;
-    $formData['category'] = null;
-    $formData['token'] = $this->getToken();
+    if ($edit)
+    {
+      $post = $this->blogModel->getOnePost($id);
+      $category = $this->blogModel->getCategoryById($post['category']);
+      // var_dump($category);
+      
+      $formData['title'] = $post['title'];
+      $formData['text'] = $post['text'];
+      $formData['date'] = $post['date'];
+      $formData['author'] = $post['author'];
+      $formData['category'] = $category['id'];        
+    } else {
+      $formData['title'] = null;
+      $formData['text'] = null;
 
+      if (date_default_timezone_get() != 'CET') {
+        date_default_timezone_set('CET');
+      }      
+      
+      $formData['date'] = date('m/d/Y h:i:s a', time());
+      
+      $user = $this->getUserFromRequest($request);
+      $id = $this->userModel->getUser($user->getUsername());
+      
+      $formData['author'] = $id['id'];
+      $formData['category'] = null;
+    }
+    
+    $formData['token'] = $this->getToken();
+    
     return $formData;
   }
 
@@ -128,35 +154,59 @@ class AdminController extends Controller
 
   /**
    */
-  protected function saveFormData(Request $request, $formData)
+  protected function saveFormData(Request $request, $formData, $edit, $id)
   {
+    var_dump($formData);
     $task['title'] = $formData['title'];
     $task['text'] = $formData['text'];
-
-    if (date_default_timezone_get() != 'CET') {
-      date_default_timezone_set('CET');
-    }
-
-    $task['date'] = date('m/d/Y h:i:s a', time());
-
-    $user = $request->attributes->get('user');
-    $id = $this->userModel->getUser($user->getUsername());
-    $task['author'] = $id['id'];
-
+    $task['date'] = $formData['date'];
+    $task['author'] = $formData['author'];
     $task['category'] = $formData['category'];
-
-    $this->blogModel->addPost($task);
+    var_dump($task);
+    if ($edit) {
+      $this->blogModel->editPost($task, $id);
+    } else {
+      $this->blogModel->addPost($task);
+    }
   }
 
+  /* **************************** logout **************************** */
   public function logoutAction($request)
   {
-    $user = $request->attributes->get('user');
+    $user = $this->getUserFromRequest($request);
     $user->logout($request);
     return new RedirectResponse('/');
   }
 
-
-  public function deleteBlogPost($request)
+  
+  /* **************************** admin **************************** */
+  public function showAdminAction($request)
+  {
+    $posts = $this->blogModel->getFewPosts();  
+    $user = $this->getUserFromRequest($request);
+    $html = $this->container['twig']->render('admin.html.twig', [
+      'user' => $user,
+      'posts' => $posts
+      ]);
+      
+      return new Response($html);
+    }
+    
+  /* **************************** admin / blog **************************** */
+  public function showAdminBlogAction($request)
+  {
+    $posts = $this->blogModel->getAllPosts();
+    $user = $this->getUserFromRequest($request);
+    $html = $this->container['twig']->render('admin-blog.html.twig', [
+      'posts' => $posts,
+      'user' => $user
+      ]);
+      
+      return new Response($html);
+    }
+    
+  /* **************************** admin / blog / delete **************************** */
+  public function deleteAdminBlogAction($request)
   {
     $id = $request->attributes->get('id');
 
@@ -169,26 +219,31 @@ class AdminController extends Controller
     }
   }
 
-  public function showAdminAction($request)
+  /* **************************** admin / blog / edit **************************** */
+  public function editAdminBlogAction($request)
   {
-    $posts = $this->blogModel->getFewPosts();  
-    $user = $request->attributes->get('user');
-    $html = $this->container['twig']->render('admin.html.twig', [
-      'user' => $user,
-      'posts' => $posts
-    ]);
+    // $id = $request->attributes->get('id');
+    $this->showFormAction($request);
 
+  }
+
+
+  public function showAdminProjectsAction($request)
+  {
+    $user = $this->getUserFromRequest($request);    
+    $projects = $this->blogModel->getAllPosts();
+    $html = $this->container['twig']->render('admin-projects.html.twig', [
+      'projects' => $projects,
+      'user' => $user
+    ]);
+    
     return new Response($html);
   }
 
-  // public function showBlog($request) {
-  //   $categories = $this->model->getAllCategories($request);
-  //   $html = $this->container['twig']->render('adminblog.html.twig',[
-  //     // 'error' => $formError,
-  //     // 'user' => $user,
-  //     'categories' => $categories
-  //   ]);
-  //   return new Response($html);
-  // }
+
+  private function getUserFromRequest($request)
+  {
+    return $request->attributes->get('user');
+  }
 
 }

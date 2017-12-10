@@ -10,6 +10,8 @@
     <form class="form form--box" action="#" method="post">
         <h2 class="form__header">New Blog Post</h2>
         <input type="hidden" name="form[token]" value="{{ form['token'] }}">
+        <input type="hidden" name="form[author]" value="{{ form['author'] }}">
+        <input type="hidden" name="form[date]" value="{{ form['date'] }}">
         {% if error['title'] %}<p class="form__error form__error--danger">{{ error['title'] }}</p>{% endif %}
         <input class="form__input form__input--box" type="text" id="form_title" name="form[title]"
                value="{{ form['title'] }}" placeholder="Title">
@@ -23,7 +25,7 @@
         {% include 'formtoolbar.html.twig' %}
 
         <textarea rows="4" cols="50" class="form__input form__input--simple" type="text" id="form_text"
-                  name="form[text]" value="{{ form['text'] }}" placeholder="Text"></textarea>
+                  name="form[text]" value="{{ form['text'] }}" placeholder="Text">{{ form['text'] }}</textarea>
         <input class="form__submit" type="submit" id="form_submit" value="Post">
     </form>
 

@@ -62,7 +62,7 @@ $routes->add(
   'adminblogdelete',
   new Route(
     '/admin/blog/delete/{id}',
-    ['_controller' => 'Controller\AdminController::deleteBlogPost'],
+    ['_controller' => 'Controller\AdminController::deleteAdminBlogAction'],
     ['id' => '\d+'],
     ['_permission' => 'delete']
   )
@@ -72,8 +72,8 @@ $routes->add(
 $routes->add(
   'adminblogid',
   new Route(
-    '/admin/blog/{id}',
-    ['_controller' => 'Controller\AdminController::showBlog'],
+    '/admin/blog/edit/{id}',
+    ['_controller' => 'Controller\AdminController::showFormAction'],
     [],
     ['_permission' => 'edit']
   )
@@ -84,7 +84,7 @@ $routes->add(
   'adminblog',
   new Route(
     '/admin/blog',
-    ['_controller' => 'Controller\AdminController::showBlog'],
+    ['_controller' => 'Controller\AdminController::showAdminBlogAction'],
     [],
     ['_permission' => 'edit']
   )
@@ -115,27 +115,24 @@ $routes->add(
 );
 
 $routes->add(
+  'adminprojectid',
+  new Route(
+    '/admin/project/edit/{id}',
+    ['_controller' => 'Controller\AdminController::showBlog'],
+    [],
+    ['_permission' => 'edit']
+    )
+  );
+  
+$routes->add(
   'adminproject',
   new Route(
     '/admin/project',
-    ['_controller' => 'Controller\AdminController::showBlog'],
+    ['_controller' => 'Controller\AdminController::showAdminProjectsAction'],
     [],
     ['_permission' => 'edit']
   )
 );
-
-$routes->add(
-  'adminprojectid',
-  new Route(
-    '/admin/project/{id}',
-    ['_controller' => 'Controller\AdminController::showBlog'],
-    [],
-    ['_permission' => 'edit']
-  )
-);
-
-
-
 
 
 $routes->add(

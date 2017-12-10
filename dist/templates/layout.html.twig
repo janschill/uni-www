@@ -14,17 +14,20 @@
 <body>
 <div class="wrapper">
     <header>
-        <nav class="nav nav--appear">
-            <ul class
-            "nav--active">
-            <li class="current-item" class="nav__home"><a href="/">JS</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/about">About</a></li>
-            {% if user.isAuthenticated() %}
-                <li><a href="/admin">Admin</a></li>
-                <li><a href="/logout">Logout</a></li>
-            {% endif %}
+        {% if user.isAuthenticated() %}
+        <nav class="nav nav--admin">
+            <ul class="nav--active">
+                <li class="nav__item nav__item--admin"><a href="/admin">Admin</a></li>
+                <li class="nav__item nav__item--admin"><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+        {% endif %}
+        <nav class="nav nav--regular">
+            <ul class="nav--active">
+                <li class="nav__item current-item nav__item--regular" class="nav__home"><a href="/">JS</a></li>
+                <li class="nav__item nav__item--regular"><a href="/blog">Blog</a></li>
+                <li class="nav__item nav__item--regular"><a href="/projects">Projects</a></li>
+                <li class="nav__item nav__item--regular"><a href="/about">About</a></li>
             </ul>
             <a href="#" class="nav--toggle">&#9776;</a>
         </nav>
