@@ -6,23 +6,32 @@
 {% endblock %}
 {% block content %}
 
-        <section class="admindashboard">
+        <section class="admin">
             {% include 'admin-aside.html.twig' %}
 
-            <article class="admindashboard__article">
-                <h3>
+            <article class="admin__article">
+                <h3 class="admin__header">
                     Blog posts
-                    <span><a href="blog/new">new Post</a></span>
+                    <span class="admin__button"><a href="blog/new">new Post</a></span>
                 </h3>
-                <ul class="blogposts">
+                <table class="blogposts">
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                    </tr>
                     {% for post in posts %}
-                        <li class="blogpost">
-                            <a class="blogpost__title" href="blog/edit/{{ post.id }}">{{ post.title }}</a>
-                            <a class="blogpost__edit" href="blog/edit/{{ post.id }}">Edit</a>
-                            <a class="blogpost__delete" href="blog/delete/{{ post.id }}">Delete</a>
-                        </li>
+                        <tr class="blogpost">
+                            <td class="blogpost__title"><a href="blog/edit/{{ post.id }}">{{ post.title }}</a></td>
+                            <td class="blogpost__author"><a href="blog/{{ post.author }}">{{ post.author }}</a></td>
+                            <td class="blogpost__category"><a href="blog/{{ post.category }}">{{ post.category }}</a></td>
+                            <td>{{ post.date|date("Y/m/d") }}</td>
+                            <td><a class="blogpost__edit" href="blog/edit/{{ post.id }}">Edit</a></td>
+                            <td><a class="blogpost__delete" href="blog/delete/{{ post.id }}">Delete</a></td>
+                        </tr>
                     {% endfor %}
-                </ul>
+                </table>
               </article>
         </section>
 

@@ -1,4 +1,4 @@
-.admindashboard {
+.admin {
     display: grid;
     grid-template-columns: 1fr 11fr;
     grid-template-areas: "aside article"
@@ -10,7 +10,6 @@
 }
 
 .adminaside__nav {
-    text-align: center;
     list-style: none;
     &:hover {
         background-color: $blue;
@@ -24,7 +23,7 @@
     color: $black-haze;
 }
 
-.admindashboard__article {
+.admin__article {
     grid-area: article;
 }
 

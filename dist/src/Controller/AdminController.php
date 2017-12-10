@@ -85,10 +85,13 @@ class AdminController extends Controller
       $formError['title'] = "Please fill out all input fields";
     }
 
-    if ($this->uploadImage() === 0) {
-      $valid = false;
-      $formError['image'] = 'Bad image';
-      throw new \Exception('Bad image.');
+    if(!isset($_FILES['fileToUpload']) || $_FILES['fileToUpload']['error'] == UPLOAD_ERR_NO_FILE) {
+    } else {
+        if ($this->uploadImage() === 0) {
+          $valid = false;
+          $formError['image'] = 'Bad image';
+          throw new \Exception('Bad image.');
+      }
     }
 
     return [$valid, $formError];
@@ -179,19 +182,23 @@ class AdminController extends Controller
   /* **************************** image / upload **************************** */
   private function uploadImage()
   {
-    /* creates accordingly folders and moves image there */
-    $path = __DIR__ . '/../../public/images/uploads/' . date("Y", time()) . "/". date("m", time()) . "/";
-    if (!file_exists($path)) {
-      mkdir($path, 0777, true);
-    }
-    $uploadfile = $path . basename($_FILES['fileToUpload']['name']);
-    $vaild = 1;
+    $valid = 1;
 
-    if (!move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $uploadfile)) {
-        $vaild = 0;
+    if ($_FILES) {
+      /* creates accordingly folders and moves image there */
+      $path = __DIR__ . '/../../public/images/uploads/' . date("Y", time()) . "/". date("m", time()) . "/";
+      if (!file_exists($path)) {
+        mkdir($path, 0777, true);
+      }
+      $uploadfile = $path . basename($_FILES['fileToUpload']['name']);
+      $valid = 1;
+  
+      if (!move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $uploadfile)) {
+          $valid = 0;
+      }
     }
-    
-    return $vaild;
+
+    return $valid;
   }
 
 
@@ -224,9 +231,19 @@ class AdminController extends Controller
   public function showAdminBlogAction($request)
   {
     $posts = $this->blogModel->getAllPosts();
+    $posts_edited = [];
+    foreach ($posts as $post) {
+      $temp_category = $this->blogModel->getCategoryById($post['category']);
+      $temp_author = $this->userModel->getUserById($post['author']);
+      $post['category'] = $temp_category['name'];
+      $post['author'] = $temp_author['username'];
+      array_push($posts_edited, $post);
+      
+    }
+
     $user = $this->getUserFromRequest($request);
     $html = $this->container['twig']->render('admin-blog.html.twig', [
-      'posts' => $posts,
+      'posts' => $posts_edited,
       'user' => $user
       ]);
       

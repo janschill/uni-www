@@ -76,7 +76,7 @@
         position: absolute;
         top: 120%;
         left: 0px;
-        padding: 10px 18px;
+        padding: 5px 18px;
         box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
         border-radius: 3px;
         background: #FFF;
@@ -98,7 +98,12 @@
         margin: 5px 0px 5px 0px;
         float: none;
         display: block;
+    }
+    .nav__item--regular {
         padding: 7px;
+    }
+    .nav__item--admin {
+        padding: 4px;
     }
     .nav a {
         display: block;
