@@ -85,6 +85,12 @@ class AdminController extends Controller
       $formError['title'] = "Please fill out all input fields";
     }
 
+    if ($this->uploadImage() === 0) {
+      $valid = false;
+      $formError['image'] = 'Bad image';
+      throw new \Exception('Bad image.');
+    }
+
     return [$valid, $formError];
   }
 
@@ -169,6 +175,28 @@ class AdminController extends Controller
       $this->blogModel->addPost($task);
     }
   }
+
+  /* **************************** image / upload **************************** */
+  private function uploadImage()
+  {
+    /* creates accordingly folders and moves image there */
+    $path = __DIR__ . '/../../public/images/uploads/' . date("Y", time()) . "/". date("m", time()) . "/";
+    if (!file_exists($path)) {
+      mkdir($path, 0777, true);
+    }
+    $uploadfile = $path . basename($_FILES['fileToUpload']['name']);
+    $vaild = 1;
+
+    if (!move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $uploadfile)) {
+        $vaild = 0;
+    }
+    
+    return $vaild;
+  }
+
+
+
+
 
   /* **************************** logout **************************** */
   public function logoutAction($request)

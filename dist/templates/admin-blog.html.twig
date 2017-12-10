@@ -12,14 +12,14 @@
             <article class="admindashboard__article">
                 <h3>
                     Blog posts
-                    <span><a href="/admin/blog/new">new Post</a></span>
+                    <span><a href="blog/new">new Post</a></span>
                 </h3>
                 <ul class="blogposts">
                     {% for post in posts %}
                         <li class="blogpost">
-                            <a class="blogpost__title" href="admin/blog/edit/{{ post.id }}">{{ post.title }}</a>
-                            <a class="blogpost__edit" href="admin/blog/edit/{{ post.id }}">Edit</a>
-                            <a class="blogpost__delete" href="admin/blog/delete/{{ post.id }}">Delete</a>
+                            <a class="blogpost__title" href="blog/edit/{{ post.id }}">{{ post.title }}</a>
+                            <a class="blogpost__edit" href="blog/edit/{{ post.id }}">Edit</a>
+                            <a class="blogpost__delete" href="blog/delete/{{ post.id }}">Delete</a>
                         </li>
                     {% endfor %}
                 </ul>
