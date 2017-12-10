@@ -41,7 +41,7 @@ class AdminController extends Controller
       $edit = true;
     }
     if ($request->getMethod() !== 'POST') {
-      $formData = $this->getFormDefaults($edit, $id);
+      $formData = $this->getFormDefaults($request, $edit, $id);
     } else {
       $formData = $request->get('form');
       list($valid, $formError) = $this->isFormDataValid($request, $formData);
@@ -88,7 +88,7 @@ class AdminController extends Controller
     return [$valid, $formError];
   }
 
-  protected function getFormDefaults($edit, $id)
+  protected function getFormDefaults($request, $edit, $id)
   {
     if ($edit)
     {
