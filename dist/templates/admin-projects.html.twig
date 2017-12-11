@@ -18,7 +18,6 @@
                     {% for post in posts %}
                         <li class="project">
                             <a class="project__title" href="admin/project/edit/{{ post.id }}">{{ post.title }}</a>
-                            <a class="project__edit" href="admin/project/edit/{{ post.id }}">Edit</a>
                             <a class="project__delete" href="admin/project/delete/{{ post.id }}">Delete</a>
                         </li>
                     {% endfor %}

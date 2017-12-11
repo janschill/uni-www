@@ -259,7 +259,7 @@ class AdminController extends Controller
     {
       if ($this->blogModel->deletePost($id))
       {
-        return new RedirectResponse('/admin');
+        return new RedirectResponse('/admin/blog');
       }
     }
   }

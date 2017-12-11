@@ -27,7 +27,6 @@
                             <td class="blogpost__author"><a href="blog/{{ post.author }}">{{ post.author }}</a></td>
                             <td class="blogpost__category"><a href="blog/{{ post.category }}">{{ post.category }}</a></td>
                             <td>{{ post.date|date("Y/m/d") }}</td>
-                            <td><a class="blogpost__edit" href="blog/edit/{{ post.id }}">Edit</a></td>
                             <td><a class="blogpost__delete" href="blog/delete/{{ post.id }}">Delete</a></td>
                         </tr>
                     {% endfor %}

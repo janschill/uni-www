@@ -14,14 +14,6 @@
 <body>
 <div class="wrapper">
     <header>
-        {% if user.isAuthenticated() %}
-        <nav class="nav nav--admin">
-            <ul class="nav--active">
-                <li class="nav__item nav__item--admin"><a href="/admin">Admin</a></li>
-                <li class="nav__item nav__item--admin"><a href="/logout">Logout</a></li>
-            </ul>
-        </nav>
-        {% endif %}
         <nav class="nav nav--regular">
             <ul class="nav--active">
                 <li class="nav__item current-item nav__item--regular" class="nav__home"><a href="/">JS</a></li>
@@ -31,6 +23,14 @@
             </ul>
             <a href="#" class="nav--toggle">&#9776;</a>
         </nav>
+        {% if user.isAuthenticated() %}
+        <nav class="nav nav--admin">
+            <ul class="nav--active">
+                <li class="nav__item nav__item--admin"><a href="/admin">Admin</a></li>
+                <li class="nav__item nav__item--admin"><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+        {% endif %}
     </header>
 
     <div class="content">
