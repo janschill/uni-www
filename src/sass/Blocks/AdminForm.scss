@@ -1,0 +1,24 @@
+.admin-form {
+    display: grid;
+    grid-template-columns: 9fr 2fr;
+    grid-template-areas: "form aside";
+    padding: 1rem;
+}
+
+.admin-form__form {
+    padding: 1rem;
+    grid-area: form;
+}
+
+.admin-form__aside {
+    padding: 1rem;
+    grid-area: aside;
+}
+
+.admin-form__tags {
+    padding-top: 1rem;
+}
+
+.admin-tags__heading {
+    padding-bottom: 0.5rem;
+}

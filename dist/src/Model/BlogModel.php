@@ -61,6 +61,20 @@ class BlogModel extends Model
     return $this->getRow("SELECT * FROM categories");
   }
 
+  public function getCategoryById($id)
+  {
+    $sql = $this->db->prepare("SELECT * FROM categories WHERE id = :id");
+    $sql->bindParam(':id', $id);
+    $sql->execute();
+    $row = $sql->fetch(\PDO::FETCH_ASSOC);
+    return $row;
+  }
+
+  public function getAllTags()
+  {
+    return $this->getRow("SELECT * FROM tags");
+  }
+
   public function getTagsById($id)
   {
     $query = "SELECT tags.name FROM tags
@@ -73,19 +87,10 @@ class BlogModel extends Model
     $sql->execute();    
     /* to format the return array – fetches first item from every row – would otherwise return 2d array */
     $row = $sql->fetchAll(\PDO::FETCH_COLUMN, 0);
-    var_dump($row);
+    
     return $row;
   }
-
-  public function getCategoryById($id)
-  {
-    $sql = $this->db->prepare("SELECT * FROM categories WHERE id = :id");
-    $sql->bindParam(':id', $id);
-    $sql->execute();
-    $row = $sql->fetch(\PDO::FETCH_ASSOC);
-    return $row;
-  }
-
+  
   public function deletePost($id)
   {
     $sql = $this->db->prepare("DELETE FROM posts WHERE id = :id");

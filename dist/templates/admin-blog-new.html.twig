@@ -8,29 +8,47 @@
     <section class="admin">
         {% include 'admin-aside.html.twig' %}
 
-        <form enctype="multipart/form-data" class="form form--box" action="#" method="post">
-            <h2 class="form__header">New Blog Post</h2>
-            <input type="hidden" name="form[token]" value="{{ form['token'] }}">
-            <input type="hidden" name="form[author]" value="{{ form['author'] }}">
-            <input type="hidden" name="form[date]" value="{{ form['date'] }}">
-            {% if error['title'] %}<p class="form__error form__error--danger">{{ error['title'] }}</p>{% endif %}
-            <input class="form__input form__input--box" type="text" id="form_title" name="form[title]"
-                value="{{ form['title'] }}" placeholder="Title">
+    <article class="admin-article">
 
-            <select name="form[category]">
-                {% for category in categories %}
-                    <option value="{{ category.id }}">{{ category.name }}</option>
-                {% endfor %}
-            </select>
+            <form enctype="multipart/form-data" class="admin-form admin-form__form--box" action="#" method="post">
+                <div class="admin-form__form">
+                    <h2 class="admin-form__header">New Blog Post</h2>
+                    <input type="hidden" name="form[token]" value="{{ form['token'] }}">
+                    <input type="hidden" name="form[author]" value="{{ form['author'] }}">
+                    <input type="hidden" name="form[date]" value="{{ form['date'] }}">
+                    {% if error['title'] %}<p class="form__error form__error--danger">{{ error['title'] }}</p>{% endif %}
+                    <input class="admin-form__input form__input--box" type="text" id="form_title" name="form[title]"
+                        value="{{ form['title'] }}" placeholder="Title">
 
-            <input type="file" name="fileToUpload" id="fileToUpload">
+                    <input type="file" name="fileToUpload" id="fileToUpload">
 
-            {% include 'formtoolbar.html.twig' %}
+                    {% include 'formtoolbar.html.twig' %}
 
-            <textarea rows="4" cols="50" class="form__input form__input--simple" type="text" id="form_text"
-                    name="form[text]" value="{{ form['text'] }}" placeholder="Text">{{ form['text'] }}</textarea>
-            <input class="form__submit" type="submit" id="form_submit" value="Post">
-        </form>
+                    <textarea rows="4" cols="50" class="form__input form__input--simple" type="text" id="form_text"
+                            name="form[text]" value="{{ form['text'] }}" placeholder="Text">{{ form['text'] }}</textarea>
+                    <input class="form__submit" type="submit" id="form_submit" value="Post">
+                </div>
+
+                <aside class="admin-form__aside">
+                    <select name="form[category]">
+                        {% for category in categories %}
+                            <option value="{{ category.id }}">{{ category.name }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <ul class="admin-form__tags">
+                        <h3 class="admin-tags__heading">tags</h3>
+                        {% for tag in tags %}
+                            <li><input type="checkbox" name="form[tags]" value="{{ tag.name }}">{{ tag.name }}</input></li>
+                        {% endfor %}
+                    </ul>
+                </aside>
+                
+
+            </form>
+
+
+        </article>
     </section>
 
 {% endblock %}

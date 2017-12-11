@@ -54,13 +54,15 @@ class AdminController extends Controller
     }
 
     $user = $this->getUserFromRequest($request);
-    $categories = $this->blogModel->getAllCategories($request);
+    $categories = $this->blogModel->getAllCategories();
+    $tags = $this->blogModel->getAllTags();
 
     $html = $this->container['twig']->render('admin-blog-new.html.twig', [
       'form' => $formData,
       'error' => $formError,
       'user' => $user,
       'categories' => $categories,
+      'tags' => $tags
     ]);
 
     return new Response($html);
@@ -240,16 +242,13 @@ class AdminController extends Controller
       $temp_author = $this->userModel->getUserById($post['author']);
       $post['category'] = $temp_category['name'];
       $post['author'] = $temp_author['username'];
-      $tags[] = $this->blogModel->getTagsById($post['id']);
+      $post['tags'] = $this->blogModel->getTagsById($post['id']);
       array_push($posts_edited, $post);
     }
-
-    var_dump($tags);
 
     $user = $this->getUserFromRequest($request);
     $html = $this->container['twig']->render('admin-blog.html.twig', [
       'posts' => $posts_edited,
-      'tags' => $tags,
       'user' => $user
       ]);
       
