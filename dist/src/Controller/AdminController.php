@@ -232,18 +232,24 @@ class AdminController extends Controller
   {
     $posts = $this->blogModel->getAllPosts();
     $posts_edited = [];
+    $tags = [];
+    
+
     foreach ($posts as $post) {
       $temp_category = $this->blogModel->getCategoryById($post['category']);
       $temp_author = $this->userModel->getUserById($post['author']);
       $post['category'] = $temp_category['name'];
       $post['author'] = $temp_author['username'];
+      $tags[] = $this->blogModel->getTagsById($post['id']);
       array_push($posts_edited, $post);
-      
     }
+
+    var_dump($tags);
 
     $user = $this->getUserFromRequest($request);
     $html = $this->container['twig']->render('admin-blog.html.twig', [
       'posts' => $posts_edited,
+      'tags' => $tags,
       'user' => $user
       ]);
       

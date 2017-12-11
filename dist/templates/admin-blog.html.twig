@@ -19,6 +19,7 @@
                         <th>Title</th>
                         <th>Author</th>
                         <th>Category</th>
+                        <th>Tags</th>                        
                         <th>Date</th>
                     </tr>
                     {% for post in posts %}
@@ -26,11 +27,16 @@
                             <td class="blogpost__title"><a href="blog/edit/{{ post.id }}">{{ post.title }}</a></td>
                             <td class="blogpost__author"><a href="blog/{{ post.author }}">{{ post.author }}</a></td>
                             <td class="blogpost__category"><a href="blog/{{ post.category }}">{{ post.category }}</a></td>
+                            <td class="blogpost__tags">
+                            </td>
                             <td>{{ post.date|date("Y/m/d") }}</td>
                             <td><a class="blogpost__delete" href="blog/delete/{{ post.id }}">Delete</a></td>
                         </tr>
                     {% endfor %}
                 </table>
+                                {% for tag in tags %}
+                                    <a href="blog/{{ tag.index0 }}">{{ tag[index] }}</a>
+                                {% endfor %}
               </article>
         </section>
 

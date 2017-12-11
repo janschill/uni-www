@@ -20,12 +20,12 @@ class UserModel
       $query = "INSERT INTO users
       ('username', 'password') VALUES (:username, :password)";
 
-      $stmt = $this->db->prepare($query);
+      $sql = $this->db->prepare($query);
 
-      $stmt->bindParam(':username', $user['username']);
-      $stmt->bindParam(':password', password_hash($user['password'], PASSWORD_DEFAULT));
+      $sql->bindParam(':username', $user['username']);
+      $sql->bindParam(':password', password_hash($user['password'], PASSWORD_DEFAULT));
 
-      $stmt->execute();
+      $sql->execute();
     } else {
       throw new \Exception('User exists.');
     }
@@ -37,11 +37,11 @@ class UserModel
   public function getUser($username)
   {
     $query = "SELECT * FROM users WHERE username = :username";
-    $stmt = $this->db->prepare($query);
-    $stmt->bindParam(':username', $username);
+    $sql = $this->db->prepare($query);
+    $sql->bindParam(':username', $username);
 
-    $stmt->execute();
-    $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+    $sql->execute();
+    $row = $sql->fetch(\PDO::FETCH_ASSOC);
 
     return $row;
   }
@@ -79,11 +79,11 @@ class UserModel
     JOIN users ON users.id = user2permission.userid
     WHERE users.username = :username";
     
-    $stmt = $this->db->prepare($query);
-    $stmt->bindParam(':username', $username);
-    $stmt->execute();    
+    $sql = $this->db->prepare($query);
+    $sql->bindParam(':username', $username);
+    $sql->execute();    
     /* to format the return array – fetches first item from every row – would otherwise return 2d array */
-    $row = $stmt->fetchAll(\PDO::FETCH_COLUMN, 0);
+    $row = $sql->fetchAll(\PDO::FETCH_COLUMN, 0);
     return $row;
   }
 }

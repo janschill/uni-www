@@ -61,6 +61,22 @@ class BlogModel extends Model
     return $this->getRow("SELECT * FROM categories");
   }
 
+  public function getTagsById($id)
+  {
+    $query = "SELECT tags.name FROM tags
+    JOIN tag2post ON tags.id = tag2post.tagid
+    JOIN posts ON posts.id = tag2post.postid
+    WHERE posts.id = :id";
+
+    $sql = $this->db->prepare($query);
+    $sql->bindParam(':id', $id);
+    $sql->execute();    
+    /* to format the return array – fetches first item from every row – would otherwise return 2d array */
+    $row = $sql->fetchAll(\PDO::FETCH_COLUMN, 0);
+    var_dump($row);
+    return $row;
+  }
+
   public function getCategoryById($id)
   {
     $sql = $this->db->prepare("SELECT * FROM categories WHERE id = :id");
