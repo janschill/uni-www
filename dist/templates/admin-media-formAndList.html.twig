@@ -1,0 +1,25 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Media{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+
+        <section class="admin">
+            {% include 'admin-aside.html.twig' %}
+
+            <article class="admin__article">
+                <h3 class="admin__header">
+                </h3>
+ 
+                {% include 'admin-media-form.html.twig' %}
+
+                {% for image in images %}
+                  <img class="admin__image admin__image--small" src="../images/uploads/{{ image }}">
+                {% endfor %}
+
+              </article>
+        </section>
+
+{% endblock %}

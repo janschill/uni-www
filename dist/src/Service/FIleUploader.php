@@ -4,7 +4,7 @@ namespace Service;
 
 class FileUploader
 {
-  public function upload()
+  public static function upload()
   {
     $valid = 1;
     
@@ -14,10 +14,10 @@ class FileUploader
       if (!file_exists($path)) {
         mkdir($path, 0777, true);
       }
-      $uploadfile = $path . basename($_FILES['fileToUpload']['name']);
+      $uploadfile = $path . basename($_FILES['file-upload']['name']);
       $valid = 1;
       
-      if (!move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $uploadfile)) {
+      if (!move_uploaded_file($_FILES['file-upload']['tmp_name'], $uploadfile)) {
         $valid = 0;
       }
     }

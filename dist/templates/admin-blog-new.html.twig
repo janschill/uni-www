@@ -3,6 +3,7 @@
 {% block title %}Admin Panel{% endblock %}
 {% block head %}
     {{ parent() }}
+    <script src="/js/ckeditor/ckeditor.js"></script>
 {% endblock %}
 {% block content %}
     <section class="admin">
@@ -10,7 +11,7 @@
 
     <article class="admin-article">
 
-            <form enctype="multipart/form-data" class="admin-form admin-form__form--box" action="#" method="post">
+            <form enctype="multipart/form-data" class="admin-form admin-form__form--box" action="#" method="post" contenteditable>
                 <div class="admin-form__form">
                     <h2 class="admin-form__heading">New Blog Post</h2>
                     <input type="hidden" name="form[token]" value="{{ form['token'] }}">
@@ -21,10 +22,15 @@
                         value="{{ form['title'] }}" placeholder="Enter title">
 
                     <div class="admin-form__textarea admin-form__textarea--shadow">
-                    {% include 'formtoolbar.html.twig' %}
+                    {# {% include 'formtoolbar.html.twig' %} #}
 
                     <textarea rows="4" cols="50" class="admin-form__input admin-form__input--regular" type="text" id="form_text"
                             name="form[text]" value="{{ form['text'] }}" placeholder="Text">{{ form['text'] }}</textarea>
+                    <script>
+                        // Replace the <textarea id="editor1"> with a CKEditor
+                        // instance, using default configuration.
+                        CKEDITOR.replace( 'form_text' );
+                    </script>
                     </div>
 
                     <input class="form__submit" type="submit" id="form_submit" value="Post">
