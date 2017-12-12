@@ -172,6 +172,17 @@ class AdminController extends Controller
     $task['text'] = $formData['text'];
     $task['created'] = $formData['created'];
     $task['author'] = $formData['author'];
+
+
+    var_dump($formData['category']);
+    var_dump($formData['tags']);
+    // if(isset($formData['category']))
+    // {
+    //   foreach ($formData['category'] as $tag)
+    //   {
+    //     $task[] = $tag;
+    //   }
+    // }
     $task['category'] = $formData['category'];
     $task['tags'] = $formData['tags'];
 
