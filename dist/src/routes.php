@@ -90,10 +90,7 @@ $routes->add(
   )
 );
 
-
-/**
- * admin project
- */
+/* **************************** admin / project / new **************************** */
 $routes->add(
   'adminprojectnew',
   new Route(
@@ -104,16 +101,18 @@ $routes->add(
   )
 );
 
+/* **************************** admin / project / delete **************************** */
 $routes->add(
   'adminprojectdelete',
   new Route(
-    '/admin/project/delete',
+    '/admin/project/delete/{id}',
     ['_controller' => 'Controller\AdminController::showBlog'],
-    [],
-    ['__permission' => 'edit']
+    ['id' => '\d+'],
+    ['_permission' => 'delete']
   )
 );
 
+/* **************************** admin / project / edit **************************** */
 $routes->add(
   'adminprojectid',
   new Route(
@@ -124,6 +123,7 @@ $routes->add(
     )
   );
   
+/* **************************** admin / project **************************** */
 $routes->add(
   'adminproject',
   new Route(
@@ -133,6 +133,41 @@ $routes->add(
     ['_permission' => 'edit']
   )
 );
+
+
+/* **************************** admin / media / new **************************** */
+$routes->add(
+  'medianew',
+  new Route(
+    '/admin/media/new',
+    ['_controller' => 'Controller\AdminController::showAdminMediaFormAction'],
+    [],
+    ['_permission' => 'edit']
+  )
+);
+
+/* **************************** admin / media / delete **************************** */
+$routes->add(
+  'adminmediadelete',
+  new Route(
+    '/admin/media/delete/{id}',
+    ['_controller' => 'Controller\AdminController::showBlog'],
+    ['id' => '\d+'],
+    ['_permission' => 'delete']
+  )
+);
+
+/* **************************** admin / media **************************** */
+$routes->add(
+  'media',
+  new Route(
+    '/admin/media',
+    ['_controller' => 'Controller\AdminController::showAdminMediaAction'],
+    [],
+    ['_permission' => 'edit']
+  )
+);
+
 
 
 $routes->add(
@@ -173,8 +208,6 @@ $routes->add(
     ['_controller' => 'Controller\ViewController::showBlog']
   )
 );
-
-
 
 
 $routes->add(

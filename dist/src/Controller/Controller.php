@@ -19,4 +19,9 @@ class Controller
   {
     return new RedirectResponse($url, $code);
   }
+
+  public function render($template, $parameters)
+  {
+    return $this->container['twig']->render($template, $parameters);
+  }
 }

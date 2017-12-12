@@ -27,6 +27,7 @@ class ComposerStaticInitd18db539d96be834813a5a886a729344
             'Symfony\\Component\\HttpFoundation\\' => 33,
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\Debug\\' => 24,
+            'Service\\' => 8,
         ),
         'P' => 
         array (
@@ -74,6 +75,10 @@ class ComposerStaticInitd18db539d96be834813a5a886a729344
         'Symfony\\Component\\Debug\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/debug',
+        ),
+        'Service\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Service',
         ),
         'Psr\\Log\\' => 
         array (

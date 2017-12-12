@@ -9,7 +9,8 @@
         "psr-4": {
             "User\\": "src\\User",
             "Controller\\": "src\\Controller",
-            "Model\\": "src\\Model"
+            "Model\\": "src\\Model",
+            "Service\\": "src\\Service"
         }
     }
 }

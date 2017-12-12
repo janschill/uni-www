@@ -4,10 +4,10 @@ namespace Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Model\BlogModel;
 use User\UserModel;
+use Service\ShowImagesFromFolder;
 
 class AdminController extends Controller
 {
@@ -50,14 +50,14 @@ class AdminController extends Controller
     if ($request->getMethod() == 'POST' && $valid) {
       $this->saveFormData($request, $formData, $edit, $id);
 
-      return new RedirectResponse('/admin/blog');
+      return $this->redirect('/admin/blog', 302);
     }
 
     $user = $this->getUserFromRequest($request);
     $categories = $this->blogModel->getAllCategories();
     $tags = $this->blogModel->getAllTags();
 
-    $html = $this->container['twig']->render('admin-blog-new.html.twig', [
+    $html = $this->render('admin-blog-new.html.twig', [
       'form' => $formData,
       'error' => $formError,
       'user' => $user,
@@ -184,6 +184,19 @@ class AdminController extends Controller
     }
   }
 
+
+
+  /* **************************** image **************************** */
+  public function showAdminMediaAction($request)
+  {
+    $images = ShowImagesFromFolder::showImages();
+    $html = $this->render('admin-media.html.twig', [
+      'images' => $images
+    ]);
+    
+    return new Response($html);
+  }
+
   /* **************************** image / upload **************************** */
   private function uploadImage()
   {
@@ -215,7 +228,7 @@ class AdminController extends Controller
   {
     $user = $this->getUserFromRequest($request);
     $user->logout($request);
-    return new RedirectResponse('/');
+    return $this->redirect('/', 302);
   }
 
   
@@ -224,10 +237,16 @@ class AdminController extends Controller
   {
     $posts = $this->blogModel->getFewPosts();  
     $user = $this->getUserFromRequest($request);
-    $html = $this->container['twig']->render('admin.html.twig', [
+    $html = $this->render('admin.html.twig', array(
       'user' => $user,
       'posts' => $posts
-      ]);
+    ));
+      
+      
+    // $html = $this->container['twig']->render('admin.html.twig', [
+    //   'user' => $user,
+    //   'posts' => $posts
+    //   ]);
       
       return new Response($html);
     }
@@ -250,11 +269,11 @@ class AdminController extends Controller
     }
 
     $user = $this->getUserFromRequest($request);
-    $html = $this->container['twig']->render('admin-blog.html.twig', [
+    $html = $this->render('admin-blog.html.twig', array(
       'posts' => $posts_edited,
       'user' => $user
-      ]);
-      
+    ));
+          
       return new Response($html);
     }
     
@@ -267,7 +286,7 @@ class AdminController extends Controller
     {
       if ($this->blogModel->deletePost($id))
       {
-        return new RedirectResponse('/admin/blog');
+        return $this->redirect('/admin/blog', 302);
       }
     }
   }
@@ -285,7 +304,7 @@ class AdminController extends Controller
   {
     $user = $this->getUserFromRequest($request);    
     $projects = $this->blogModel->getAllPosts();
-    $html = $this->container['twig']->render('admin-projects.html.twig', [
+    $html = $this->render('admin-projects.html.twig', [
       'projects' => $projects,
       'user' => $user
     ]);
