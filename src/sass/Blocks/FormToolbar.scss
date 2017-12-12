@@ -1,12 +1,10 @@
 .formtoolbar {
-    margin: 1rem 0 0 0;
     padding: 2px;
     display: flex;
     background-color: $black-haze;
-    border-bottom: 1px solid $bunker;
+    border: 1px solid;
+    border-color: rgba(0, 0, 255, 0.15);
     // box-shadow: 0 2px 5px $bunker;
-    align-self: stretch;
-    justify-content: space-between;
 }
 
 .formtoolbar__modifier {}

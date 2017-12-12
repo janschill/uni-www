@@ -12,11 +12,11 @@ class BlogModel extends Model
 
   public function addPost($post)
   {
-    $sql = $this->db->prepare("INSERT INTO posts (title, text, date, author, category) VALUES (:title, :text, :date, :author, :category)");
+    $sql = $this->db->prepare("INSERT INTO posts (title, text, created, author, category) VALUES (:title, :text, :created, :author, :category)");
 
     $sql->bindParam(':title', $post['title']);
     $sql->bindParam(':text', $post['text']);
-    $sql->bindParam(':date', $post['date']);
+    $sql->bindParam(':created', $post['created']);
     $sql->bindParam(':author', $post['author']);
     $sql->bindParam(':category', $post['category']);
 
@@ -25,11 +25,11 @@ class BlogModel extends Model
 
   public function editPost($post, $id)
   {
-    $sql = $this->db->prepare("UPDATE posts SET title = :title, text = :text, date = :date, author = :author, category = :category WHERE id = :id");
+    $sql = $this->db->prepare("UPDATE posts SET title = :title, text = :text, created = :created, author = :author, category = :category WHERE id = :id");
 
     $sql->bindParam(':title', $post['title']);
     $sql->bindParam(':text', $post['text']);
-    $sql->bindParam(':date', $post['date']);
+    $sql->bindParam(':created', $post['created']);
     $sql->bindParam(':author', $post['author']);
     $sql->bindParam(':category', $post['category']);
     $sql->bindParam(':id', $id);
@@ -48,12 +48,12 @@ class BlogModel extends Model
 
   public function getAllPosts()
   {
-    return $this->getRow("SELECT * FROM posts ORDER BY date desc");
+    return $this->getRow("SELECT * FROM posts ORDER BY created desc");
   }
 
   public function getFewPosts()
   {
-    return $this->getRow("SELECT * FROM posts ORDER BY date desc LIMIT 3");
+    return $this->getRow("SELECT * FROM posts ORDER BY created desc LIMIT 3");
   }
 
   public function getAllCategories()

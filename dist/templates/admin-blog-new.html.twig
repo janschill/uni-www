@@ -12,29 +12,31 @@
 
             <form enctype="multipart/form-data" class="admin-form admin-form__form--box" action="#" method="post">
                 <div class="admin-form__form">
-                    <h2 class="admin-form__header">New Blog Post</h2>
+                    <h2 class="admin-form__heading">New Blog Post</h2>
                     <input type="hidden" name="form[token]" value="{{ form['token'] }}">
                     <input type="hidden" name="form[author]" value="{{ form['author'] }}">
-                    <input type="hidden" name="form[date]" value="{{ form['date'] }}">
+                    <input type="hidden" name="form[created]" value="{{ form['created'] }}">
                     {% if error['title'] %}<p class="form__error form__error--danger">{{ error['title'] }}</p>{% endif %}
-                    <input class="admin-form__input form__input--box" type="text" id="form_title" name="form[title]"
-                        value="{{ form['title'] }}" placeholder="Title">
+                    <input class="admin-form__input admin-form__input--large" type="text" id="form_title" name="form[title]"
+                        value="{{ form['title'] }}" placeholder="Enter title">
 
-                    <input type="file" name="fileToUpload" id="fileToUpload">
-
+                    <div class="admin-form__textarea admin-form__textarea--shadow">
                     {% include 'formtoolbar.html.twig' %}
 
-                    <textarea rows="4" cols="50" class="form__input form__input--simple" type="text" id="form_text"
+                    <textarea rows="4" cols="50" class="admin-form__input admin-form__input--regular" type="text" id="form_text"
                             name="form[text]" value="{{ form['text'] }}" placeholder="Text">{{ form['text'] }}</textarea>
+                    </div>
+
                     <input class="form__submit" type="submit" id="form_submit" value="Post">
                 </div>
 
                 <aside class="admin-form__aside">
-                    <select name="form[category]">
+                    <ul class="admin-form__category">
+                        <h3 class="admin-category__heading">categories</h3>
                         {% for category in categories %}
-                            <option value="{{ category.id }}">{{ category.name }}</option>
+                            <li><input type="checkbox" name="form[category]" value="{{ category.name }}">{{ category.name }}</input></li>
                         {% endfor %}
-                    </select>
+                    </ul>
 
                     <ul class="admin-form__tags">
                         <h3 class="admin-tags__heading">tags</h3>

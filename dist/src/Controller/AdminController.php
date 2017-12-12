@@ -50,7 +50,7 @@ class AdminController extends Controller
     if ($request->getMethod() == 'POST' && $valid) {
       $this->saveFormData($request, $formData, $edit, $id);
 
-      return new RedirectResponse('/blog');
+      return new RedirectResponse('/admin/blog');
     }
 
     $user = $this->getUserFromRequest($request);
@@ -109,7 +109,7 @@ class AdminController extends Controller
       
       $formData['title'] = $post['title'];
       $formData['text'] = $post['text'];
-      $formData['date'] = $post['date'];
+      $formData['created'] = $post['created'];
       $formData['author'] = $post['author'];
       $formData['category'] = $category['id'];        
     } else {
@@ -120,7 +120,7 @@ class AdminController extends Controller
         date_default_timezone_set('CET');
       }      
       
-      $formData['date'] = date('m/d/Y h:i:s a', time());
+      $formData['created'] = date('m/d/Y h:i:s a', time());
       
       $user = $this->getUserFromRequest($request);
       $id = $this->userModel->getUser($user->getUsername());
@@ -170,9 +170,12 @@ class AdminController extends Controller
     var_dump($formData);
     $task['title'] = $formData['title'];
     $task['text'] = $formData['text'];
-    $task['date'] = $formData['date'];
+    $task['created'] = $formData['created'];
     $task['author'] = $formData['author'];
     $task['category'] = $formData['category'];
+    $task['tags'] = $formData['tags'];
+
+
     var_dump($task);
     if ($edit) {
       $this->blogModel->editPost($task, $id);
