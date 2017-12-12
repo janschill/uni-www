@@ -37,14 +37,14 @@
                     <ul class="admin-form__category">
                         <h3 class="admin-category__heading">categories</h3>
                         {% for category in categories %}
-                            <li><input type="checkbox" name="form[category]" value="{{ category.name }}">{{ category.name }}</input></li>
+                            <li><input type="checkbox" name="form[category][]" value="{{ category.name }}">{{ category.name }}</input></li>
                         {% endfor %}
                     </ul>
 
                     <ul class="admin-form__tags">
                         <h3 class="admin-tags__heading">tags</h3>
                         {% for tag in tags %}
-                            <li><input type="checkbox" name="form[tags]" value="{{ tag.name }}">{{ tag.name }}</input></li>
+                            <li><input type="checkbox" name="form[tags][]" value="{{ tag.name }}">{{ tag.name }}</input></li>
                         {% endfor %}
                     </ul>
                 </aside>

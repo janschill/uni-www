@@ -12,26 +12,36 @@ class BlogModel extends Model
 
   public function addPost($post)
   {
-    $sql = $this->db->prepare("INSERT INTO posts (title, text, created, author, category) VALUES (:title, :text, :created, :author, :category)");
+    $sql = $this->db->prepare("INSERT INTO posts (title, text, created, author) VALUES (:title, :text, :created, :author)");
 
     $sql->bindParam(':title', $post['title']);
     $sql->bindParam(':text', $post['text']);
     $sql->bindParam(':created', $post['created']);
     $sql->bindParam(':author', $post['author']);
-    $sql->bindParam(':category', $post['category']);
-
+    
+    $this->addTagToPost($post['created'], $post['tags']);
+    $this->addCategoryToPost($post['created'], $post['categories']);
+    
     $sql->execute();
+  }
+
+  private function addTagToPost($created, $tags)
+  {
+    
+    $query = "INSERT INTO tag2post (tagid, postid) VALUES (:tagid, :postid)";
+
+    $sql = $this->db->prepare($query);
+
   }
 
   public function editPost($post, $id)
   {
-    $sql = $this->db->prepare("UPDATE posts SET title = :title, text = :text, created = :created, author = :author, category = :category WHERE id = :id");
+    $sql = $this->db->prepare("UPDATE posts SET title = :title, text = :text, created = :created, author = :author WHERE id = :id");
 
     $sql->bindParam(':title', $post['title']);
     $sql->bindParam(':text', $post['text']);
     $sql->bindParam(':created', $post['created']);
     $sql->bindParam(':author', $post['author']);
-    $sql->bindParam(':category', $post['category']);
     $sql->bindParam(':id', $id);
 
     $sql->execute();
@@ -45,34 +55,65 @@ class BlogModel extends Model
     $row = $sql->fetch(\PDO::FETCH_ASSOC);
     return $row;
   }
-
+  
+  public function getFewPosts()
+  {
+    return $this->getRow("SELECT * FROM posts ORDER BY created desc LIMIT 3");
+  }
+  
   public function getAllPosts()
   {
     return $this->getRow("SELECT * FROM posts ORDER BY created desc");
   }
 
-  public function getFewPosts()
-  {
-    return $this->getRow("SELECT * FROM posts ORDER BY created desc LIMIT 3");
-  }
 
   public function getAllCategories()
   {
     return $this->getRow("SELECT * FROM categories");
   }
 
-  public function getCategoryById($id)
+  private function getCategoryByName($name)
   {
-    $sql = $this->db->prepare("SELECT * FROM categories WHERE id = :id");
-    $sql->bindParam(':id', $id);
+    $query = "SELECT categories.id FROM categories WHERE categories.name = :name";
+
+    $sql = $this->db->prepare($query);
+    $sql->bindParam(':name', $name);
     $sql->execute();
     $row = $sql->fetch(\PDO::FETCH_ASSOC);
+
+    return $row;
+  }
+
+  public function getCategoryById($id)
+  {
+    $query = "SELECT categories.name FROM categories 
+    JOIN category2post ON categories.id = category2post.categoriesid
+    JOIN posts ON posts.id = category2post.postsid
+    WHERE posts.id = :id";
+
+    $sql = $this->db->prepare($query);
+    $sql->bindParam(':id', $id);
+    $sql->execute();
+    $row = $sql->fetchAll(\PDO::FETCH_COLUMN, 0);
+
     return $row;
   }
 
   public function getAllTags()
   {
     return $this->getRow("SELECT * FROM tags");
+  }
+
+  private function getTagByName($name)
+  {
+    $query = "SELECT tags.id FROM tags WHERE tags.name = :name";
+
+    $sql = $this->db->prepare($query);
+    $sql->bindParam(':name', $name);
+    $sql->execute();
+    $row = $sql->fetch(\PDO::FETCH_ASSOC);
+
+    return $row;
   }
 
   public function getTagsById($id)

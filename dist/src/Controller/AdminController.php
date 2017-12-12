@@ -52,49 +52,49 @@ class AdminController extends Controller
 
       return $this->redirect('/admin/blog', 302);
     }
-
+    
     $user = $this->getUserFromRequest($request);
     $categories = $this->blogModel->getAllCategories();
     $tags = $this->blogModel->getAllTags();
-
+    
     $html = $this->render('admin-blog-new.html.twig', [
       'form' => $formData,
       'error' => $formError,
       'user' => $user,
       'categories' => $categories,
       'tags' => $tags
-    ]);
-
-    return new Response($html);
-  }
-
-  protected function isFormDataValid(Request $request, $formData)
-  {
-    $valid = true;
-    $formError = [];
-    $token = $this->getToken();
-
-    if ((!isset($formData['token'])) || (!hash_equals($token,
-        $formData['token']))
-    ) {
-      $valid = false;
-      $formError['token'] = 'Bad token';
-      throw new \Exception('Bad CSRF token.');
+      ]);
+      
+      return new Response($html);
     }
-
-    if ((!isset($formData['title'])) || (strlen($formData['title']) < 3) || (!isset($formData['text']))) {
-      $valid = false;
-      $formError['title'] = "Please fill out all input fields";
-    }
-
-    if(!isset($_FILES['fileToUpload']) || $_FILES['fileToUpload']['error'] == UPLOAD_ERR_NO_FILE) {
-    } else {
-        if ($this->uploadImage() === 0) {
-          $valid = false;
-          $formError['image'] = 'Bad image';
-          throw new \Exception('Bad image.');
+    
+    protected function isFormDataValid(Request $request, $formData)
+    {
+      $valid = true;
+      $formError = [];
+      $token = $this->getToken();
+            
+      if ((!isset($formData['token'])) || (!hash_equals($token,
+          $formData['token']))
+      ) {
+        $valid = false;
+        $formError['token'] = 'Bad token';
+        throw new \Exception('Bad CSRF token.');
       }
-    }
+
+      if ((!isset($formData['title'])) || (strlen($formData['title']) < 3) || (!isset($formData['text']))) {
+        $valid = false;
+        $formError['title'] = "Please fill out all input fields";
+      }
+
+      if(!isset($_FILES['fileToUpload']) || $_FILES['fileToUpload']['error'] == UPLOAD_ERR_NO_FILE) {
+      } else {
+          if ($this->uploadImage() === 0) {
+            $valid = false;
+            $formError['image'] = 'Bad image';
+            throw new \Exception('Bad image.');
+        }
+      }
 
     return [$valid, $formError];
   }
@@ -111,7 +111,10 @@ class AdminController extends Controller
       $formData['text'] = $post['text'];
       $formData['created'] = $post['created'];
       $formData['author'] = $post['author'];
-      $formData['category'] = $category['id'];        
+
+      // here get category and tags
+
+
     } else {
       $formData['title'] = null;
       $formData['text'] = null;
@@ -174,8 +177,7 @@ class AdminController extends Controller
     $task['author'] = $formData['author'];
 
 
-    var_dump($formData['category']);
-    var_dump($formData['tags']);
+
     // if(isset($formData['category']))
     // {
     //   foreach ($formData['category'] as $tag)
