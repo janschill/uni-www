@@ -177,7 +177,22 @@ $routes->add(
 
 
 
-
+$routes->add(
+  'removetrailingslash',
+  new Route(
+    '/{url}',
+    array(
+      '_controller' => 'Controller\RedirectingController::removeTrailingSlash',
+        ),
+        array(
+            'url' => '.*/$',
+        ),
+        array(),
+        '',
+        array(),
+        array('GET')
+    )
+);
 
 
 return $routes;
