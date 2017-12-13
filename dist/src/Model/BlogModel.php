@@ -75,6 +75,11 @@ class BlogModel extends Model
     $sql->bindParam(':id', $id);
 
     $sql->execute();
+
+    $lastId = $this->db->lastInsertId();
+
+    $this->addTagToPost($lastId, $post['tags']);
+    $this->addCategoryToPost($lastId, $post['category']);
   }
 
   public function getOnePost($id)
@@ -173,6 +178,8 @@ class BlogModel extends Model
   
   public function deletePost($id)
   {
+    
+    
     $sql = $this->db->prepare("DELETE FROM posts WHERE id = :id");
     $sql->bindParam(':id', $id);
     $sql->execute();

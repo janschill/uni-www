@@ -87,6 +87,13 @@ class AdminController extends Controller
         $formError['title'] = "Please fill out all input fields";
       }
 
+      if(!isset($formData['tags']) || !isset($formData['tags']))
+      {
+        $valid = false;
+        $formError['cattag'] = "Please select atleast one category and tag";
+      }
+
+
       if(!isset($_FILES['fileToUpload']) || $_FILES['fileToUpload']['error'] == UPLOAD_ERR_NO_FILE) {
       } else {
           if ($this->uploadImage() === 0) {
@@ -104,16 +111,15 @@ class AdminController extends Controller
     if ($edit)
     {
       $post = $this->blogModel->getOnePost($id);
-      $category = $this->blogModel->getCategoryById($post['category']);
-      // var_dump($category);
+      $categories = $this->blogModel->getCategoryById($post['id']);
+      $tags = $this->blogModel->getTagsById($post['id']);
       
       $formData['title'] = $post['title'];
       $formData['text'] = $post['text'];
       $formData['created'] = $post['created'];
       $formData['author'] = $post['author'];
-
-      // here get category and tags
-
+      $formData['categories'] = $categories;
+      $formData['tags'] = $tags;
 
     } else {
       $formData['title'] = null;

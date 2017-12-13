@@ -18,6 +18,7 @@
                     <input type="hidden" name="form[author]" value="{{ form['author'] }}">
                     <input type="hidden" name="form[created]" value="{{ form['created'] }}">
                     {% if error['title'] %}<p class="form__error form__error--danger">{{ error['title'] }}</p>{% endif %}
+                    {% if error['cattag'] %}<p class="form__error form__error--danger">{{ error['cattag'] }}</p>{% endif %}
                     <input class="admin-form__input admin-form__input--large" type="text" id="form_title" name="form[title]"
                         value="{{ form['title'] }}" placeholder="Enter title">
 
@@ -37,14 +38,26 @@
                     <ul class="admin-form__category">
                         <h3 class="admin-category__heading">categories</h3>
                         {% for category in categories %}
-                            <li><input type="checkbox" name="form[category][]" value="{{ category.name }}">{{ category.name }}</input></li>
+                            {% set selected = false %}
+                            {% for formCategory in form['categories'] if selected == false %}
+                                {% if category.name == formCategory %}
+                                    {% set selected = true %}
+                                {% endif %}
+                            {% endfor %}
+                                <li><input type="checkbox" name="form[category][]" value="{{ category.name }}" {% if selected %}checked{% endif %}>{{ category.name }}</input></li>
                         {% endfor %}
                     </ul>
 
                     <ul class="admin-form__tags">
                         <h3 class="admin-tags__heading">tags</h3>
                         {% for tag in tags %}
-                            <li><input type="checkbox" name="form[tags][]" value="{{ tag.name }}">{{ tag.name }}</input></li>
+                            {% set selected = false %}
+                            {% for formTag in form['tags'] if selected == false %}
+                                {% if tag.name == formTag %}
+                                    {% set selected = true %}
+                                {% endif %}
+                            {% endfor %}
+                            <li><input type="checkbox" name="form[tags][]" value="{{ tag.name }}"{% if selected %}checked{% endif %}>{{ tag.name }}</input></li>
                         {% endfor %}
                     </ul>
                 </aside>
