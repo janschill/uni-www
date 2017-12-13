@@ -23,20 +23,41 @@ class BlogModel extends Model
     
     $lastId = $this->db->lastInsertId();
 
-    $this->addTagToPost($$lastId, $post['tags']);
-    $this->addCategoryToPost($lastId, $post['categories']);
+    $this->addTagToPost($lastId, $post['tags']);
+    $this->addCategoryToPost($lastId, $post['category']);
     
   }
 
   private function addTagToPost($lastId, $tags)
   {
+    var_dump($tags);
     foreach ($tags as $tag)
     {
+      var_dump($tag);
       $tagid = $this->getTagByName($tag);
-      $query = "INSERT INTO tag2post (tagid, postid) VALUES (:tagid, :postid)";
+      var_dump($tagid);
+      $query = "INSERT INTO tag2post (tagsid, postsid) VALUES (:tagid, :postid)";
   
       $sql = $this->db->prepare($query);
-      $sql->bindParam(':tagid', $tagid);
+      $sql->bindParam(':tagid', $tagid['id']);
+      $sql->bindParam(':postid', $lastId);
+      
+      $sql->execute();
+    }
+  }
+
+  private function addCategoryToPost($lastId, $categories)
+  {
+    var_dump($categories);
+    foreach ($categories as $category)
+    {
+      var_dump($category);
+      $categoryid = $this->getCategoryByName($category);
+      var_dump($categoryid);
+      $query = "INSERT INTO category2post (categoriesid, postsid) VALUES (:categoryid, :postid)";
+  
+      $sql = $this->db->prepare($query);
+      $sql->bindParam(':categoryid', $categoryid['id']);
       $sql->bindParam(':postid', $lastId);
       
       $sql->execute();
