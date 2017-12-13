@@ -19,19 +19,28 @@ class BlogModel extends Model
     $sql->bindParam(':created', $post['created']);
     $sql->bindParam(':author', $post['author']);
     
-    $this->addTagToPost($post['created'], $post['tags']);
-    $this->addCategoryToPost($post['created'], $post['categories']);
-    
     $sql->execute();
+    
+    $lastId = $this->db->lastInsertId();
+
+    $this->addTagToPost($$lastId, $post['tags']);
+    $this->addCategoryToPost($lastId, $post['categories']);
+    
   }
 
-  private function addTagToPost($created, $tags)
+  private function addTagToPost($lastId, $tags)
   {
-    
-    $query = "INSERT INTO tag2post (tagid, postid) VALUES (:tagid, :postid)";
-
-    $sql = $this->db->prepare($query);
-
+    foreach ($tags as $tag)
+    {
+      $tagid = $this->getTagByName($tag);
+      $query = "INSERT INTO tag2post (tagid, postid) VALUES (:tagid, :postid)";
+  
+      $sql = $this->db->prepare($query);
+      $sql->bindParam(':tagid', $tagid);
+      $sql->bindParam(':postid', $lastId);
+      
+      $sql->execute();
+    }
   }
 
   public function editPost($post, $id)
@@ -56,11 +65,20 @@ class BlogModel extends Model
     return $row;
   }
   
+  public function getPostIdFromCreated($created)
+  {
+    $sql = $this->db->prepare("SELECT id FROM POSTS WHERE created = :created");
+    $sql->bindParam(':created', $$created);
+    $sql->execute();
+    $row = $sql->fetch(\PDO::FETCH_ASSOC);
+    return $row;
+  }
+
   public function getFewPosts()
   {
     return $this->getRow("SELECT * FROM posts ORDER BY created desc LIMIT 3");
   }
-  
+
   public function getAllPosts()
   {
     return $this->getRow("SELECT * FROM posts ORDER BY created desc");
@@ -119,8 +137,8 @@ class BlogModel extends Model
   public function getTagsById($id)
   {
     $query = "SELECT tags.name FROM tags
-    JOIN tag2post ON tags.id = tag2post.tagid
-    JOIN posts ON posts.id = tag2post.postid
+    JOIN tag2post ON tags.id = tag2post.tagsid
+    JOIN posts ON posts.id = tag2post.postsid
     WHERE posts.id = :id";
 
     $sql = $this->db->prepare($query);

@@ -302,14 +302,19 @@ class AdminController extends Controller
     $posts = $this->blogModel->getAllPosts();
     $posts_edited = [];
     $tags = [];
-    
+    $categories = [];
 
     foreach ($posts as $post) {
-      $temp_category = $this->blogModel->getCategoryById($post['category']);
+      // var_dump($post['category']);
+      // $temp_category = $this->blogModel->getCategoryById($post['category'][]);
+      // $temp_tag = $this->blogModel->getTagById($post['tag'][]);
       $temp_author = $this->userModel->getUserById($post['author']);
-      $post['category'] = $temp_category['name'];
+      
+      // $post['category'] = $temp_category['name'];
+      // $post['tag'] = $temp_tag['name'];
       $post['author'] = $temp_author['username'];
       $post['tags'] = $this->blogModel->getTagsById($post['id']);
+      $post['category'] = $this->blogModel->getCategoryById($post['id']);
       array_push($posts_edited, $post);
     }
 

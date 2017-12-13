@@ -26,7 +26,14 @@
                         <tr class="blogpost">
                             <td class="blogpost__title"><a href="blog/edit/{{ post.id }}">{{ post.title }}</a></td>
                             <td class="blogpost__author"><a href="blog/{{ post.author }}">{{ post.author }}</a></td>
-                            <td class="blogpost__category">{{ post.category }}</td>
+                            <td class="blogpost__category">
+                                {% for category in post.category %}
+                                    {{ category }}
+                                    {% if not loop.last %}
+                                    <span>,</span>
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
                             <td class="blogpost__tags">
                                 {% for tag in post.tags %}
                                     {{ tag }}
