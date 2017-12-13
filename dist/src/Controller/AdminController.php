@@ -135,7 +135,6 @@ class AdminController extends Controller
       $id = $this->userModel->getUser($user->getUsername());
       
       $formData['author'] = $id['id'];
-      $formData['category'] = null;
     }
     
     $formData['token'] = $this->getToken();
@@ -181,16 +180,6 @@ class AdminController extends Controller
     $task['text'] = $formData['text'];
     $task['created'] = $formData['created'];
     $task['author'] = $formData['author'];
-
-
-
-    // if(isset($formData['category']))
-    // {
-    //   foreach ($formData['category'] as $tag)
-    //   {
-    //     $task[] = $tag;
-    //   }
-    // }
     $task['category'] = $formData['category'];
     $task['tags'] = $formData['tags'];
 
