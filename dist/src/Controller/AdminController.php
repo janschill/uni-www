@@ -11,13 +11,11 @@ use Service\ShowImagesFromFolder;
 
 class AdminController extends Controller
 {
-  protected $formData, $blogModel, $userModel;
+  protected $formData;
 
   public function __construct($container)
   {
     parent::__construct($container);
-    $this->blogModel = new BlogModel($this->container['db']);
-    $this->userModel = new UserModel($this->container['db']);
   }
 
   /* **************************** admin **************************** */
@@ -27,8 +25,8 @@ class AdminController extends Controller
     $formError = [];
     $valid = false;
     $edit = false;
-    $route = $request->attributes->get('_route');
-    $id = $request->attributes->get('id');
+    $route = $this->getAttributeFromRequest($request, '_route');
+    $id = $this->getAttributeFromRequest($request,'id');
   
     /**
      * when page is loaded with GET this will trigger and fill out
@@ -53,7 +51,7 @@ class AdminController extends Controller
       return $this->redirect('/admin/blog', 302);
     }
     
-    $user = $this->getUserFromRequest($request);
+    $user = $this->getAttributeFromRequest($request, 'user');
     $categories = $this->blogModel->getAllCategories();
     $tags = $this->blogModel->getAllTags();
     
@@ -291,6 +289,8 @@ class AdminController extends Controller
       return new Response($html);
     }
     
+
+
   /* **************************** admin / blog **************************** */
   public function showAdminBlogAction($request)
   {

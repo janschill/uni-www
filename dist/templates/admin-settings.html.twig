@@ -1,0 +1,41 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Settings{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+        <section class="admin">
+            {% include 'admin-aside.html.twig' %}
+
+            <article class="admin__article">
+                <h3>
+                    Settings
+                </h3>
+
+                <h4>Tags</h4>
+                <ul>
+                {% for tag in tags %}
+                  <li>{{ tag.name }}</li>
+                {% endfor %}
+                </ul>
+                <form class="" action="" method="post">
+                  <input type="text" placeholder="new Tag"></input>
+                  <input type="submit" value="Add"></input>
+                </form>
+
+                <h4>Categories</h4>
+                <ul>
+                {% for category in categories %}
+                  <li>{{ category.name }}</li>
+                {% endfor %}
+                </ul>
+                <form class="" action="" method="post">
+                  <input type="text" placeholder="new Category"></input>
+                  <input type="submit" value="Add"></input>
+                </form>
+
+              </article>
+        </section>
+
+{% endblock %}

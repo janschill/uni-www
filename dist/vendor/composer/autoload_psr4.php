@@ -18,4 +18,5 @@ return array(
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Model\\' => array($baseDir . '/src/Model'),
     'Controller\\' => array($baseDir . '/src/Controller'),
+    'Admin\\' => array($baseDir . '/src/Controller/Admin'),
 );

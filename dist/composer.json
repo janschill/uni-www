@@ -10,7 +10,8 @@
             "User\\": "src\\User",
             "Controller\\": "src\\Controller",
             "Model\\": "src\\Model",
-            "Service\\": "src\\Service"
+            "Service\\": "src\\Service",
+            "Admin\\": "src\\Controller\\Admin"
         }
     }
 }

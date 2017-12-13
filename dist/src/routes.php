@@ -168,6 +168,16 @@ $routes->add(
   )
 );
 
+/* **************************** admin / settings **************************** */
+$routes->add(
+  'adminsettings',
+  new Route(
+    '/admin/settings',
+    ['_controller' => 'Admin\SettingsController::showAdminSettingsAction'],
+    [],
+    ['_permission' => 'edit']
+  )
+);
 
 
 $routes->add(
