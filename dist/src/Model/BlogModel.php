@@ -30,12 +30,9 @@ class BlogModel extends Model
 
   private function addTagToPost($lastId, $tags)
   {
-    var_dump($tags);
     foreach ($tags as $tag)
     {
-      var_dump($tag);
       $tagid = $this->getTagByName($tag);
-      var_dump($tagid);
       $query = "INSERT INTO tag2post (tagsid, postsid) VALUES (:tagid, :postid)";
   
       $sql = $this->db->prepare($query);
@@ -48,12 +45,9 @@ class BlogModel extends Model
 
   private function addCategoryToPost($lastId, $categories)
   {
-    var_dump($categories);
     foreach ($categories as $category)
     {
-      var_dump($category);
       $categoryid = $this->getCategoryByName($category);
-      var_dump($categoryid);
       $query = "INSERT INTO category2post (categoriesid, postsid) VALUES (:categoryid, :postid)";
   
       $sql = $this->db->prepare($query);
@@ -148,7 +142,7 @@ class BlogModel extends Model
     return $this->getRow("SELECT * FROM tags");
   }
 
-  private function getTagByName($name)
+  public function getTagByName($name)
   {
     $query = "SELECT tags.id FROM tags WHERE tags.name = :name";
 
@@ -186,4 +180,29 @@ class BlogModel extends Model
 
     return $sql;
   }
+
+  public function addTag($table, $data)
+  {
+      $query = "INSERT INTO $table ('name') VALUES (:data)";
+      $sql = $this->db->prepare($query);
+      $sql->bindParam(':data', $data);
+
+      $sql->execute();
+  }
+
+  public function getTableByName($table, $name)
+  {
+    $query = "SELECT * FROM $table WHERE :tableName = :name";
+
+    $sql = $this->db->prepare($query);
+    $tablename = $table . '.name';
+    $sql->bindParam(':tableName', $tablename);    
+    $sql->bindParam(':name', $name);
+    $sql->execute();
+    $row = $sql->fetch(\PDO::FETCH_ASSOC);
+
+    return $row;
+  }
+
+
 }

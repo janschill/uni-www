@@ -20,7 +20,7 @@
                 {% endfor %}
                 </ul>
                 <form class="" action="" method="post">
-                  <input type="text" placeholder="new Tag"></input>
+                  <input type="text" name="tag" placeholder="new Tag"></input>
                   <input type="submit" value="Add"></input>
                 </form>
 
@@ -31,9 +31,33 @@
                 {% endfor %}
                 </ul>
                 <form class="" action="" method="post">
-                  <input type="text" placeholder="new Category"></input>
+                  <input type="text" name="category" placeholder="new Category"></input>
                   <input type="submit" value="Add"></input>
                 </form>
+
+                <h4>Users</h4>
+                <ul>
+                {% for user in users %}
+                  <li>{{ user.username }}</li>
+                {% endfor %}
+                </ul>
+                <form class="" action="" method="post">
+                  <input type="text" name="username" placeholder="Username"></input>
+                  <input type="password" name="password" placeholder="Password"></input>                  
+                  <input type="submit" value="Add"></input>
+                </form>
+
+                <h4>Permissions</h4>
+                <ul>
+                {% for permission in permissions %}
+                  <li>{{ permission.permission }}</li>
+                {% endfor %}
+                </ul>
+                <form class="" action="" method="post">
+                  <input type="text" name="category" placeholder="new Category"></input>
+                  <input type="submit" value="Add"></input>
+                </form>
+
 
               </article>
         </section>

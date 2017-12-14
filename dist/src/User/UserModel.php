@@ -46,6 +46,23 @@ class UserModel
     return $row;
   }
 
+  public function getAllUsers()
+  {
+    return $this->getRow("SELECT username FROM users");
+  }
+
+  public function getRow($query)
+  {
+    $result = $this->db->query($query);
+    $data = [];
+
+    foreach ($result as $row) {
+      $data[] = $row;
+    }
+
+    return $data;
+  }
+
   public function getUserById($id)
   {
     $sql = $this->db->prepare("SELECT * FROM users WHERE id = :id");
@@ -72,6 +89,12 @@ class UserModel
   /**
    * fetch permission from database table
    */
+
+  public function getAllPermissions()
+  {
+    return $this->getRow("SELECT * FROM permissions");
+  }
+
   public function getPermissions($username)
   {
     $query = "SELECT permissions.permission FROM permissions 
