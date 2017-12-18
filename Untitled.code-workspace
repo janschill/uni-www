@@ -1,13 +1,12 @@
 {
-	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "/Users/janschill/develop/university/www/formular-jasc7047"
-		},
-		{
-			"path": "/Users/janschill/Downloads/00-Code-Forms"
-		}
-	]
+    "folders": [{
+            "path": "."
+        },
+        {
+            "path": "/Users/janschill/Downloads/uploadimage"
+        },
+        {
+            "path": "/Users/janschill/Downloads/filebrowser"
+        }
+    ]
 }
