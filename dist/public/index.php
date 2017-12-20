@@ -12,6 +12,9 @@ use Front\FrontController;
 $container = include __DIR__ . '/../src/container.php';
 $routes = include __DIR__ . '/../src/routes.php';
 
+$ROOTPATH = __DIR__;
+$container['root'] = $ROOTPATH;
+
 $request = Request::createFromGlobals();
 
 $session = $request->getSession();

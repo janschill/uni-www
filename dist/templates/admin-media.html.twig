@@ -13,9 +13,12 @@
             <article class="admin__article">
                 <h3 class="admin__header">
                     Add New Media
-                    <span class="admin__button js-Formlink"><a href="media/new">new Media</a></span>
-                    <script src="../js/inlineform.js"></script>
+                    <span class="admin__button js-Formlink"><a href="/admin/media/new">new Media</a></span>
                 </h3>
+
+                {% if showForm == true %}
+                    {% include 'admin-media-form.html.twig' %}                                    
+                {% endif %}
 
                 {% for image in images %}
                   <img class="admin__image admin__image--small" src="/images/uploads/{{ image }}">

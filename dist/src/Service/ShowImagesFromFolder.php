@@ -6,9 +6,10 @@ class ShowImagesFromFolder
 {
   public function __construct(){}
 
-  public static function showImages()
+  public static function showImages($root)
   {
-    $location = __DIR__ . '/../../public/images/uploads/';
+    
+    $location = $root . '/images/uploads/';
     $types = '{*.jpg,*.JPG,*.jpeg,*.JPEG,*.png,*.PNG,*.gif,*.GIF}';
 
     $images = glob($location . $types, GLOB_BRACE);

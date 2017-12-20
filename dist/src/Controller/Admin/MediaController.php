@@ -4,15 +4,20 @@ namespace Admin;
 
 use Controller\Controller;
 use Service\ShowImagesFromFolder;
+use Service\FileUploader;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class MediaController extends Controller
 {
-  
+  public function __construct($container)
+  {
+    parent::__construct($container);
+  }
+
   public function showAdminMediaAction($request)
   {
-    $images = ShowImagesFromFolder::showImages();
+    $images = ShowImagesFromFolder::showImages($this->root);
     $html = $this->render('admin-media.html.twig', [
       'images' => $images
     ]);
@@ -25,55 +30,26 @@ class MediaController extends Controller
   public function showAdminMediaFormAction($request)
   {
     // call by add new media
-    
+
     if ($request->getMethod() !== 'POST') {
+     $showForm = true;
       //hide form
     } else {
-      FileUploader::upload();
-
-      if (!$this->isAjax($request)) {
-          return $this->redirect('/media/new', 201);
-      } else {
-          // Return correct statuscode
-          return new Response($html, 201);
+     $showForm = false;
+      if (!FileUploader::upload($this->root)) {
+        throw new \Exception;
       }
     }
 
-    $images = ShowImagesFromFolder::showImages();
+    $images = ShowImagesFromFolder::showImages($this->root);
 
-
-    if ($this->isAjax($request)) {
-      $html = $this->render('admin-media-form.html.twig', [
-
-      ]);
-
-      if ($request->getMethod() === 'POST') {
-        return new Reponse($html, 422);
-      } else {
-        return new Response($html, 200);
-      }
-    } else {
-      $html = $this->render('admin-media-formAndList.html.twig', [
-        'images' => $images
-      ]);
-      return new Response($html);
-    }
-
-
-
-    $images = ShowImagesFromFolder::showImages();
     $html = $this->render('admin-media.html.twig', [
-      'images' => $images
+      'images' => $images,
+      'showForm' => $showForm
     ]);
     
     return new Response($html);
     
-  }
-  
-  
-  private function isAjax($request)
-  {
-      return (($request->headers->get('X-Requested-With') == 'XMLHttpRequest'));
   }
 
 }

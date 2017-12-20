@@ -2,6 +2,10 @@
 
 namespace Helper;
 
+use Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
 /**
  * helper class to remove the trailing slash, which sometimes get typed by accident
  * eg.: url.de/projects/id/ => url.de/projects/id
