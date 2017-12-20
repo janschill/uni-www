@@ -17,6 +17,8 @@ return array(
     'Service\\' => array($baseDir . '/src/Service'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Model\\' => array($baseDir . '/src/Model'),
+    'Helper\\' => array($baseDir . '/src/Controller/Helper'),
+    'Front\\' => array($baseDir . '/src/Controller/Front'),
     'Controller\\' => array($baseDir . '/src/Controller'),
     'Admin\\' => array($baseDir . '/src/Controller/Admin'),
 );

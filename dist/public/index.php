@@ -7,6 +7,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
+use Front\FrontController;
 
 $container = include __DIR__ . '/../src/container.php';
 $routes = include __DIR__ . '/../src/routes.php';
@@ -25,6 +26,6 @@ $flash = $session->get('flash');
 $request->attributes->set('flash', $flash);
 $session->remove('flash');
 
-$frontcontroller = new \Controller\FrontController($request, $routes, $container);
+$frontcontroller = new FrontController($request, $routes, $container);
 $frontcontroller->run();
 

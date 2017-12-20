@@ -105,7 +105,6 @@ class UserModel
     $sql->execute();    
     
     $row = $sql->fetchAll();
-    var_dump($row);
     return $row;
   }
 

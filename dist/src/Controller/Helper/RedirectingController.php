@@ -1,6 +1,6 @@
 <?php
 
-namespace Controller;
+namespace Helper;
 
 /**
  * helper class to remove the trailing slash, which sometimes get typed by accident

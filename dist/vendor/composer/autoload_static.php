@@ -37,6 +37,14 @@ class ComposerStaticInitd18db539d96be834813a5a886a729344
         array (
             'Model\\' => 6,
         ),
+        'H' => 
+        array (
+            'Helper\\' => 7,
+        ),
+        'F' => 
+        array (
+            'Front\\' => 6,
+        ),
         'C' => 
         array (
             'Controller\\' => 11,
@@ -91,6 +99,14 @@ class ComposerStaticInitd18db539d96be834813a5a886a729344
         'Model\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/Model',
+        ),
+        'Helper\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Controller/Helper',
+        ),
+        'Front\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Controller/Front',
         ),
         'Controller\\' => 
         array (

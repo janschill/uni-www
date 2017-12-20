@@ -140,7 +140,7 @@ $routes->add(
   'medianew',
   new Route(
     '/admin/media/new',
-    ['_controller' => 'Admin\AdminController::showAdminMediaFormAction'],
+    ['_controller' => 'Admin\MediaController::showAdminMediaFormAction'],
     [],
     ['_permission' => 'edit']
   )
@@ -151,7 +151,7 @@ $routes->add(
   'adminmediadelete',
   new Route(
     '/admin/media/delete/{id}',
-    ['_controller' => 'Admin\AdminController::showBlog'],
+    ['_controller' => 'Admin\MediaController::showBlog'],
     ['id' => '\d+'],
     ['_permission' => 'delete']
   )
@@ -162,13 +162,23 @@ $routes->add(
   'media',
   new Route(
     '/admin/media',
-    ['_controller' => 'Admin\AdminController::showAdminMediaAction'],
+    ['_controller' => 'Admin\MediaController::showAdminMediaAction'],
     [],
     ['_permission' => 'edit']
   )
 );
 
 /* **************************** admin / settings **************************** */
+$routes->add(
+  'adminsettingstagdelete',
+  new Route(
+    '/admin/settings/tag/delete/{id}',
+    ['_controller' => 'Admin\SettingsController::deleteAdminSettingsTagAction'],
+    ['id' => '\d+'],
+    ['_permission' => 'delete']
+  )
+);
+
 $routes->add(
   'adminsettings',
   new Route(
@@ -225,7 +235,7 @@ $routes->add(
   new Route(
     '/{url}',
     array(
-      '_controller' => 'Controller\RedirectingController::removeTrailingSlash',
+      '_controller' => 'Helper\RedirectingController::removeTrailingSlash',
         ),
         array(
             'url' => '.*/$',

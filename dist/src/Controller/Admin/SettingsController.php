@@ -78,4 +78,16 @@ class SettingsController extends Controller
       $this->blogModel->addTag($table, $tag);
     }
 
+    public function deleteAdminSettingsTagAction($request)
+    {
+      $id = $this->getAttributeFromRequest($request, 'id');
+
+      if (isset($id))
+      {
+        if ($this->blogModel->deleteTag($id)) {
+          return $this->redirect('/admin/settings', 302);
+        }
+      }
+    }
+
 }

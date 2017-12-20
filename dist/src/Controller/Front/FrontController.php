@@ -1,6 +1,6 @@
 <?php
 
-namespace Controller;
+namespace Front;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -10,7 +10,7 @@ use Symfony\Component\Routing;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
 
-class FrontController implements \Controller\FrontControllerInterface
+class FrontController implements \Front\FrontControllerInterface
 {
   protected $uri;
   protected $container;

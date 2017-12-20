@@ -11,7 +11,9 @@
             "Controller\\": "src\\Controller",
             "Model\\": "src\\Model",
             "Service\\": "src\\Service",
-            "Admin\\": "src\\Controller\\Admin"
+            "Admin\\": "src\\Controller\\Admin",
+            "Front\\": "src\\Controller\\Front",
+            "Helper\\": "src\\Controller\\Helper"
         }
     }
 }

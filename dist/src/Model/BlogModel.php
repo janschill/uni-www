@@ -172,8 +172,6 @@ class BlogModel extends Model
   
   public function deletePost($id)
   {
-    
-    
     $sql = $this->db->prepare("DELETE FROM posts WHERE id = :id");
     $sql->bindParam(':id', $id);
     $sql->execute();
@@ -188,6 +186,15 @@ class BlogModel extends Model
       $sql->bindParam(':data', $data);
 
       $sql->execute();
+  }
+
+  public function deleteTag($id)
+  {
+    $sql = $this->db->prepare("DELETE FROM tags WHERE id = :id");
+    $sql->bindParam(':id', $id);
+    $sql->execute();
+
+    return $sql;
   }
 
   public function getTableByName($table, $name)
