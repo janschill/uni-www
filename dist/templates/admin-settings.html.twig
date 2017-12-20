@@ -14,12 +14,11 @@
                 </h3>
 
                 <h4>Tags</h4>
-                <table class="">
+                <table class="tags">
                   {% for tag in tags %}
                     <tr>
                       <td>{{ tag.name }}</td>
                       <td>Delete</td>
-                      <td>Add new</td>
                     </tr>
                   {% endfor %}
 
@@ -42,6 +41,33 @@
                   <input type="text" name="category" placeholder="new Category"></input>
                   <input type="submit" value="Add"></input>
                 </form>
+
+
+              <table>
+                <tr>
+                  <th>Users</th>
+                  {% for permission in permissions %}
+                  <th>{{ permission.permission }}</th>
+                  {% endfor %}
+                </tr>
+                {% for user in users %}
+                  <tr>
+                    <td>{{ user.username }}</td>
+                    {% for permission in permissions %}
+                      {% set selected = false %}
+                      {% for userpermission in userpermissions if selected == false %}
+                        {% if userpermission.username == user.username and userpermission.permission == permission.permission  %}
+                          {% set selected = true %}
+                        {% endif %}
+                      {% endfor %}
+
+                      <td><input type="checkbox"{% if selected %}checked{% endif %}></td>
+                    
+                    {% endfor %}
+                  </tr>
+                {% endfor %}
+              </table>
+
 
                 <h4>Users</h4>
                 <ul>

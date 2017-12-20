@@ -16,17 +16,17 @@ class SettingsController extends Controller
       $data  = null;
       $parameters = $request->request->all();
       reset($parameters);
-
+      
       switch (key($parameters)) 
       {
         case 'tag':
-          $table = 'tags';
-          $form = 'tag';
-          break;
+        $table = 'tags';
+        $form = 'tag';
+        break;
         case 'category':
-          $table = 'categories';
-          $form = 'category';
-          break;
+        $table = 'categories';
+        $form = 'category';
+        break;
       }
       
       if ($request->getMethod() === 'POST')
@@ -45,13 +45,15 @@ class SettingsController extends Controller
       $categories = $this->blogModel->getAllCategories();
       $users = $this->userModel->getAllUsers();
       $permissions = $this->userModel->getAllPermissions();
+      $userpermissions = $this->userModel->getAllUsersPermissions();
 
       $html = $this->render('admin-settings.html.twig', array(
         'user' => $user,
         'tags' => $tags,
         'categories' => $categories,
         'users' => $users,
-        'permissions' => $permissions
+        'permissions' => $permissions,
+        'userpermissions' => $userpermissions
       ));
 
       return new Response($html);

@@ -95,6 +95,20 @@ class UserModel
     return $this->getRow("SELECT * FROM permissions");
   }
 
+  public function getAllUsersPermissions()
+  {
+    $query = "SELECT users.username, permissions.permission FROM permissions 
+    JOIN user2permission ON permissions.id = user2permission.permissionid
+    JOIN users ON users.id = user2permission.userid";
+
+    $sql = $this->db->prepare($query);
+    $sql->execute();    
+    
+    $row = $sql->fetchAll();
+    var_dump($row);
+    return $row;
+  }
+
   public function getPermissions($username)
   {
     $query = "SELECT permissions.permission FROM permissions 
