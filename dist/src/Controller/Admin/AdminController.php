@@ -1,12 +1,13 @@
 <?php
 
-namespace Controller;
+namespace Admin;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Model\BlogModel;
 use User\UserModel;
+use Controller\Controller;
 use Service\ShowImagesFromFolder;
 
 class AdminController extends Controller
