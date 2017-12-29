@@ -162,7 +162,7 @@ $routes->add(
   'media',
   new Route(
     '/admin/media',
-    ['_controller' => 'Admin\MediaController::showAdminMediaAction'],
+    ['_controller' => 'Admin\MediaController::showAdminMediaFormAction'],
     [],
     ['_permission' => 'edit']
   )

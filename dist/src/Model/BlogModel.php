@@ -18,12 +18,13 @@ class BlogModel extends Model
       $sqlDelete->execute();
     }  
     
-    $sql = $this->db->prepare("INSERT INTO posts (title, text, created, author) VALUES (:title, :text, :created, :author)");
+    $sql = $this->db->prepare("INSERT INTO posts (title, text, created, author, cover) VALUES (:title, :text, :created, :author, :cover)");
 
     $sql->bindParam(':title', $post['title']);
     $sql->bindParam(':text', $post['text']);
     $sql->bindParam(':created', $post['created']);
     $sql->bindParam(':author', $post['author']);
+    $sql->bindParam(':cover', $post['cover']);
     
     $sql->execute();
     

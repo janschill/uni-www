@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
 use Model\BlogModel;
 use User\UserModel;
 use Controller\Controller;
+use Service\ShowImagesFromFolder;
 
 class AdminController extends Controller
 {
@@ -56,13 +57,15 @@ class AdminController extends Controller
     $user = $this->getAttributeFromRequest($request, 'user');
     $categories = $this->blogModel->getAllCategories();
     $tags = $this->blogModel->getAllTags();
+    $images = ShowImagesFromFolder::showImages($this->root);
     
     $html = $this->render('admin-blog-new.html.twig', [
       'form' => $formData,
       'error' => $formError,
       'user' => $user,
       'categories' => $categories,
-      'tags' => $tags
+      'tags' => $tags,
+      'images' => $images
       ]);
       
       return new Response($html);
@@ -118,6 +121,7 @@ class AdminController extends Controller
       $formData['text'] = $post['text'];
       $formData['created'] = $post['created'];
       $formData['author'] = $post['author'];
+      $formData['cover'] = $post['cover'];
       $formData['categories'] = $categories;
       $formData['tags'] = $tags;
 
@@ -181,6 +185,7 @@ class AdminController extends Controller
     $task['author'] = $formData['author'];
     $task['category'] = $formData['category'];
     $task['tags'] = $formData['tags'];
+    $task['cover'] = $formData['cover'];
 
     $this->blogModel->addPost($task, $id);
   }
@@ -267,7 +272,6 @@ class AdminController extends Controller
     $this->showFormAction($request);
 
   }
-
 
   public function showAdminProjectsAction($request)
   {

@@ -1,18 +1,19 @@
-@import "Configuration/Variables";
-@import "Configuration/BrowserReset";
-@import "Configuration/Reset";
-@import "Configuration/Mixins";
-@import "Configuration/Typography";
-@import "Blocks/Footer";
-@import "Blocks/Navigation";
-@import "Blocks/ProjectItem";
-@import "Blocks/LoginForm";
-@import "Blocks/Blog";
-@import "Blocks/AdminDashboard";
-@import "Blocks/AdminBlog";
-@import "Blocks/AdminSettings";
-@import "Blocks/BlogPost";
-@import "Blocks/Form";
-@import "Blocks/AdminForm";
-@import "Blocks/AdminImage";
-@import "Blocks/Text";
+@import "Configuration/Variables",
+"Configuration/BrowserReset",
+"Configuration/Reset",
+"Configuration/Mixins",
+"Configuration/Typography";
+@import "Blocks/Footer",
+"Blocks/Navigation",
+"Blocks/ProjectItem",
+"Blocks/LoginForm",
+"Blocks/Blog",
+"Blocks/AdminDashboard",
+"Blocks/AdminBlog",
+"Blocks/AdminSettings",
+"Blocks/BlogPost",
+"Blocks/Form",
+"Blocks/AdminForm",
+"Blocks/AdminImage",
+"Blocks/AdminImageEnlarge",
+"Blocks/Text";

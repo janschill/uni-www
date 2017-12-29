@@ -22,7 +22,7 @@
                 {% endif %}
 
                 {% for image in images %}
-                  <img class="admin__image admin__image--small" src="{{ image }}">
+                    <img class="admin__image admin__image--small" src="{{ image.path }}" alt="{{ image.name }}">
                 {% endfor %}
 
               </article>

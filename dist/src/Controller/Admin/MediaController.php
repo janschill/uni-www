@@ -14,22 +14,12 @@ class MediaController extends Controller
   {
     parent::__construct($container);
   }
-
-  public function showAdminMediaAction($request)
-  {
-    $images = ShowImagesFromFolder::showImages($this->root);
-    $html = $this->render('admin-media.html.twig', [
-      'images' => $images
-    ]);
-    
-    return new Response($html);
-  }
-
   
   /* **************************** image / upload **************************** */
   public function showAdminMediaFormAction($request)
   {
     $error = [];
+    $images = [];
 
     if ($request->getMethod() !== 'POST') {
      $showForm = true;

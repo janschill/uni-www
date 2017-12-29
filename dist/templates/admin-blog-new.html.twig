@@ -22,9 +22,16 @@
                     <input class="admin-form__input admin-form__input--large" type="text" id="form_title" name="form[title]"
                         value="{{ form['title'] }}" placeholder="Enter title">
 
+                    <select name="form[cover]">
+                        {% for image in images %}
+                        <option value="{{ image.path }}" 
+                            {% if image.path == form['cover'] %}selected="selected"
+                            {% endif %}>{{ image.name }}
+                        </option>
+                        {% endfor %}
+                    </select>
                     <div class="admin-form__textarea admin-form__textarea--shadow">
-
-                    <textarea rows="4" cols="50" class="admin-form__input admin-form__input--regular" type="text" id="form_text"
+                    <textarea rows="4" cols="70" class="admin-form__input admin-form__input--regular" type="text" id="form_text"
                             name="form[text]" value="{{ form['text'] }}" placeholder="Text">{{ form['text'] }}</textarea>
                     <script>
                         CKEDITOR.replace( 'form_text' );
@@ -44,7 +51,7 @@
                                     {% set selected = true %}
                                 {% endif %}
                             {% endfor %}
-                                <li><input type="checkbox" name="form[category][]" value="{{ category.name }}" {% if selected %}checked{% endif %}>{{ category.name }}</input></li>
+                            <li><input type="checkbox" name="form[category][]" value="{{ category.name }}" {% if selected %}checked{% endif %}>{{ category.name }}</input></li>
                         {% endfor %}
                     </ul>
 

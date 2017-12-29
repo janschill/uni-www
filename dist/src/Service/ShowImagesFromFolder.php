@@ -13,13 +13,12 @@ class ShowImagesFromFolder
     $types = '{*.jpg,*.JPG,*.jpeg,*.JPEG,*.png,*.PNG,*.gif,*.GIF}';
     
     $images = glob($location . $types, GLOB_BRACE);
-    $names = [];
+    $img = [];
     foreach ($images as $image)
     {
-      $names[] = str_replace($root, "", $image);
+      $img[] = ['path' => str_replace($root, "", $image), 'name' => basename($image)];
     }
-
-    return $names;
+    return $img;
   }
 }
 
