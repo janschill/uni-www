@@ -35,6 +35,8 @@ class AdminController extends Controller
      * when page is loaded with POST we will check all form inputs
      * and set $valid to true to save the formData to the database
      */
+
+    // check if user wants to edit
     if (strcmp($route, 'adminblogid') === 0) {
       $edit = true;
     }
@@ -46,7 +48,7 @@ class AdminController extends Controller
     }
 
     if ($request->getMethod() == 'POST' && $valid) {
-      $this->saveFormData($request, $formData, $edit, $id);
+      $this->saveFormData($request, $formData, $id);
 
       return $this->redirect('/admin/blog', 302);
     }
@@ -88,7 +90,7 @@ class AdminController extends Controller
       if(!isset($formData['tags']) || !isset($formData['tags']))
       {
         $valid = false;
-        $formError['cattag'] = "Please select atleast one category and tag";
+        $formError['cattag'] = "Please select atleast one category and one tag";
       }
 
 
@@ -171,9 +173,8 @@ class AdminController extends Controller
 
   /**
    */
-  protected function saveFormData(Request $request, $formData, $edit, $id)
+  protected function saveFormData(Request $request, $formData, $id)
   {
-    var_dump($formData);
     $task['title'] = $formData['title'];
     $task['text'] = $formData['text'];
     $task['created'] = $formData['created'];
@@ -181,13 +182,7 @@ class AdminController extends Controller
     $task['category'] = $formData['category'];
     $task['tags'] = $formData['tags'];
 
-
-    var_dump($task);
-    if ($edit) {
-      $this->blogModel->editPost($task, $id);
-    } else {
-      $this->blogModel->addPost($task);
-    }
+    $this->blogModel->addPost($task, $id);
   }
 
   /* **************************** logout **************************** */

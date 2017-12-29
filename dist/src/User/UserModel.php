@@ -11,9 +11,6 @@ class UserModel
     $this->db = $db;
   }
 
-  /**
-   * add new user to the database
-   */
   public function addUser($user)
   {
     if ($this->getUser($user['username']) == null) {
@@ -31,9 +28,6 @@ class UserModel
     }
   }
 
-  /**
-   * retrieve user from database
-   */
   public function getUser($username)
   {
     $query = "SELECT * FROM users WHERE username = :username";

@@ -9,9 +9,15 @@ class BlogModel extends Model
     parent::__construct($db);
   }
 
-
-  public function addPost($post)
+  public function addPost($post, $id)
   {
+    if ($this->getOnePost($id) != null) {
+      $queryDelete = "DELETE FROM posts WHERE id = :id";
+      $sqlDelete = $this->db->prepare($queryDelete);
+      $sqlDelete->bindParam(':id', $id);
+      $sqlDelete->execute();
+    }  
+    
     $sql = $this->db->prepare("INSERT INTO posts (title, text, created, author) VALUES (:title, :text, :created, :author)");
 
     $sql->bindParam(':title', $post['title']);
@@ -30,6 +36,11 @@ class BlogModel extends Model
 
   private function addTagToPost($lastId, $tags)
   {
+    $query = "DELETE FROM tag2post WHERE postsid = :postid";
+    $sql = $this->db->prepare($query);
+    $sql->bindParam(':postid', $lastId);
+    $sql->execute();
+    
     foreach ($tags as $tag)
     {
       $tagid = $this->getTagByName($tag);
@@ -45,6 +56,11 @@ class BlogModel extends Model
 
   private function addCategoryToPost($lastId, $categories)
   {
+    $query = "DELETE FROM category2post WHERE postsid = :postid";
+    $sql = $this->db->prepare($query);
+    $sql->bindParam(':postid', $lastId);
+    $sql->execute();
+
     foreach ($categories as $category)
     {
       $categoryid = $this->getCategoryByName($category);
@@ -56,24 +72,6 @@ class BlogModel extends Model
       
       $sql->execute();
     }
-  }
-
-  public function editPost($post, $id)
-  {
-    $sql = $this->db->prepare("UPDATE posts SET title = :title, text = :text, created = :created, author = :author WHERE id = :id");
-
-    $sql->bindParam(':title', $post['title']);
-    $sql->bindParam(':text', $post['text']);
-    $sql->bindParam(':created', $post['created']);
-    $sql->bindParam(':author', $post['author']);
-    $sql->bindParam(':id', $id);
-
-    $sql->execute();
-
-    $lastId = $this->db->lastInsertId();
-
-    $this->addTagToPost($lastId, $post['tags']);
-    $this->addCategoryToPost($lastId, $post['category']);
   }
 
   public function getOnePost($id)
