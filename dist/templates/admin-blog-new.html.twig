@@ -23,6 +23,7 @@
                         value="{{ form['title'] }}" placeholder="Enter title">
 
                     <select name="form[cover]">
+                        <option value=""> - </option>
                         {% for image in images %}
                         <option value="{{ image.path }}" 
                             {% if image.path == form['cover'] %}selected="selected"

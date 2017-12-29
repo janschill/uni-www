@@ -17,9 +17,13 @@ class BlogController extends Controller
   {
     $user = $request->attributes->get('user');
     $posts = $this->blogModel->getAllPosts($request);
+    $categories = $this->blogModel->getAllCategories();
+    $tags = $this->blogModel->getAllTags();
     $html = $this->container['twig']->render('blog.html.twig', [
       'posts' => $posts,
       'user' => $user,
+      'tags' => $tags,
+      'categories' => $categories
     ]);
     return new Response($html);
   }
