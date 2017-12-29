@@ -15,13 +15,14 @@
                     Add New Media
                     <span class="admin__button js-Formlink"><a href="/admin/media/new">new Media</a></span>
                 </h3>
+                {% if error['format'] %}<p class="form__error form__error--danger">{{ error['format'] }}</p>{% endif %}
 
                 {% if showForm == true %}
                     {% include 'admin-media-form.html.twig' %}                                    
                 {% endif %}
 
                 {% for image in images %}
-                  <img class="admin__image admin__image--small" src="/images/uploads/{{ image }}">
+                  <img class="admin__image admin__image--small" src="{{ image }}">
                 {% endfor %}
 
               </article>
