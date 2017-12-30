@@ -66,7 +66,7 @@ class FrontController implements \Front\FrontControllerInterface
   private function checkPermission($parameters)
   {
     $options = $this->routes->get($parameters['_route'])->getOptions();
-    
+
     $user = $this->request->attributes->get('user');
     if (isset($options['_permission'])) {
       if (!$user->hasPermission($options['_permission'])) {

@@ -96,8 +96,8 @@ class UserModel
     JOIN users ON users.id = user2permission.userid";
 
     $sql = $this->db->prepare($query);
-    $sql->execute();    
-    
+    $sql->execute();
+
     $row = $sql->fetchAll();
     return $row;
   }
@@ -108,10 +108,10 @@ class UserModel
     JOIN user2permission ON permissions.id = user2permission.permissionid
     JOIN users ON users.id = user2permission.userid
     WHERE users.username = :username";
-    
+
     $sql = $this->db->prepare($query);
     $sql->bindParam(':username', $username);
-    $sql->execute();    
+    $sql->execute();
     /* to format the return array – fetches first item from every row – would otherwise return 2d array */
     $row = $sql->fetchAll(\PDO::FETCH_COLUMN, 0);
     return $row;

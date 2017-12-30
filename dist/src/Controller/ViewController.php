@@ -10,7 +10,6 @@ class ViewController extends Controller
   public function __construct($container)
   {
     parent::__construct($container);
-    // $this->model = new \App\Model($this->container['db']);
   }
 
   public function showIndex($request)
@@ -39,12 +38,21 @@ class ViewController extends Controller
       echo "Project";
     }
   }
-  // public function showBlog($request)
-  // {
-  //     $user = $request->attributes->get('user');
-  //     $html = $this->container['twig']->render('blog.html.twig', ['user' => $user]);
-  //     return new Response($html);
-  // }
+
+  public function showBlog($request)
+  {
+    $user = $request->attributes->get('user');
+    $posts = $this->blogModel->getAllPosts($request);
+    $categories = $this->blogModel->getAllCategories();
+    $tags = $this->blogModel->getAllTags();
+    $html = $this->container['twig']->render('blog.html.twig', [
+      'posts' => $posts,
+      'user' => $user,
+      'tags' => $tags,
+      'categories' => $categories
+    ]);
+    return new Response($html);
+  }
 
   public function showConf($request)
   {

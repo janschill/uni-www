@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
  * helper class to remove the trailing slash, which sometimes get typed by accident
  * eg.: url.de/projects/id/ => url.de/projects/id
  */
-class RedirectingController extends Controller 
+class RedirectingController extends Controller
 {
 
   public function removeTrailingSlash($request)

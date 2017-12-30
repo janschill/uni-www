@@ -21,7 +21,7 @@ $routes->add(
   'logout',
   new Route(
     '/logout',
-    ['_controller' => 'Admin\AdminController::logoutAction']
+    ['_controller' => 'Controller\LoginController::logoutAction']
   )
 );
 
@@ -29,10 +29,9 @@ $routes->add(
   'login',
   new Route(
     '/login',
-    ['_controller' => 'Controller\LoginController::showFormAction']
+    ['_controller' => 'Controller\LoginController::loginAction']
   )
 );
-
 
 
 /* **************************** admin **************************** */
@@ -40,7 +39,7 @@ $routes->add(
   'admin',
   new Route(
     '/admin',
-    ['_controller' => 'Admin\AdminController::showAdminAction'],
+    ['_controller' => 'Admin\HomeController::showAdminHomeAction'],
     [],
     ['_permission' => 'edit']
   )
@@ -51,7 +50,7 @@ $routes->add(
   'adminblognew',
   new Route(
     '/admin/blog/new',
-    ['_controller' => 'Admin\AdminController::showFormAction'],
+    ['_controller' => 'Admin\BlogController::showFormAction'],
     [],
     ['_permission' => 'edit']
   )
@@ -62,7 +61,7 @@ $routes->add(
   'adminblogdelete',
   new Route(
     '/admin/blog/delete/{id}',
-    ['_controller' => 'Admin\AdminController::deleteAdminBlogAction'],
+    ['_controller' => 'Admin\BlogController::deleteAdminBlogAction'],
     ['id' => '\d+'],
     ['_permission' => 'delete']
   )
@@ -73,7 +72,7 @@ $routes->add(
   'adminblogid',
   new Route(
     '/admin/blog/edit/{id}',
-    ['_controller' => 'Admin\AdminController::showFormAction'],
+    ['_controller' => 'Admin\BlogController::showFormAction'],
     [],
     ['_permission' => 'edit']
   )
@@ -84,7 +83,7 @@ $routes->add(
   'adminblog',
   new Route(
     '/admin/blog',
-    ['_controller' => 'Admin\AdminController::showAdminBlogAction'],
+    ['_controller' => 'Admin\BlogController::showAdminAction'],
     [],
     ['_permission' => 'edit']
   )
@@ -95,7 +94,7 @@ $routes->add(
   'adminprojectnew',
   new Route(
     '/admin/project/new',
-    ['_controller' => 'Admin\AdminController::showBlog'],
+    ['_controller' => 'Admin\ProjectsController::showFormAction'],
     [],
     ['_permission' => 'edit']
   )
@@ -106,7 +105,7 @@ $routes->add(
   'adminprojectdelete',
   new Route(
     '/admin/project/delete/{id}',
-    ['_controller' => 'Admin\AdminController::showBlog'],
+    ['_controller' => 'Admin\ProjectsController::showBlog'],
     ['id' => '\d+'],
     ['_permission' => 'delete']
   )
@@ -117,18 +116,18 @@ $routes->add(
   'adminprojectid',
   new Route(
     '/admin/project/edit/{id}',
-    ['_controller' => 'Admin\AdminController::showBlog'],
+    ['_controller' => 'Admin\ProjectsController::showFormAction'],
     [],
     ['_permission' => 'edit']
-    )
-  );
-  
+  )
+);
+
 /* **************************** admin / project **************************** */
 $routes->add(
   'adminproject',
   new Route(
     '/admin/project',
-    ['_controller' => 'Admin\AdminController::showAdminProjectsAction'],
+    ['_controller' => 'Admin\BlogController::showAdminAction'],
     [],
     ['_permission' => 'edit']
   )
@@ -217,7 +216,7 @@ $routes->add(
   'blog',
   new Route(
     '/blog',
-    ['_controller' => 'Controller\BlogController::showAllPosts']
+    ['_controller' => 'Controller\ViewController::showBlog']
   )
 );
 
@@ -236,15 +235,15 @@ $routes->add(
     '/{url}',
     array(
       '_controller' => 'Helper\RedirectingController::removeTrailingSlash',
-        ),
-        array(
-            'url' => '.*/$',
-        ),
-        array(),
-        '',
-        array(),
-        array('GET')
-    )
+    ),
+    array(
+      'url' => '.*/$',
+    ),
+    array(),
+    '',
+    array(),
+    array('GET')
+  )
 );
 
 

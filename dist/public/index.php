@@ -18,8 +18,7 @@ $container['root'] = $ROOTPATH;
 $request = Request::createFromGlobals();
 
 $session = $request->getSession();
-if (!$session)
-{
+if (!$session) {
   $session = new Session();
 }
 $user = User\User::getFromSession($container, $session);

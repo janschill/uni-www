@@ -20,7 +20,7 @@ class LoginController extends Controller
   /**
    * entry point for data form submission
    */
-  public function showFormAction(Request $request)
+  public function loginAction(Request $request)
   {
     $formData = [];
     $formError = [];
@@ -82,5 +82,13 @@ class LoginController extends Controller
     } else {
       $session->remove('username');
     }
+  }
+
+  /* **************************** logout **************************** */
+  public function logoutAction($request)
+  {
+    $user = $this->getAttributeFromRequest($request, 'user');
+    $user->logout($request);
+    return $this->redirect('/', 302);
   }
 }

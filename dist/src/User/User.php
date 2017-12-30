@@ -61,8 +61,7 @@ class User
   function logout($request)
   {
     $session = $request->getSession();
-    if (!$session) 
-    {
+    if (!$session) {
       $session = new Session();
     }
     $session->remove('username');

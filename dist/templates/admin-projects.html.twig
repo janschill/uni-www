@@ -10,18 +10,48 @@
             {% include 'admin-aside.html.twig' %}
 
             <article class="admin__article">
-                <h3>
+                <h3 class="admin__header">
                     Projects
-                    <span><a href="/admin/project/new">new Project</a></span>
+                    <span class="admin__button"><a href="project/new">new Project</a></span>
                 </h3>
-                <ul class="projects">
+                <table class="posts posts--project">
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Category</th>
+                        <th>Tags</th>                        
+                        <th>Created</th>
+                    </tr>
                     {% for post in posts %}
-                        <li class="project">
-                            <a class="project__title" href="admin/project/edit/{{ post.id }}">{{ post.title }}</a>
-                            <a class="project__delete" href="admin/project/delete/{{ post.id }}">Delete</a>
-                        </li>
+                        <tr class="posts__post">
+                            <td class="posts__title">
+                                <a href="project/edit/{{ post.id }}">{{ post.title }}</a>
+                                <p>{{ post.description }}</p>
+                            </td>
+                            <td class="posts__author"><a href="project/{{ post.author }}">{{ post.author }}</a></td>
+                            <td class="posts__category">
+                                {% for category in post.category %}
+                                    {{ category }}
+                                    {% if not loop.last %}
+                                    <span>,</span>
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
+                            <td class="posts__tags">
+                                {% for tag in post.tags %}
+                                    {{ tag }}
+                                    {% if not loop.last %}
+                                    <span>,</span>
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
+                            <td>{{ post.created }}</td>
+                            {# <td>{{ post.created|date("Y/m/d") }}</td> #}
+                            <td><a class="posts__delete" href="project/delete/{{ post.id }}">Delete</a></td>
+                        </tr>
                     {% endfor %}
-                </ul>
+                </table>
+
               </article>
         </section>
 

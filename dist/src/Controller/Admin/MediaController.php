@@ -14,7 +14,7 @@ class MediaController extends Controller
   {
     parent::__construct($container);
   }
-  
+
   /* **************************** image / upload **************************** */
   public function showAdminMediaFormAction($request)
   {
@@ -22,10 +22,10 @@ class MediaController extends Controller
     $images = [];
 
     if ($request->getMethod() !== 'POST') {
-     $showForm = true;
+      $showForm = true;
       //hide form
     } else {
-     $showForm = false;
+      $showForm = false;
       if (FileUploader::upload($this->root) != 1) {
         var_dump("error");
         $error['format'] = "Invalid file format";
@@ -33,15 +33,17 @@ class MediaController extends Controller
     }
 
     $images = ShowImagesFromFolder::showImages($this->root);
+    $user = $this->getAttributeFromRequest($request, 'user');
 
     $html = $this->render('admin-media.html.twig', [
       'images' => $images,
       'showForm' => $showForm,
-      'error' => $error
+      'error' => $error,
+      'user' => $user
     ]);
-    
+
     return new Response($html);
-    
+
   }
 
 }
