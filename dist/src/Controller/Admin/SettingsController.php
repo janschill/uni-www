@@ -38,8 +38,8 @@ class SettingsController extends Controller
     }
 
     $user = $this->getAttributeFromRequest($request, 'user');
-    $tags = $this->blogModel->getAllTags();
-    $categories = $this->blogModel->getAllCategories();
+    $tags = $this->postModel->getAllTags();
+    $categories = $this->postModel->getAllCategories();
     $users = $this->userModel->getAllUsers();
     $permissions = $this->userModel->getAllPermissions();
     $userpermissions = $this->userModel->getAllUsersPermissions();
@@ -61,7 +61,7 @@ class SettingsController extends Controller
     $valid = true;
     $formError = [];
 
-    if (!isset($data) || $this->blogModel->getTableByName($table, $data) != null) {
+    if (!isset($data) || $this->postModel->getTableByName($table, $data) != null) {
       $valid = false;
       $formError[$data] = 'Invalid ' . $data . '.';
     }
@@ -71,7 +71,7 @@ class SettingsController extends Controller
 
   private function saveFormData($table, $tag)
   {
-    $this->blogModel->addTag($table, $tag);
+    $this->postModel->addTag($table, $tag);
   }
 
   public function deleteAdminSettingsTagAction($request)
@@ -79,7 +79,7 @@ class SettingsController extends Controller
     $id = $this->getAttributeFromRequest($request, 'id');
 
     if (isset($id)) {
-      if ($this->blogModel->deleteTag($id)) {
+      if ($this->postModel->deleteTag($id)) {
         return $this->redirect('/admin/settings', 302);
       }
     }

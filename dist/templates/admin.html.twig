@@ -10,8 +10,25 @@
             {% include 'admin-aside.html.twig' %}
 
             <article class="admin__article">
-                <h2>Dashboard</h2>
+                <h2>Most recent</h2>
+                <div class="">
+                    <a href="admin/blog"><h2>Blog</h2></a>
+                    {% for post in blog %}
+                        <a href="/blog/{{ post.title }}" ><h3>{{ post.title }}</h3></a>
+                        <p>{{ post.description }}</p>
+                    {% endfor %}
+                </div>
+                
+                <div class="">
+                    <a href="admin/projects"><h2>Projects</h2></a>
+                    {% for post in projects %}
+                        <a href="/projects/{{ post.title }}" ><h3>{{ post.title }}</h3></a>
+                        <p>{{ post.description }}</p>
+                    {% endfor %}
+                </div>
             </article>
+
+
         </section>
 
 

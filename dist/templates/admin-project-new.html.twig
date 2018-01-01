@@ -1,6 +1,6 @@
 {% extends "layout.html.twig" %}
 
-{% block title %}Admin Panel{% endblock %}
+{% block title %}Project{% endblock %}
 {% block head %}
     {{ parent() }}
     <script src="/js/ckeditor/ckeditor.js"></script>
@@ -13,7 +13,7 @@
 
             <form enctype="multipart/form-data" class="admin-form admin-form__form--box" action="#" method="post">
                 <div class="admin-form__form">
-                    <h2 class="admin-form__heading">New Blog Post</h2>
+                    <h2 class="admin-form__heading">New Project</h2>
                     <input type="hidden" name="form[token]" value="{{ form['token'] }}">
                     <input type="hidden" name="form[author]" value="{{ form['author'] }}">
                     <input type="hidden" name="form[created]" value="{{ form['created'] }}">
@@ -21,7 +21,7 @@
                     {% if error['cattag'] %}<p class="form__error form__error--danger">{{ error['cattag'] }}</p>{% endif %}
                     <input class="admin-form__input admin-form__input--large" type="text" id="form_title" name="form[title]"
                         value="{{ form['title'] }}" placeholder="Enter title">
-                    <input class="admin-form__input admin-form__input--large" type="text" id="form_description" name="form[description]"
+                     <input class="admin-form__input admin-form__input--large" type="text" id="form_description" name="form[description]"
                         value="{{ form['description'] }}" placeholder="Enter description">
                     <select name="form[cover]">
                         <option value=""> - </option>

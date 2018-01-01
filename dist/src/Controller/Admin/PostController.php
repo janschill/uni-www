@@ -5,12 +5,13 @@ namespace Admin;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
-use Model\BlogModel;
+use Model\PostModel;
 use User\UserModel;
 use Controller\Controller;
 use Service\ShowImagesFromFolder;
+use Service\PathChecker;
 
-class BlogController extends Controller implements PostsInterface
+class PostController extends Controller implements FormInterface
 {
   protected $formData;
 
@@ -28,6 +29,7 @@ class BlogController extends Controller implements PostsInterface
     $edit = false;
     $route = $this->getAttributeFromRequest($request, '_route');
     $id = $this->getAttributeFromRequest($request, 'id');
+    $instance = PathChecker::checkPath($route);
 
     /**
      * when page is loaded with GET this will trigger and fill out
@@ -38,28 +40,29 @@ class BlogController extends Controller implements PostsInterface
      */
 
     // check if user wants to edit
-    if (strcmp($route, 'adminblogid') === 0) {
-      $edit = true;
-    }
+    // if (strcmp($route, 'adminblogid') === 0) {
+    //   $edit = true;
+    // }
+
     if ($request->getMethod() !== 'POST') {
-      $formData = $this->getFormDefaults($request, $edit, $id);
+      $formData = $this->getFormDefaults($request, $instance, $id);
     } else {
       $formData = $request->get('form');
       list($valid, $formError) = $this->isFormDataValid($request, $formData);
     }
 
     if ($request->getMethod() == 'POST' && $valid) {
-      $this->saveFormData($request, $formData, $id);
+      $this->saveFormData($request, $instance['instance'], $formData, $id);
 
-      return $this->redirect('/admin/blog', 302);
+      return $this->redirect('/admin/' . $instance['instance'], 302);
     }
 
     $user = $this->getAttributeFromRequest($request, 'user');
-    $categories = $this->blogModel->getAllCategories();
-    $tags = $this->blogModel->getAllTags();
+    $categories = $this->postModel->getAllCategories();
+    $tags = $this->postModel->getAllTags();
     $images = ShowImagesFromFolder::showImages($this->root);
 
-    $html = $this->render('admin-blog-new.html.twig', [
+    $html = $this->render($instance['html'], [
       'form' => $formData,
       'error' => $formError,
       'user' => $user,
@@ -108,14 +111,15 @@ class BlogController extends Controller implements PostsInterface
     return [$valid, $formError];
   }
 
-  public function getFormDefaults($request, $edit, $id)
+  public function getFormDefaults($request, $instance, $id)
   {
-    if ($edit) {
-      $post = $this->blogModel->getOnePost($id);
-      $categories = $this->blogModel->getCategoryById($post['id']);
-      $tags = $this->blogModel->getTagsById($post['id']);
+    if ($instance['edit']) {
+      $post = $this->postModel->getOnePost($instance['instance'], $id);
+      $categories = $this->postModel->getCategoryById($instance['instance'], $post['id']);
+      $tags = $this->postModel->getTagsById($instance['instance'], $post['id']);
 
       $formData['title'] = $post['title'];
+      $formData['description'] = $post['description'];
       $formData['text'] = $post['text'];
       $formData['created'] = $post['created'];
       $formData['author'] = $post['author'];
@@ -126,6 +130,7 @@ class BlogController extends Controller implements PostsInterface
     } else {
       $formData['title'] = null;
       $formData['text'] = null;
+      $formData['description'] = null;
 
       if (date_default_timezone_get() != 'CET') {
         date_default_timezone_set('CET');
@@ -144,9 +149,10 @@ class BlogController extends Controller implements PostsInterface
     return $formData;
   }
 
-  public function saveFormData(Request $request, $formData, $id)
+  public function saveFormData(Request $request, $instance, $formData, $id)
   {
     $task['title'] = $formData['title'];
+    $task['description'] = $formData['description'];
     $task['text'] = $formData['text'];
     $task['created'] = $formData['created'];
     $task['author'] = $formData['author'];
@@ -154,28 +160,26 @@ class BlogController extends Controller implements PostsInterface
     $task['tags'] = $formData['tags'];
     $task['cover'] = $formData['cover'];
 
-    $this->blogModel->addPost($task, $id);
+    $this->postModel->addPost($instance, $task, $id);
   }
 
 
   /* **************************** admin / blog **************************** */
   public function showAdminAction($request)
   {
+    $author = $this->getAttributeFromRequest($request, 'author');
     $route = $this->getAttributeFromRequest($request, '_route');
-
-    var_dump($route);
-
     $instance = PathChecker::checkPath($route);
     
-    if(strcmp($route, 'adminblog') == 0) {
-      $instance = 'posts';
-      $htmlfile = 'admin-blog.html.twig';
-    } else {
-      $instance = 'projects';
-      $htmlfile = 'admin-projects.html.twig';
+    if ($author !== null)
+    {
+      $authorId = $this->userModel->getUserId($author);
+      $posts = $this->postModel->getAllPostsByAuthor($instance['instance'], $authorId['id']);
+    } else 
+    {
+      $posts = $this->postModel->getAllPosts($instance['instance']);
     }
-    var_dump($instance);
-    $posts = $this->blogModel->getAllPosts($instance);
+
     $posts_edited = [];
     $tags = [];
     $categories = [];
@@ -183,38 +187,33 @@ class BlogController extends Controller implements PostsInterface
     foreach ($posts as $post) {
       $temp_author = $this->userModel->getUserById($post['author']);
       $post['author'] = $temp_author['username'];
-      $post['tags'] = $this->blogModel->getTagsById($post['id']);
-      $post['category'] = $this->blogModel->getCategoryById($post['id']);
+      $post['tags'] = $this->postModel->getTagsById($instance['instance'], $post['id']);
+      $post['category'] = $this->postModel->getCategoryById($instance['instance'], $post['id']);
       array_push($posts_edited, $post);
     }
 
     $user = $this->getAttributeFromRequest($request, 'user');
-    $html = $this->render($htmlfile, array(
+    $html = $this->render($instance['html'], array(
       'posts' => $posts_edited,
-      'user' => $user
+      'user' => $user,
+      'instance' => $instance
     ));
 
     return new Response($html);
   }
 
   /* **************************** admin / blog / delete **************************** */
-  public function deleteAdminBlogAction($request)
+  public function deleteAdminAction($request)
   {
     $id = $this->getAttributeFromRequest($request, 'id');
+    $route = $this->getAttributeFromRequest($request, '_route');
+    $instance = PathChecker::checkPath($route);
 
     if (isset($id)) {
-      if ($this->blogModel->deletePost($id)) {
-        return $this->redirect('/admin/blog', 302);
+      if ($this->postModel->deletePost($instance['instance'], $id)) {
+        $newpath = '/admin/' . $instance['instance'];
+        return $this->redirect($newpath, 302);
       }
     }
   }
-
-  /* **************************** admin / blog / edit **************************** */
-  public function editAdminBlogAction($request)
-  {
-    // $id = $request->attributes->get('id');
-    $this->showFormAction($request);
-
-  }
-
 }

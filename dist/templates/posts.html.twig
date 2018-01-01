@@ -1,0 +1,31 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}{{ instance.instance }}{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    <section class="blog">
+        <h1 class="blog__heading">{{ instance.instance }}</h1>
+        
+        <article class="posts-container">
+            {% for post in posts %}
+                <a class="posts" href="{{ instance.instance }}/{{ post.id }}">
+                    <div class="posts__header">
+                        {% if not post.cover == null %}
+                            <img class="posts__cover" src="{{ post.cover }}">
+                        {% endif %}
+                        <div class="posts__title">
+                            <h2 class="">{{ post.title }}</h2>
+                        </div>
+                    </div>
+                    <div class="posts__description">
+                        <p>
+                            {{ post.description }}
+                        </p>
+                    </div>
+                </a>
+            {% endfor %}
+        </article>
+    </section>
+{% endblock %}

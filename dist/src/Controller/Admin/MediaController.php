@@ -27,7 +27,6 @@ class MediaController extends Controller
     } else {
       $showForm = false;
       if (FileUploader::upload($this->root) != 1) {
-        var_dump("error");
         $error['format'] = "Invalid file format";
       }
     }
@@ -45,5 +44,4 @@ class MediaController extends Controller
     return new Response($html);
 
   }
-
 }

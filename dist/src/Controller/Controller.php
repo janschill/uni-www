@@ -5,22 +5,20 @@ namespace Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Model\BlogModel;
-use Model\ProjectModel;
+use Model\PostModel;
 use User\UserModel;
 
 class Controller
 {
   protected $container;
-  protected $blogModel, $userModel, $projectModel;
+  protected $postModel, $userModel;
   protected $root;
 
   public function __construct($container)
   {
     $this->container = $container;
-    $this->blogModel = new BlogModel($this->container['db']);
+    $this->postModel = new PostModel($this->container['db']);
     $this->userModel = new UserModel($this->container['db']);
-    $this->projectModel = new ProjectModel($this->container['db']);    
     $this->root = $this->container['root'];
   }
 

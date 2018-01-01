@@ -1,6 +1,6 @@
 {% extends "layout.html.twig" %}
 
-{% block title %}Projects{% endblock %}
+{% block title %}Admin{% endblock %}
 {% block head %}
     {{ parent() }}
 {% endblock %}
@@ -11,10 +11,10 @@
 
             <article class="admin__article">
                 <h3 class="admin__header">
-                    Projects
-                    <span class="admin__button"><a href="project/new">new Project</a></span>
+                    {{ instance.instance }}
+                    <span class="admin__button"><a href="{{ instance.instance }}/new">new Post</a></span>
                 </h3>
-                <table class="posts posts--project">
+                <table class="admin-posts admin-posts--blog">
                     <tr>
                         <th>Title</th>
                         <th>Author</th>
@@ -23,13 +23,13 @@
                         <th>Created</th>
                     </tr>
                     {% for post in posts %}
-                        <tr class="posts__post">
-                            <td class="posts__title">
-                                <a href="project/edit/{{ post.id }}">{{ post.title }}</a>
+                        <tr class="admin-posts__post">
+                            <td class="admin-posts__title">
+                                <a href="{{ instance.instance }}/edit/{{ post.id }}">{{ post.title }}</a>
                                 <p>{{ post.description }}</p>
                             </td>
-                            <td class="posts__author"><a href="project/{{ post.author }}">{{ post.author }}</a></td>
-                            <td class="posts__category">
+                            <td class="admin-posts__author"><a href="{{ instance.instance }}/{{ post.author }}">{{ post.author }}</a></td>
+                            <td class="admin-posts__category">
                                 {% for category in post.category %}
                                     {{ category }}
                                     {% if not loop.last %}
@@ -37,7 +37,7 @@
                                     {% endif %}
                                 {% endfor %}
                             </td>
-                            <td class="posts__tags">
+                            <td class="admin-posts__tags">
                                 {% for tag in post.tags %}
                                     {{ tag }}
                                     {% if not loop.last %}
@@ -45,9 +45,8 @@
                                     {% endif %}
                                 {% endfor %}
                             </td>
-                            <td>{{ post.created }}</td>
-                            {# <td>{{ post.created|date("Y/m/d") }}</td> #}
-                            <td><a class="posts__delete" href="project/delete/{{ post.id }}">Delete</a></td>
+                            <td>{{ post.created|date("Y/m/d") }}</td>
+                            <td><a class="admin-posts__delete" href="{{ instance.instance }}/delete/{{ post.id }}">Delete</a></td>
                         </tr>
                     {% endfor %}
                 </table>

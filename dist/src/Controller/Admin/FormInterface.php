@@ -4,7 +4,7 @@ namespace Admin;
 
 use Symfony\Component\HttpFoundation\Request;
 
-interface PostsInterface
+interface FormInterface
 {
 
   function __construct($container);
@@ -13,9 +13,9 @@ interface PostsInterface
 
   function isFormDataValid(Request $request, $formData);
 
-  function getFormDefaults($request, $edit, $id);
+  function getFormDefaults($request, $instance, $id);
 
-  function saveFormData(Request $request, $formData, $id);
+  function saveFormData(Request $request, $instance, $formData, $id);
 
   function showAdminAction($request);
 }

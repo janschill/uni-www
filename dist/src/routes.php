@@ -45,12 +45,23 @@ $routes->add(
   )
 );
 
+/* **************************** admin **************************** */
+$routes->add(
+  'adminabout',
+  new Route(
+    '/admin/about',
+    ['_controller' => 'Admin\AboutController::showAdminAction'],
+    [],
+    ['_permission' => 'edit']
+  )
+);
+
 /* **************************** admin / blog / new **************************** */
 $routes->add(
   'adminblognew',
   new Route(
     '/admin/blog/new',
-    ['_controller' => 'Admin\BlogController::showFormAction'],
+    ['_controller' => 'Admin\PostController::showFormAction'],
     [],
     ['_permission' => 'edit']
   )
@@ -61,7 +72,7 @@ $routes->add(
   'adminblogdelete',
   new Route(
     '/admin/blog/delete/{id}',
-    ['_controller' => 'Admin\BlogController::deleteAdminBlogAction'],
+    ['_controller' => 'Admin\PostController::deleteAdminAction'],
     ['id' => '\d+'],
     ['_permission' => 'delete']
   )
@@ -72,18 +83,30 @@ $routes->add(
   'adminblogid',
   new Route(
     '/admin/blog/edit/{id}',
-    ['_controller' => 'Admin\BlogController::showFormAction'],
+    ['_controller' => 'Admin\PostController::showFormAction'],
     [],
     ['_permission' => 'edit']
   )
 );
+
+/* **************************** admin / blog / author **************************** */
+$routes->add(
+  'adminblogauthor',
+  new Route(
+    '/admin/blog/{author}',
+    ['_controller' => 'Admin\PostController::showAdminAction'],
+    ['_permission' => 'edit']
+  )
+);
+
+
 
 /* **************************** admin / blog **************************** */
 $routes->add(
   'adminblog',
   new Route(
     '/admin/blog',
-    ['_controller' => 'Admin\BlogController::showAdminAction'],
+    ['_controller' => 'Admin\PostController::showAdminAction'],
     [],
     ['_permission' => 'edit']
   )
@@ -93,8 +116,8 @@ $routes->add(
 $routes->add(
   'adminprojectnew',
   new Route(
-    '/admin/project/new',
-    ['_controller' => 'Admin\ProjectsController::showFormAction'],
+    '/admin/projects/new',
+    ['_controller' => 'Admin\PostController::showFormAction'],
     [],
     ['_permission' => 'edit']
   )
@@ -104,8 +127,8 @@ $routes->add(
 $routes->add(
   'adminprojectdelete',
   new Route(
-    '/admin/project/delete/{id}',
-    ['_controller' => 'Admin\ProjectsController::showBlog'],
+    '/admin/projects/delete/{id}',
+    ['_controller' => 'Admin\PostController::deleteAdminAction'],
     ['id' => '\d+'],
     ['_permission' => 'delete']
   )
@@ -115,9 +138,19 @@ $routes->add(
 $routes->add(
   'adminprojectid',
   new Route(
-    '/admin/project/edit/{id}',
-    ['_controller' => 'Admin\ProjectsController::showFormAction'],
+    '/admin/projects/edit/{id}',
+    ['_controller' => 'Admin\PostController::showFormAction'],
     [],
+    ['_permission' => 'edit']
+  )
+);
+
+/* **************************** admin / blog / author **************************** */
+$routes->add(
+  'adminprojectsauthor',
+  new Route(
+    '/admin/projects/{author}',
+    ['_controller' => 'Admin\PostController::showAdminAction'],
     ['_permission' => 'edit']
   )
 );
@@ -126,8 +159,8 @@ $routes->add(
 $routes->add(
   'adminproject',
   new Route(
-    '/admin/project',
-    ['_controller' => 'Admin\BlogController::showAdminAction'],
+    '/admin/projects',
+    ['_controller' => 'Admin\PostController::showAdminAction'],
     [],
     ['_permission' => 'edit']
   )
@@ -201,7 +234,7 @@ $routes->add(
   'projects',
   new Route(
     '/projects',
-    ['_controller' => 'Controller\ViewController::showProjects']
+    ['_controller' => 'Controller\ViewController::showPosts']
   )
 );
 
@@ -209,14 +242,15 @@ $routes->add(
   'projectsID',
   new Route(
     '/projects/{id}',
-    ['_controller' => 'Controller\ViewController::showProjects']
+    ['_controller' => 'Controller\ViewController::showSinglePost'],
+    ['id' => '\d+']
   )
 );
 $routes->add(
   'blog',
   new Route(
     '/blog',
-    ['_controller' => 'Controller\ViewController::showBlog']
+    ['_controller' => 'Controller\ViewController::showPosts']
   )
 );
 
@@ -224,7 +258,8 @@ $routes->add(
   'blogID',
   new Route(
     '/blog/{id}',
-    ['_controller' => 'Controller\ViewController::showBlog']
+    ['_controller' => 'Controller\ViewController::showSinglePost'],
+    ['id' => '\d+']
   )
 );
 

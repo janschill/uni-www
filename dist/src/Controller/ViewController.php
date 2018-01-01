@@ -4,6 +4,7 @@ namespace Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Service\PathChecker;
 
 class ViewController extends Controller
 {
@@ -31,28 +32,48 @@ class ViewController extends Controller
     $user = $request->attributes->get('user');
     $id = $request->attributes->get('id');
 
-    if (!isset($id)) {
-      $html = $this->container['twig']->render('projects.html.twig', ['user' => $user]);
-      return new Response($html);
-    } else {
-      echo "Project";
-    }
+
   }
 
-  public function showBlog($request)
+  public function showPosts($request)
   {
     $user = $request->attributes->get('user');
-    $posts = $this->blogModel->getAllPosts($request);
-    $categories = $this->blogModel->getAllCategories();
-    $tags = $this->blogModel->getAllTags();
-    $html = $this->container['twig']->render('blog.html.twig', [
+    $route = $this->getAttributeFromRequest($request, '_route');
+    $instance = PathChecker::checkPath($route);
+    $posts = $this->postModel->getAllPosts($instance['instance']);
+    $categories = $this->postModel->getAllCategories();
+    $tags = $this->postModel->getAllTags();
+
+    $html = $this->render($instance['html'], [
       'posts' => $posts,
       'user' => $user,
       'tags' => $tags,
-      'categories' => $categories
+      'categories' => $categories,
+      'instance' => $instance
     ]);
     return new Response($html);
   }
+
+  public function showSinglePost($request)
+  {
+    $id = $this->getAttributeFromRequest($request, 'id');
+    $user = $request->attributes->get('user');
+    $route = $this->getAttributeFromRequest($request, '_route');
+    $instance = PathChecker::checkPath($route);
+    $post = $this->postModel->getOnePost($instance['instance'], $id);
+    $categories = $this->postModel->getAllCategories();
+    $tags = $this->postModel->getAllTags();
+
+    $html = $this->render($instance['html'], [
+      'post' => $post,
+      'user' => $user,
+      'tags' => $tags,
+      'categories' => $categories,
+      'instance' => $instance
+    ]);
+    return new Response($html);
+  }
+
 
   public function showConf($request)
   {

@@ -66,6 +66,15 @@ class UserModel
     return $row;
   }
 
+  public function getUserId($username)
+  {
+    $sql = $this->db->prepare("SELECT id FROM users WHERE username = :username");
+    $sql->bindParam(':username', $username);
+    $sql->execute();
+    $row = $sql->fetch(\PDO::FETCH_ASSOC);
+    return $row;
+  }
+
   /**
    * check if user and password matches
    */
