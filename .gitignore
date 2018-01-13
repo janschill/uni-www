@@ -87,3 +87,5 @@ typings/
 
 composer.phar
 /vendor/
+
+.code-workspace
