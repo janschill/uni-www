@@ -23,17 +23,34 @@ Um in das Backend zu gelangen, haben wir uns an die heutigen CMS angelehnt und e
 ### Überlegungen zu den URIs 
 Im Routing gibt es:
 
-| Route       | Intention |
-|-------------|-----------|
-| `/`         |           |
-| `/login`    |           |
-| `/logout`   |           |
-| `/admin`    |           |
-| `/blog`     |           |
-| `/projects` |           |
-| `/about`    |           |
-| `/{}/id     |           |
-
+```
+|-- /
+    |-- /login
+    |-- /logout
+    |-- /blog
+        |-- /{id}
+    |-- /projects
+        |-- /{id}
+    |-- /about
+    |-- /admin
+        |-- /about
+        |-- /blog
+            |-- /new
+            |-- /delete/{id}
+            |-- /edit/{id}
+            |-- /{author}
+        |-- /projects
+            |-- /new
+            |-- /delete/{id}
+            |-- /edit/{id}
+            |-- /{author}        
+        |-- /media
+            |-- /new
+            |-- /delete/{id}
+        |-- /settings
+            |-- /tag/delete{id}
+            |-- /category/delete{id}
+```
 ### Externe Komponenten
 - `gulp.js`
 - `Sass`
