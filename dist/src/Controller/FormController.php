@@ -21,6 +21,7 @@ class FormController extends Controller
       }
     }
     $token = $_SESSION['token'];
+    var_dump($token);
 
     return $token;
   }

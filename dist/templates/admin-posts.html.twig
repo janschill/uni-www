@@ -11,7 +11,7 @@
 
             <article class="admin__article">
                 <h3 class="admin__header">
-                    {{ instance.instance }}
+                    {{ instance.instance | capitalize  }}
                     <span class="admin__button"><a href="{{ instance.instance }}/new">new Post</a></span>
                 </h3>
                 <table class="admin-posts admin-posts--blog">

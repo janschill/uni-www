@@ -5,10 +5,11 @@
     {{ parent() }}
 {% endblock %}
 {% block content %}
+{{ dump() }}
   <article class="post">
       <div class="post__header">
           <h2 class="post__heading">{{ post.title }}</h2>
-          <p class="post__created">{{ post.created }} {{ post.author }}</p>
+          <p class="post__created">{{ post.created }} {{ post.username }}</p>
           {% if not post.cover == null %}
           <img class="post__cover" src="{{ post.cover }}">
           {% endif %}
@@ -16,5 +17,40 @@
       <p class="post__text">
           {{ post.text | raw }}
       </p>
+    <aside>
+        <h3>Leave a message</h3>
+        <form action="/blog/{{ id }}/new" method="post">
+            <input type="hidden" name="form[token]" value="{{ form['token'] }}">
+            {% if error['name'] %}<p class="form__error form__error--danger">{{ error['name'] }}</p>{% endif %}
+            {% if error['token'] %}<p class="form__error form__error--danger">{{ error['token'] }}</p>{% endif %}
+              <div>
+                <label for="msg">Message:</label>
+                <textarea id="msg" name="form[text]"></textarea>
+              </div>
+
+              <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="form[author]">
+              </div>
+             
+              <div class="button">
+                <button type="submit">Post</button>
+              </div>
+        </form>
+
+        <h3>Comments</h3>
+        <div class="comments">
+            {% for comment in comments %}
+                <div class="comment">
+                    <h4 class="comment__header">{% if comment.author is defined %} {{ comment.username }} {% else %} {{ comment.author }} {% endif %}</h4>
+                    <p class="comment__date">{{ comment.created }}</p>
+                    <p class="comment__text">{{ comment.text | raw }}</p>
+                </div>
+            {% endfor %}
+        <div>
+
+    </aside>
   </article>
+
+
 {% endblock %}

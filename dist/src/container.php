@@ -2,6 +2,7 @@
 
 $loader = new \Twig_Loader_Filesystem(realpath(dirname(__FILE__)) . '/../templates');
 $twig = new \Twig_Environment($loader, ['cache' => false, 'debug' => true]);
+$twig->addExtension(new Twig_Extension_Debug());
 
 $db = new \PDO('sqlite:' . realpath(dirname(__FILE__)) . '/../data/website.db');
 $db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);

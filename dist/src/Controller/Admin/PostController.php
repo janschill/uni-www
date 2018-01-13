@@ -11,7 +11,7 @@ use Controller\Controller;
 use Service\ShowImagesFromFolder;
 use Service\PathChecker;
 
-class PostController extends \Controller\FormController implements FormInterface
+class PostController extends \Controller\FormController
 {
   protected $formData;
 
@@ -165,7 +165,7 @@ class PostController extends \Controller\FormController implements FormInterface
 
 
   /* **************************** admin / blog **************************** */
-  public function showAdminAction($request)
+  public function showAction($request)
   {
     $author = $this->getAttributeFromRequest($request, 'author');
     $route = $this->getAttributeFromRequest($request, '_route');

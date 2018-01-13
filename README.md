@@ -58,6 +58,7 @@ _hier ueberlegungen_
 - `Composer`
 - `Twig`
 - `BEM`
+- CKEditor
 
 ### Inspiration
 Da unser Projekt Richtung Blog und ein wenig in Content-Management-System geht, haben wir uns ein wenig an dem Backend von Wordpress orientiert. 
@@ -83,6 +84,7 @@ Wir haben uns entschieden die Hausarbeit aus dem letzten Semester in GOM (Fronte
 
 ## Auflistung der Implementierungen
 ### Backend
+#### Minimalanforderungen
 - :white_check_mark: Objektorientierung
 - :white_check_mark: PHP-Version 5.6.x oder 7.x
 - :white_check_mark: Codestyle nach PSR-1 und PSR-2
@@ -111,6 +113,7 @@ Wir haben uns entschieden die Hausarbeit aus dem letzten Semester in GOM (Fronte
 - :white_check_mark: größer Umfang
 
 ### Frontend
+#### Minimalanforderungen
 - :white_check_mark: Valides HTML
 - :white_check_mark: Valides CSS
 - :white_check_mark: Semantisches HTML

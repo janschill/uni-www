@@ -50,7 +50,7 @@ $routes->add(
   'adminabout',
   new Route(
     '/admin/about',
-    ['_controller' => 'Admin\AboutController::showAdminAction'],
+    ['_controller' => 'Admin\AboutController::showAction'],
     [],
     ['_permission' => 'edit']
   )
@@ -94,7 +94,7 @@ $routes->add(
   'adminblogauthor',
   new Route(
     '/admin/blog/{author}',
-    ['_controller' => 'Admin\PostController::showAdminAction'],
+    ['_controller' => 'Admin\PostController::showAction'],
     ['_permission' => 'edit']
   )
 );
@@ -106,7 +106,7 @@ $routes->add(
   'adminblog',
   new Route(
     '/admin/blog',
-    ['_controller' => 'Admin\PostController::showAdminAction'],
+    ['_controller' => 'Admin\PostController::showAction'],
     [],
     ['_permission' => 'edit']
   )
@@ -150,7 +150,7 @@ $routes->add(
   'adminprojectsauthor',
   new Route(
     '/admin/projects/{author}',
-    ['_controller' => 'Admin\PostController::showAdminAction'],
+    ['_controller' => 'Admin\PostController::showAction'],
     ['_permission' => 'edit']
   )
 );
@@ -160,7 +160,7 @@ $routes->add(
   'adminproject',
   new Route(
     '/admin/projects',
-    ['_controller' => 'Admin\PostController::showAdminAction'],
+    ['_controller' => 'Admin\PostController::showAction'],
     [],
     ['_permission' => 'edit']
   )
@@ -259,6 +259,15 @@ $routes->add(
   new Route(
     '/blog/{id}',
     ['_controller' => 'Controller\ViewController::showSinglePost'],
+    ['id' => '\d+']
+  )
+);
+
+$routes->add(
+  'blogComment',
+  new Route(
+    '/blog/{id}/new',
+    ['_controller' => 'Controller\CommentController::showFormAction'],
     ['id' => '\d+']
   )
 );

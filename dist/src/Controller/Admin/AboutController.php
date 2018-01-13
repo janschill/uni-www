@@ -13,7 +13,7 @@ class AboutController extends Controller
     parent::__construct($container);
   }
 
-  public function showAdminAction($request)
+  public function showAction($request)
   {
     
     

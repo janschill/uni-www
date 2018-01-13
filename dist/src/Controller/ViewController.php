@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Service\PathChecker;
 
-class ViewController extends Controller
+class ViewController extends FormController
 {
   public function __construct($container)
   {
@@ -63,17 +63,21 @@ class ViewController extends Controller
     $post = $this->postModel->getOnePost($instance['instance'], $id);
     $categories = $this->postModel->getAllCategories();
     $tags = $this->postModel->getAllTags();
+    $comments = $this->postModel->getAllCommentsForPost($id);
+    $form['token'] = $this->getToken();
 
     $html = $this->render($instance['html'], [
+      'id' => $id,
       'post' => $post,
       'user' => $user,
       'tags' => $tags,
       'categories' => $categories,
-      'instance' => $instance
+      'instance' => $instance,
+      'comments' => $comments,
+      'form' => $form
     ]);
     return new Response($html);
   }
-
 
   public function showConf($request)
   {

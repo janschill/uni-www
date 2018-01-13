@@ -81,7 +81,7 @@ class PostModel extends Model
 
   public function getOnePost($instance, $id)
   {
-    $sql = $this->db->prepare("SELECT * FROM $instance WHERE id = :id");
+    $sql = $this->db->prepare("SELECT * FROM $instance JOIN users ON author = users.id WHERE $instance.id = :id");
     $sql->bindParam(':id', $id);
     $sql->execute();
     $row = $sql->fetch(\PDO::FETCH_ASSOC);
@@ -150,4 +150,35 @@ class PostModel extends Model
 
     return $sql;
   }
+
+  public function addComment($formData, $id)
+  {
+    if (date_default_timezone_get() != 'CET') 
+    {
+      date_default_timezone_set('CET');
+    }
+    $formData['created'] = date('m/d/Y h:i:s a', time());
+
+    $sql = $this->db->prepare("INSERT INTO comments (author, admin, text, created, blogid) VALUES (:author, :admin, :text, :created, :blogid)");
+
+    $sql->bindParam(':author', $formData['author']);
+    $sql->bindParam(':admin', $formData['admin']);
+    $sql->bindParam(':text', $formData['text']);
+    $sql->bindParam(':created', $formData['created']);
+    $sql->bindParam(':blogid', $id);
+        
+    $sql->execute();
+  }
+
+  public function getAllCommentsForPost($id)
+  {
+    $query = "SELECT c.author, c.text, c.created, u.username FROM comments c JOIN blog b ON c.blogid = b.id JOIN users u ON c.admin = u.id WHERE b.id = :id";
+    $sql = $this->db->prepare($query);
+    $sql->bindParam(':id', $id);
+    $sql->execute();
+    $row = $sql->fetchAll();
+
+    return $row;
+  }
+
 }

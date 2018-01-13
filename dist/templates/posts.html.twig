@@ -1,12 +1,12 @@
 {% extends "layout.html.twig" %}
 
-{% block title %}{{ instance.instance }}{% endblock %}
+{% block title %}{{ instance.instance | capitalize }}{% endblock %}
 {% block head %}
     {{ parent() }}
 {% endblock %}
 {% block content %}
     <section class="blog">
-        <h1 class="blog__heading">{{ instance.instance }}</h1>
+        <h1 class="blog__heading">{{ instance.instance | capitalize}}</h1>
         
         <article class="posts-container">
             {% for post in posts %}
