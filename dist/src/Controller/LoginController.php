@@ -25,6 +25,7 @@ class LoginController extends FormController
     $formData = [];
     $formError = [];
     $valid = false;
+    $user = $this->getAttributeFromRequest($request, 'user');
 
     if ($request->getMethod() !== 'POST') {
       $formData = $this->getFormDefaults($request);
@@ -40,6 +41,7 @@ class LoginController extends FormController
     }
 
     $html = $this->container['twig']->render('login.html.twig', [
+      'user' => $user,
       'form' => $formData,
       'error' => $formError,
     ]);

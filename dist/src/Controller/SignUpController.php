@@ -22,6 +22,7 @@ class SignUpController extends FormController
     $formData = [];
     $formError = [];
     $valid = false;
+    $user = $this->getAttributeFromRequest($request, 'user');
 
     if ($request->getMethod() !== 'POST') {
       $formData = $this->getFormDefaults($request);
@@ -37,6 +38,7 @@ class SignUpController extends FormController
     }
 
     $html = $this->container['twig']->render('signup.html.twig', [
+      'user' => $user,
       'form' => $formData,
       'error' => $formError,
     ]);

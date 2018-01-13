@@ -6,6 +6,7 @@
 {% endblock %}
 {% block content %}
 
+    {% if not user.isAuthenticated %}
         <div class="formholder">
             <form class="form form--shadow form--small" action="#" method="post">
                 <input type="hidden" name="form[token]" value="{{ form['token'] }}">
@@ -17,5 +18,6 @@
                 <input class="form__submit form__submit--blue" type="submit" id="form_submit" value="Login">
             </form>
         </div>
+    {% endif %}
 
 {% endblock %}

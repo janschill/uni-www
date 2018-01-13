@@ -32,14 +32,6 @@ class CommentController extends FormController
 
       return $this->redirect('/blog/' . $id, 302);
     }
-
-    $html = $this->render($instance['html'], [
-      'form' => $formData,
-      'error' => $formError,
-      'user' => $user
-    ]);
-
-    return new Response($html);
   }
 
   function isFormDataValid($request, $formData)
@@ -59,7 +51,7 @@ class CommentController extends FormController
       throw new \Exception('Bad CSRF token.');
     }
 
-    if ((!isset($formData['author'])) || (!isset($formData['text']))) {
+    if ((!isset($formData['text']))) {
       $valid = false;
       $formError['author'] = "Please fill out all fields";
     }

@@ -23,10 +23,12 @@
             </ul>
             <a href="#" class="nav--toggle">&#9776;</a>
         </nav>
-        {% if user.isAuthenticated() %}
+        {% if user.isAuthenticated %}
         <nav class="nav nav--admin">
             <ul class="nav--active">
+                {% if user.hasPermission('delete') %}
                 <li class="nav__item nav__item--admin"><a href="/admin">Admin</a></li>
+                {% endif %}
                 <li class="nav__item nav__item--admin"><a href="/logout">Logout</a></li>
             </ul>
         </nav>
