@@ -17,7 +17,10 @@
       <p class="post__text">
           {{ post.text | raw }}
       </p>
+    
     <aside>
+    
+        {% if user.isAuthenticated %}
         <h3>Leave a message</h3>
         <form action="/blog/{{ id }}/new" method="post">
             <input type="hidden" name="form[token]" value="{{ form['token'] }}">
@@ -28,21 +31,17 @@
                 <textarea id="msg" name="form[text]"></textarea>
               </div>
 
-              <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="form[author]">
-              </div>
-             
               <div class="button">
                 <button type="submit">Post</button>
               </div>
         </form>
+        {% endif %}
 
         <h3>Comments</h3>
         <div class="comments">
             {% for comment in comments %}
                 <div class="comment">
-                    <h4 class="comment__header">{% if comment.author is defined %} {{ comment.username }} {% else %} {{ comment.author }} {% endif %}</h4>
+                    <h4 class="comment__header">{{ comment.username }}</h4>
                     <p class="comment__date">{{ comment.created }}</p>
                     <p class="comment__text">{{ comment.text | raw }}</p>
                 </div>

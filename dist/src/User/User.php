@@ -34,9 +34,6 @@ class User
     return (array_search($permissions, $this->permissions) !== false);
   }
 
-  /**
-   *
-   */
   static function getFromSession($container, Session $session)
   {
     $user = new User();
@@ -69,5 +66,4 @@ class User
     $this->isAuthenticated = false;
     $this->permissions = $this->anonPermissions();
   }
-
 }

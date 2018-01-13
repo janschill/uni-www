@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Session\Session;
 use User\UserModel;
 
-class LoginController extends FormController
+class SignUpController extends FormController
 {
   protected $formData;
 
@@ -17,10 +17,7 @@ class LoginController extends FormController
     parent::__construct($container);
   }
 
-  /**
-   * entry point for data form submission
-   */
-  public function loginAction(Request $request)
+  public function signUpAction(Request $request)
   {
     $formData = [];
     $formError = [];
@@ -30,16 +27,16 @@ class LoginController extends FormController
       $formData = $this->getFormDefaults($request);
     } else {
       $formData = $request->get('form');
-      list($valid, $formError) = $this->isLoginFormDataValid($request, $formData);
+      list($valid, $formError) = $this->isSignUpFormDataValid($request, $formData);
     }
 
     if ($request->getMethod() == 'POST' && $valid) {
       $this->saveFormData($request, $formData);
 
-      return new RedirectResponse('/admin');
+      return new RedirectResponse('/');
     }
 
-    $html = $this->container['twig']->render('login.html.twig', [
+    $html = $this->container['twig']->render('signup.html.twig', [
       'form' => $formData,
       'error' => $formError,
     ]);
@@ -53,10 +50,7 @@ class LoginController extends FormController
     return $formData;
   }
 
-  /**
-   * check if username/password is entered
-   */
-  protected function isLoginFormDataValid(Request $request, $formData)
+  protected function isSignUpFormDataValid(Request $request, $formData)
   {
     $valid = true;
     $formError = [];
@@ -83,11 +77,10 @@ class LoginController extends FormController
     return [$valid, $formError];
   }
 
-  /**
-   * put username/password into session, also check if combo is valid
-   */
   protected function saveFormData(Request $request, $formData)
   {
+    $this->userModel->addUser($formData);
+
     $session = $request->getSession();
     if (!$session) {
       $session = new Session();
@@ -98,13 +91,5 @@ class LoginController extends FormController
     } else {
       $session->remove('username');
     }
-  }
-
-  /* **************************** logout **************************** */
-  public function logoutAction($request)
-  {
-    $user = $this->getAttributeFromRequest($request, 'user');
-    $user->logout($request);
-    return $this->redirect('/', 302);
   }
 }

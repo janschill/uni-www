@@ -33,6 +33,13 @@ $routes->add(
   )
 );
 
+$routes->add(
+  'signup',
+  new Route(
+    '/signup',
+    ['_controller' => 'Controller\SignUpController::signUpAction']
+  )
+);
 
 /* **************************** admin **************************** */
 $routes->add(
@@ -268,10 +275,10 @@ $routes->add(
   new Route(
     '/blog/{id}/new',
     ['_controller' => 'Controller\CommentController::showFormAction'],
-    ['id' => '\d+']
+    ['id' => '\d+'],
+    ['_permission' => 'add']
   )
 );
-
 
 $routes->add(
   'removetrailingslash',

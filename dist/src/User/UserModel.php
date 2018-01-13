@@ -23,10 +23,23 @@ class UserModel
       $sql->bindParam(':password', password_hash($user['password'], PASSWORD_DEFAULT));
 
       $sql->execute();
+
+      $lastId = $this->db->lastInsertId();
+      $this->addPermissionToUser($lastId, 3);
     } else {
       throw new \Exception('User exists.');
     }
   }
+
+  public function addPermissionToUser($id, $permission)
+  {
+    $query = "INSERT INTO user2permission (userid, permissionid) VALUES (:userid, :permissionid)";
+    $sql = $this->db->prepare($query);
+    $sql->bindParam(':userid', $id);
+    $sql->bindParam(':permissionid', $permission);
+    $sql->execute();
+  }
+
 
   public function getUser($username)
   {

@@ -19,12 +19,11 @@ class CommentController extends FormController
     $route = $this->getAttributeFromRequest($request, '_route');
     $id = $this->getAttributeFromRequest($request, 'id');
     $user = $this->getAttributeFromRequest($request, 'user');
+    $username = $this->userModel->getUserId($user->getUsername());
 
-    if ($request->getMethod() !== 'POST') {
-      $formData = $this->getFormDefaults($request, $user);
-      var_dump($formData);die();
-    } else {
+    if ($request->getMethod() == 'POST') {
       $formData = $request->get('form');
+      $formData['admin'] = $username['id'];
       list($valid, $formError) = $this->isFormDataValid($request, $formData);
     }
 
@@ -66,18 +65,6 @@ class CommentController extends FormController
     }
 
     return [$valid, $formError];
-  }
-
-  function getFormDefaults($request, $user)
-  {  
-    $formData['token'] = $this->getToken();
-
-    if (!is_null($user))
-    {
-      $formData['admin'] = $this->userModel->getUserId($user['username']);
-    }
-
-    return $formData;
   }
 
   function saveFormData($request, $formData, $id)
