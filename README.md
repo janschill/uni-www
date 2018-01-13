@@ -4,8 +4,22 @@
 
 > Setzen Sie mit PHP (Backend) und HTML/CSS/Javascript (Frontend) eine Anwendung zur Nutzung im Browser um. Diese soll u.a. Nutzeranfragen über Formulare entgegennehmen, verarbeiten und die Ergebnisse als HTML-Seite anzeigen. Die Daten sollen dabei in einer Datenbank gespeichert werden.
 
-### Dokumentation 
-- Ziel und Funktionsumfang der Anwendung
+## Dokumentation 
+### Ziel und Funktionsumfang der Anwendung
+Wir haben uns entschieden das GOM-Projekt aus dem letzten Semester weiterzuführen, um so ein _komplettes_ Webseiten-Projekt einmal entwickelt zu haben.
+Die Aufgabe in GOM war es eine statische Webseite mit HTML und CSS umzusetzen, hier wählten wir als Projekt eine persönliche Webseite für Jan Schill, auf der, wie in einem Portfolio, verschiedenste Projekte aufgelistet werden.
+Nun haben wir dieses Projekt mit PHP so erweitert, dass es möglich ist die Projekte dynamisch anzulegen und zu verwalten. Außerdem können Blogeinträge verfasst werden.
+Es gibt verschiedene Benutzergruppen, welchen es ermöglicht entweder Einträge zu verfassen oder zu löschen.
+
+### Aufbau der Anwendung
+Die Anwendung ist nach dem MVC-Softwaremuster aufgebaut. Es gibt das `Model`, welches die Datenbank Verarbeitung übernimmt, den `View`, welcher per Twig-Templating, den Content an den Browser gibt und den `Controller`, welcher die Kommunikation zwischen `Model` und `View` übernimmt – also die Daten aus der Datenbank vom `Model` entgegennimmt und dann ans `View` schickt.
+
+Da es ein Admin-Panel gibt, in dem der Nutzer, mit den nötigen Rechten Einstellungen und Einträge verwalten kann, unterscheiden wir zwischen Controller, welche für das Admin-Panel sind und die Controller die im Frontend, also das was auf der Webseite angezeigt wird.
+Zwischen den Controllern haben wir auch versucht die auszuteilen, so dass eher mehr Controller haben, um so das doch recht umfangreiche Projekt sinnvoll zu gliedern.
+Da, dabei viele Redundanzen auftreten, haben wir auch _Oberklassen_ angelegt, die an _Unterklassen_ Methoden und Variablen vererben.
+
+### Überlegungen zu den URIs 
+
 - Aufbau der Anwendung
 - Überlegungen zu den URIs
 - Aufgabenteilung: Welcher Teil übernimmt welche Aufgaben?
@@ -21,7 +35,10 @@
 - Welchen vorhandenen Lösungen haben Sie als Vorlage oder Inspiration genutzt?
 - Ggf. eine Erklärung, dass sie über die nötigen Rechte für externe Inhalte, Bilder und Komponenten verfügen, ggf. mit URIs. Keine Ausdrucke der AGBs beifügen!
 
-### Mindestanforderungen (Backend)
+Wir haben uns entschieden die Hausarbeit aus dem letzten Semester in GOM (Frontend) weiterzufuehren, damit wir ein komplettes realistisches Webseiten-Projekt umsetzen koennen. Da dort das Frontend entwickelt wurde, muessen wir bei diesem Projekt nicht von 0 anfangen und koennen uns auf das Neugelernte konzentrieren und anwenden.
+
+## Auflistung der Implementierungen
+### Backend
 - :white_check_mark: Objektorientierung
 - :white_check_mark: PHP-Version 5.6.x oder 7.x
 - :white_check_mark: Codestyle nach PSR-1 und PSR-2
@@ -36,9 +53,7 @@
 - :white_check_mark: Speicherung der Daten in einer Datenbank
 - :white_check_mark: Datenbank: SQLite (Kein Postgres, MySQL o.ä.)
 - :white_check_mark: Nutzung des eingebauten Entwicklungs-Servers
-- Die Abgabe muss alle genutzten Resourcen enthalten
-
-### Mindestanforderungen (Frontend)
+### Frontend
 - Valides HTML
 - Valides CSS
 - Semantisches HTML
@@ -49,6 +64,3 @@
 - Die Nutzung von CSS-Frameworks ist möglich (Bootstrap / Foundation) – aber keine Nutzung der dazugehörigen JS-Komponenten.
 - Impressum
 - Dokumentation als HTML-Seite(n)
-
-## Dokumentation
-Wir haben uns entschieden die Hausarbeit aus dem letzten Semester in GOM (Frontend) weiterzufuehren, damit wir ein komplettes realistisches Webseiten-Projekt umsetzen koennen. Da dort das Frontend entwickelt wurde, muessen wir bei diesem Projekt nicht von 0 anfangen und koennen uns auf das Neugelernte konzentrieren und anwenden.
