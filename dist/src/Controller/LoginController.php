@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Session\Session;
 use User\UserModel;
 
-class LoginController extends Controller
+class LoginController extends FormController
 {
   protected $formData;
 
@@ -26,7 +26,9 @@ class LoginController extends Controller
     $formError = [];
     $valid = false;
 
-    if ($request->getMethod() == 'POST') {
+    if ($request->getMethod() !== 'POST') {
+      $formData = $this->getFormDefaults($request);
+    } else {
       $formData = $request->get('form');
       list($valid, $formError) = $this->isLoginFormDataValid($request, $formData);
     }
@@ -45,6 +47,12 @@ class LoginController extends Controller
     return new Response($html);
   }
 
+  protected function getFormDefaults($request)
+  {
+    $formData['token'] = $this->getToken();
+    return $formData;
+  }
+
   /**
    * check if username/password is entered
    */
@@ -52,6 +60,15 @@ class LoginController extends Controller
   {
     $valid = true;
     $formError = [];
+    $token = $this->getToken();
+
+    if ((!isset($formData['token'])) || (!hash_equals($token,
+        $formData['token']))
+    ) {
+      $valid = false;
+      $formError['token'] = 'Bad token';
+      throw new \Exception('Bad CSRF token.');
+    }
 
     if ((!isset($formData['username']))) {
       $valid = false;

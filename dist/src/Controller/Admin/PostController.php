@@ -11,7 +11,7 @@ use Controller\Controller;
 use Service\ShowImagesFromFolder;
 use Service\PathChecker;
 
-class PostController extends Controller implements FormInterface
+class PostController extends \Controller\FormController implements FormInterface
 {
   protected $formData;
 
@@ -170,13 +170,11 @@ class PostController extends Controller implements FormInterface
     $author = $this->getAttributeFromRequest($request, 'author');
     $route = $this->getAttributeFromRequest($request, '_route');
     $instance = PathChecker::checkPath($route);
-    
-    if ($author !== null)
-    {
+
+    if ($author !== null) {
       $authorId = $this->userModel->getUserId($author);
       $posts = $this->postModel->getAllPostsByAuthor($instance['instance'], $authorId['id']);
-    } else 
-    {
+    } else {
       $posts = $this->postModel->getAllPosts($instance['instance']);
     }
 

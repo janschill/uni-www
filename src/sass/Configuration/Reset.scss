@@ -1,22 +1,47 @@
+// Remove focus – http://stackoverflow.com/questions/71074/how-to-remove-firefoxs-dotted-outline-on-buttons-as-well-as-links
+button::-moz-focus-inner {
+  border: 0;
+}
+
+a:focus,
+button:focus {
+  outline: none;
+}
+
+// Box model reset – http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 * {
-    box-sizing: border-box;
+  // Remove gray highlight when tapping links in Mobile Safari – https://css-tricks.com/snippets/css/remove-gray-highlight-when-tapping-links-in-mobile-safari/
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  /* stylelint-disable property-no-unknown */
+  // Prevent mobile safari from resizing text – http://blog.55minutes.com/2012/04/iphone-text-resizing/
+  text‑size‑adjust: 100%;
+  /* stylelint-enable */
+
+  //  Remove default styles from input on iOS – https://maximilianhoffmann.com/posts/better-font-rendering-on-osx
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-    font-family: "Montserrat", sans-serif;
+// Remove default styles from input on iOS – http://stackoverflow.com/questions/7599533/ios-forces-rounded-corners-and-glare-on-inputs
+input,
+textarea {
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 
-body {}
-
-.wrapper {
-    display: grid;
-    grid-template-areas: "nav" "content" "footer";
-    @media (min-width: 500px) {
-        grid-template-columns: 1fr;
-        grid-template-areas: "nav nav" "content content" "footer footer";
-    }
+// Remove the default yellow background color on input fields with autofill
+input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0 9999px lighten($color-primary, 0.1);
 }
 
-.content {
-    grid-area: content;
+// Fix main element in IE – ttps://github.com/aFarkas/html5shiv/issues/114#issuecomment-24992081
+main {
+  display: block;
 }

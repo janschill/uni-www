@@ -2,8 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31cdeece-f300-4236-b4ca-f4e1e3d88a12" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/dist/src/Controller/Admin/BlogController.php" afterPath="$PROJECT_DIR$/dist/src/Controller/Admin/BlogController.php" />
-      <change beforePath="$PROJECT_DIR$/dist/src/Service/PathChecker.php" afterPath="$PROJECT_DIR$/dist/src/Service/PathChecker.php" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/dist/data/website.db" afterPath="$PROJECT_DIR$/dist/data/website.db" />
+      <change beforePath="$PROJECT_DIR$/dist/public/css/basic.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/Karla-Bold.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/Karla-BoldItalic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/Karla-Italic.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/Karla-Italic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/Karla-Italic.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/Karla-Regular.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/Karla-Regular.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/Karla-Regular.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/Karla-Regurlar.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/OFL.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/desktop.ini" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-Black.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-BlackItalic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-Bold.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-Bold.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-BoldItalic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-ExtraBold.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-ExtraBoldItalic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-ExtraLight.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-ExtraLightItalic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-Italic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-Light.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-LightItalic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-Medium.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-MediumItalic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-Regular.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-SemiBold.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-SemiBoldItalic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-Thin.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-ThinItalic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/OFL.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/desktop.ini" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/src/Controller/Admin/PostController.php" afterPath="$PROJECT_DIR$/dist/src/Controller/Admin/PostController.php" />
+      <change beforePath="$PROJECT_DIR$/dist/src/Controller/Controller.php" afterPath="$PROJECT_DIR$/dist/src/Controller/Controller.php" />
+      <change beforePath="$PROJECT_DIR$/dist/src/Controller/LoginController.php" afterPath="$PROJECT_DIR$/dist/src/Controller/LoginController.php" />
+      <change beforePath="$PROJECT_DIR$/src/sass/Configuration/BrowserReset.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/sass/Configuration/Mixins.scss" afterPath="$PROJECT_DIR$/src/sass/Configuration/Mixins.scss" />
+      <change beforePath="$PROJECT_DIR$/src/sass/Configuration/Reset.scss" afterPath="$PROJECT_DIR$/src/sass/Configuration/Reset.scss" />
+      <change beforePath="$PROJECT_DIR$/src/sass/Configuration/Typography.scss" afterPath="$PROJECT_DIR$/src/sass/Configuration/Typography.scss" />
+      <change beforePath="$PROJECT_DIR$/src/sass/Configuration/Variables.scss" afterPath="$PROJECT_DIR$/src/sass/Configuration/Variables.scss" />
+      <change beforePath="$PROJECT_DIR$/src/sass/main.scss" afterPath="$PROJECT_DIR$/src/sass/main.scss" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,90 +67,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BlogController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/src/Controller/Admin/BlogController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PathChecker.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dist/src/Service/PathChecker.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PostsInterface.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/src/Controller/Admin/PostsInterface.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProjectsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/src/Controller/Admin/ProjectsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="15" column="41" lean-forward="false" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlogModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/src/Model/BlogModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1650">
-              <caret line="110" column="34" lean-forward="false" selection-start-line="110" selection-start-column="34" selection-end-line="110" selection-end-column="34" />
-              <folding>
-                <marker date="1514673424000" expanded="true" signature="237:269" ph="DELETE FROM posts... " />
-                <marker date="1514673424000" expanded="true" signature="433:538" ph="INSERT INTO posts... " />
-                <marker date="1514673424000" expanded="true" signature="1078:1122" ph="DELETE FROM tag2post... " />
-                <marker date="1514673424000" expanded="true" signature="1315:1378" ph="INSERT INTO tag2post... " />
-                <marker date="1514673424000" expanded="true" signature="1678:1727" ph="DELETE FROM category2post... " />
-                <marker date="1514673424000" expanded="true" signature="1946:2025" ph="INSERT INTO category2post... " />
-                <marker date="1514673424000" expanded="true" signature="2274:2308" ph="SELECT * FRO... posts" />
-                <marker date="1514673424000" expanded="true" signature="2493:2542" ph="SELECT * FRO... posts" />
-                <marker date="1514673424000" expanded="true" signature="2622:2667" ph="SELECT * FRO... ${$instance}" />
-                <marker date="1514673424000" expanded="true" signature="2733:2917" ph="SELECT categ... categories" />
-                <marker date="1514673424000" expanded="true" signature="3140:3284" ph="SELECT tags.... tags" />
-                <marker date="1514673424000" expanded="true" signature="3630:3662" ph="DELETE FROM posts... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Model.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/src/Model/Model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="59" lean-forward="false" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
-              <folding>
-                <marker date="1514673500811" expanded="true" signature="803:827" ph="SELECT * FRO... categories" />
-                <marker date="1514673500811" expanded="true" signature="900:966" ph="SELECT categ... categories" />
-                <marker date="1514673500811" expanded="true" signature="1194:1212" ph="SELECT * FRO... tags" />
-                <marker date="1514673500811" expanded="true" signature="1277:1325" ph="SELECT tags.... tags" />
-                <marker date="1514673500811" expanded="true" signature="1550:1592" ph="INSERT INTO ${$table}... " />
-                <marker date="1514673500811" expanded="true" signature="1766:1797" ph="DELETE FROM tags... " />
-                <marker date="1514673500811" expanded="true" signature="1944:1989" ph="SELECT * FRO... ${$table}" />
-                <marker date="1514673500811" expanded="true" signature="2231:2236" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -152,6 +111,8 @@
         <option value="$PROJECT_DIR$/dist/src/Controller/Admin/ProjectsController.php" />
         <option value="$PROJECT_DIR$/dist/src/Model/BlogModel.php" />
         <option value="$PROJECT_DIR$/dist/src/Model/Projects.php" />
+        <option value="$PROJECT_DIR$/dist/src/Controller/FormController.php" />
+        <option value="$PROJECT_DIR$/dist/src/Controller/Admin/PostController.php" />
       </list>
     </option>
   </component>
@@ -190,7 +151,7 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="3360" />
     <option name="height" value="1867" />
@@ -335,15 +296,16 @@
       <workItem from="1514664812794" duration="76000" />
       <workItem from="1514666035180" duration="83000" />
       <workItem from="1514728681953" duration="70000" />
+      <workItem from="1515850774619" duration="16000" />
+      <workItem from="1515850906940" duration="63000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3316000" />
+    <option name="totallyTimeSpent" value="3395000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="3360" height="1867" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="3360" height="1867" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -352,7 +314,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20205656" sideWeight="0.40833333" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20205656" sideWeight="0.40833333" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21428572" sideWeight="0.59166664" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2166968" sideWeight="0.59166664" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27727547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -379,15 +341,8 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/BlogController.php" />
     <entry file="file://$PROJECT_DIR$/dist/src/Controller/FormController.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/ProjectController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/src/Controller/ProjectController.php" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a0693b25-0dcd-4a44-b813-f9c15ff32e5d/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -409,7 +364,6 @@
     <entry file="file://$PROJECT_DIR$/dist/src/App/FrontControllerInterface.php" />
     <entry file="file://$PROJECT_DIR$/dist/src/App/Model.php" />
     <entry file="file://$PROJECT_DIR$/dist/src/App/Controller.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/FormController.php" />
     <entry file="file://$PROJECT_DIR$/dist/src/Controller/AdminController.php" />
     <entry file="file://$PROJECT_DIR$/dist/src/Controller/FrontControllerInterface.php" />
     <entry file="file://$PROJECT_DIR$/dist/src/Controller/FrontController.php" />
@@ -430,13 +384,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/templates/adminblog.html.twig" />
-    <entry file="file://$PROJECT_DIR$/dist/templates/projects.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="36" lean-forward="false" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/projects.html.twig" />
     <entry file="file://$PROJECT_DIR$/dist/templates/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -459,13 +407,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/templates/blog.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/blog.html.twig" />
     <entry file="file://$PROJECT_DIR$/dist/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -522,20 +464,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/ProjectController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/src/Controller/ProjectController.php" />
     <entry file="file://$PROJECT_DIR$/dist/src/Controller/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -573,23 +502,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/src/Controller/Admin/AdminController.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/Admin/PostsInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/Admin/ProjectsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" column="41" lean-forward="false" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/src/Controller/Admin/PostsInterface.php" />
+    <entry file="file://$PROJECT_DIR$/dist/src/Controller/Admin/ProjectsController.php" />
     <entry file="file://$PROJECT_DIR$/dist/src/Model/Projects.php" />
+    <entry file="file://$PROJECT_DIR$/dist/src/Model/BlogModel.php" />
+    <entry file="file://$PROJECT_DIR$/dist/src/Controller/Admin/BlogController.php" />
+    <entry file="file://$PROJECT_DIR$/dist/src/Service/PathChecker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dist/src/Model/Model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -607,39 +532,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/Model/BlogModel.php">
+    <entry file="file://$PROJECT_DIR$/dist/src/Controller/Admin/PostController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="110" column="34" lean-forward="false" selection-start-line="110" selection-start-column="34" selection-end-line="110" selection-end-column="34" />
-          <folding>
-            <marker date="1514673424000" expanded="true" signature="237:269" ph="DELETE FROM posts... " />
-            <marker date="1514673424000" expanded="true" signature="433:538" ph="INSERT INTO posts... " />
-            <marker date="1514673424000" expanded="true" signature="1078:1122" ph="DELETE FROM tag2post... " />
-            <marker date="1514673424000" expanded="true" signature="1315:1378" ph="INSERT INTO tag2post... " />
-            <marker date="1514673424000" expanded="true" signature="1678:1727" ph="DELETE FROM category2post... " />
-            <marker date="1514673424000" expanded="true" signature="1946:2025" ph="INSERT INTO category2post... " />
-            <marker date="1514673424000" expanded="true" signature="2274:2308" ph="SELECT * FRO... posts" />
-            <marker date="1514673424000" expanded="true" signature="2493:2542" ph="SELECT * FRO... posts" />
-            <marker date="1514673424000" expanded="true" signature="2622:2667" ph="SELECT * FRO... ${$instance}" />
-            <marker date="1514673424000" expanded="true" signature="2733:2917" ph="SELECT categ... categories" />
-            <marker date="1514673424000" expanded="true" signature="3140:3284" ph="SELECT tags.... tags" />
-            <marker date="1514673424000" expanded="true" signature="3630:3662" ph="DELETE FROM posts... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/Admin/BlogController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="480">
+          <caret line="39" column="7" lean-forward="false" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/Service/PathChecker.php">
+    <entry file="file://$PROJECT_DIR$/dist/src/Controller/FormController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+        <state relative-caret-position="570">
+          <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/src/Controller/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
