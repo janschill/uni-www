@@ -18,7 +18,37 @@ Da es ein Admin-Panel gibt, in dem der Nutzer, mit den nötigen Rechten Einstell
 Zwischen den Controllern haben wir auch versucht die auszuteilen, so dass eher mehr Controller haben, um so das doch recht umfangreiche Projekt sinnvoll zu gliedern.
 Da, dabei viele Redundanzen auftreten, haben wir auch _Oberklassen_ angelegt, die an _Unterklassen_ Methoden und Variablen vererben.
 
+Um in das Backend zu gelangen, haben wir uns an die heutigen CMS angelehnt und es einfach im Pfad unter `/login` versteckt.
+
 ### Überlegungen zu den URIs 
+Im Routing gibt es:
+
+| Route       | Intention |
+|-------------|-----------|
+| `/`         |           |
+| `/login`    |           |
+| `/logout`   |           |
+| `/admin`    |           |
+| `/blog`     |           |
+| `/projects` |           |
+| `/about`    |           |
+| `/{}/id     |           |
+
+### Externe Komponenten
+- `gulp.js`
+- `Sass`
+- `Composer`
+- `Twig`
+- `BEM`
+
+### Inspiration
+Da unser Projekt Richtung Blog und ein wenig in Content-Management-System geht, haben wir uns ein wenig an dem Backend von Wordpress orientiert. 
+Also, so etwas wie das Dashboard und das Anlegen von neuen Blogeinträgen.
+
+### Probleme
+Wir hatten anfangs Probleme mit dem Verständniss von Twig, Composer und wie PHP dies nutzt.
+Und auch Probleme PHP richtig anzuwenden, was möglich ist, wie man es dann umsetzt und die _neue_ `->`-Notation zu verwenden und nicht Punktnotation, war wahrscheinlich die häufigste Fehlerquelle.
+
 
 - Aufbau der Anwendung
 - Überlegungen zu den URIs
@@ -30,7 +60,6 @@ Da, dabei viele Redundanzen auftreten, haben wir auch _Oberklassen_ angelegt, di
 - Besonderheiten
 - Aufgetretene Probleme und deren Lösungen
 - Wer hat was umgesetzt?
-- Welche externen Komponenten, Scripte, CSS etc werden verwendet?
 - Warum werden sie verwendet?
 - Welchen vorhandenen Lösungen haben Sie als Vorlage oder Inspiration genutzt?
 - Ggf. eine Erklärung, dass sie über die nötigen Rechte für externe Inhalte, Bilder und Komponenten verfügen, ggf. mit URIs. Keine Ausdrucke der AGBs beifügen!
