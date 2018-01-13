@@ -97,14 +97,33 @@ Wir haben uns entschieden die Hausarbeit aus dem letzten Semester in GOM (Fronte
 - :white_check_mark: Speicherung der Daten in einer Datenbank
 - :white_check_mark: Datenbank: SQLite (Kein Postgres, MySQL o.ä.)
 - :white_check_mark: Nutzung des eingebauten Entwicklungs-Servers
+
+#### Mögliche Erweiterungen
+- :white_check_mark: Erlaubt und erwünscht: Nutzung von weiteren PHP-Komponenten (z.B. Symfony-Komponenten)
+- :white_check_mark: Verwendung eines Routers (z.B. Symfony/Router)
+- :white_check_mark: Unterschiedliche Rechte-Gruppen
+- :white_check_mark: Schlanke Kontroller
+- :white_check_mark: Nutzung von Composer
+- :white_check_mark: Nutzung von Autoloading
+- :white_check_mark: Logging nach PSR-3
+- Rest-Api (für Frontend evtl. nötig)
+- PHPUnit-Tests
+- :white_check_mark: größer Umfang
+
 ### Frontend
-- Valides HTML
-- Valides CSS
-- Semantisches HTML
+- :white_check_mark: Valides HTML
+- :white_check_mark: Valides CSS
+- :white_check_mark: Semantisches HTML
 - Responsive Webdesign
-- Progressive Enhancement: Kernfunktionen auch ohne JS
-- Progressive Enhancement: Alle Inhalte ohne JS zu erreichen
+- :white_check_mark: Progressive Enhancement: Kernfunktionen auch ohne JS
+- :white_check_mark: Progressive Enhancement: Alle Inhalte ohne JS zu erreichen
 - Keine JS-Frameworks
-- Die Nutzung von CSS-Frameworks ist möglich (Bootstrap / Foundation) – aber keine Nutzung der dazugehörigen JS-Komponenten.
+- :white_check_mark: Die Nutzung von CSS-Frameworks ist möglich (Bootstrap / Foundation) – aber keine Nutzung der dazugehörigen JS-Komponenten.
 - Impressum
-- Dokumentation als HTML-Seite(n)
+- :white_check_mark: Dokumentation als HTML-Seite(n)
+
+#### Mögliche Erweiterungen
+- :white_check_mark: CSFR-Token im Formular
+- Progressive Enhancement mit Javascript
+- Web-App im ROCA-Stil (Resource-oriented Client Architecture)
+- größer Umfang
