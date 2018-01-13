@@ -21,17 +21,16 @@ Da, dabei viele Redundanzen auftreten, haben wir auch _Oberklassen_ angelegt, di
 Um in das Backend zu gelangen, haben wir uns an die heutigen CMS angelehnt und es einfach im Pfad unter `/login` versteckt.
 
 ### Überlegungen zu den URIs 
-Im Routing gibt es:
-
+Das Routing als Struktur:
 ```
 |-- /
     |-- /login
     |-- /logout
+    |-- /about
     |-- /blog
         |-- /{id}
     |-- /projects
         |-- /{id}
-    |-- /about
     |-- /admin
         |-- /about
         |-- /blog
@@ -51,6 +50,8 @@ Im Routing gibt es:
             |-- /tag/delete{id}
             |-- /category/delete{id}
 ```
+_hier ueberlegungen_
+
 ### Externe Komponenten
 - `gulp.js`
 - `Sass`
@@ -75,11 +76,8 @@ Und auch Probleme PHP richtig anzuwenden, was möglich ist, wie man es dann umse
 - Nutzung von JS im Frontend
 - Überlegungen zum Progressive Enhancement
 - Besonderheiten
-- Aufgetretene Probleme und deren Lösungen
 - Wer hat was umgesetzt?
 - Warum werden sie verwendet?
-- Welchen vorhandenen Lösungen haben Sie als Vorlage oder Inspiration genutzt?
-- Ggf. eine Erklärung, dass sie über die nötigen Rechte für externe Inhalte, Bilder und Komponenten verfügen, ggf. mit URIs. Keine Ausdrucke der AGBs beifügen!
 
 Wir haben uns entschieden die Hausarbeit aus dem letzten Semester in GOM (Frontend) weiterzufuehren, damit wir ein komplettes realistisches Webseiten-Projekt umsetzen koennen. Da dort das Frontend entwickelt wurde, muessen wir bei diesem Projekt nicht von 0 anfangen und koennen uns auf das Neugelernte konzentrieren und anwenden.
 
