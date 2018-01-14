@@ -2,6 +2,9 @@
 
 namespace Controller;
 
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
 class DocumentationController extends Controller 
 {
   public function __construct($container)
@@ -12,7 +15,7 @@ class DocumentationController extends Controller
   public function showAction($request)
   {
     $user = $request->attributes->get('user');
-    $html = $this->container['twig']->render('docu.html.twig', [
+    $html = $this->container['twig']->render('doc.html.twig', [
       'user' => $user
       ]);
     return new Response($html);
