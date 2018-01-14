@@ -91,3 +91,5 @@ composer.phar
 .code-workspace
 
 dist/data/
+
+dist/public/css/combined.min.css
