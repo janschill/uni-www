@@ -17,7 +17,7 @@
             &#9776;
         </span>
         <nav class="nav nav--regular">
-            <ul class="nav__list">
+            <ul class="nav__list nav__list--regular">
                 <li class="nav__list-item current-item nav__item--regular"><a class="nav__link"href="/">JS</a></li>
                 <li class="nav__list-item nav__item--regular"><a class="nav__link" href="/blog">Blog</a></li>
                 <li class="nav__list-item nav__item--regular"><a class="nav__link" href="/projects">Projects</a></li>
@@ -26,7 +26,7 @@
         </nav>
         {% if user.isAuthenticated %}
         <nav class="nav nav--admin">
-            <ul class="nav__list">
+            <ul class="nav__list nav__list--admin">
                 {% if user.hasPermission('delete') %}
                 <li class="nav__list-item nav__item--admin"><a class="nav__link" href="/admin">Admin</a></li>
                 {% endif %}

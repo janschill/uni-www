@@ -13,6 +13,11 @@
 .admin__articles {
     padding: 1rem;
     grid-area: article;
+    @include clearfix;
+}
+
+.admin__article-setting+.admin__article-setting {
+    margin-left: 40px;
 }
 
 .admin__article {
@@ -21,7 +26,11 @@
 
 .admin__article+.admin__article {
     margin-top: 20px;
-    border-top: 1px solid $blue;
+    border-top: 1px solid $bunker;
+}
+
+.admin__article-setting {
+    float: left;
 }
 
 .admin__button {

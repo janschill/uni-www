@@ -106,14 +106,11 @@
 }
 
 @media screen and (max-width: 860px) {
-    .nav {
+    .nav--regular {
         position: relative;
         display: inline-block;
     }
-    .nav ul.nav--active {
-        display: none;
-    }
-    .nav__list {
+    .nav__list--regular {
         //width: 100%;
         position: absolute;
         top: 120%;
@@ -123,7 +120,7 @@
         border-radius: 3px;
         background: #FFF;
     }
-    .nav__list-item {
+    .nav__list-item--regular {
         margin: 5px 0px 5px 0px;
         float: none;
         display: block;
@@ -134,7 +131,7 @@
     .nav__list-item--admin {
         padding: 4px;
     }
-    .nav a {
+    .nav--regular a {
         display: block;
     }
     .nav--toggle {
