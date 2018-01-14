@@ -53,10 +53,6 @@
             <br>
             Um in das Backend zu gelangen, haben wir uns an die heutigen CMS angelehnt und es einfach im Pfad unter
             <span class="codebox">/login</span> versteckt.
-            <br>
-            *** Welcher Teil übernimmt welche Aufgaben?
-            <br>
-            *** Warum wurde diese Aufteilung gewählt?
 
         </p>
     </article>
@@ -97,7 +93,7 @@
             </div>
             
 
-<em>hier ueberlegungen</em>
+    Wir haben für die wichtigen Bereiche direkte URIs gewählt und dann bei direkteren Anfragen haben wir in jedem Bereich die gleichen Methoden gleich strukturiert.
         </pre>
         </p>
     </article>
@@ -161,34 +157,9 @@
             <summary> user2permission</summary>
             <p> id, permissions </p></details>
 
+            Es worden die Tabellen so gewählt, dass, dort wo eine Assoziativtabelle vorhanden ist n zu m Beziehungen stattfinden, sodass es zum Beispiel mehrere Tags zu mehreren Posts geben kann.
 
-    </article>
 
-    <article class="post">
-        <div class="post__header">
-            <h2 class="post__heading">Nutzung von JS im Frontend</h2>
-        </div>
-        <p class="post__text">
-            ***TEXT
-        </p>
-    </article>
-
-    <article class="post">
-        <div class="post__header">
-            <h2 class="post__heading">Progressive Enhancement</h2>
-        </div>
-        <p class="post__text">
-            ***TEXT
-        </p>
-    </article>
-
-    <article class="post">
-        <div class="post__header">
-            <h2 class="post__heading">Besonderheiten</h2>
-        </div>
-        <p class="post__text">
-            ***TEXT
-        </p>
     </article>
 
     <article class="post">
@@ -206,7 +177,9 @@
         </ul>
         </p>
         <p class="post__text">
-            *** Warum werden sie verwendet?
+            <span class="codebox">Sass</span> wurde gewählt damit wir mehr Möglichkeiten haben im CSS-Styling, wie das Verwenden von Variablen, mixins und so weiter. Für das Kompelieren und minifizieren von CSS und JavaScript Files
+            haben wir <span class="codebox">gulp.js</span> verwendet. Composer und npm für die einfache Versions- und Dependencyverwaltung. Twig fürs Templating und BEM als Softwaremuster im HTML, für einfaches Wiederverwenden von gestaltateten Komponenten.
+            CKEditor als Rich Text Editor zum Formatieren von eingepflegten Texten über das Backend.
         </p>
     </article>
 
@@ -238,7 +211,7 @@
             <h2 class="post__heading">Wer hat was umgesetzt</h2>
         </div>
         <p class="post__text">
-            ***TEXT
+            Jan hat überwiegend, aber nicht ausschließlich, im Backend entwickelt. Da sich häufig zum Entwickeln getroffen wurde, ist die Arbeitsaufteilung sehr ausgeglichen gewesen.
         </p>
     </article>
 
