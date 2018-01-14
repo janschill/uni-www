@@ -64,6 +64,13 @@ p {
     line-height: 1;
 }
 
+.codebox {
+    margin: 0 2px;
+    padding: 0px 5px;
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
 p+p {
     text-indent: 1em;
     margin: 0;

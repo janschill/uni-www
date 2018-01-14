@@ -69,11 +69,11 @@ Wir hatten anfangs Probleme mit dem Verständniss von Twig, Composer und wie PHP
 Und auch Probleme PHP richtig anzuwenden, was möglich ist, wie man es dann umsetzt und die _neue_ `->`-Notation zu verwenden und nicht Punktnotation, war wahrscheinlich die häufigste Fehlerquelle.
 
 
-- Aufbau der Anwendung
-- Überlegungen zu den URIs
-- Aufgabenteilung: Welcher Teil übernimmt welche Aufgaben?
-- Warum wurde diese Aufteilung gewählt?
-- Aufbau der Datenbank
+- (Aufbau der Anwendung)
+- (Aufgabenteilung: Welcher Teil übernimmt welche Aufgaben?)
+- (Überlegungen zu den URIs)
+- (Warum wurde diese Aufteilung gewählt?)
+- (Aufbau der Datenbank)
 - Nutzung von JS im Frontend
 - Überlegungen zum Progressive Enhancement
 - Besonderheiten
