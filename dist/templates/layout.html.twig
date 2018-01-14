@@ -19,18 +19,18 @@
         <nav class="nav nav--regular">
             <ul class="nav__list">
                 <li class="nav__list-item current-item nav__item--regular"><a class="nav__link"href="/">JS</a></li>
-                <li class="nav__list-item nav__item--regular"><a class="nav__link"href="/blog">Blog</a></li>
-                <li class="nav__list-item nav__item--regular"><a class="nav__link"href="/projects">Projects</a></li>
-                <li class="nav__list-item nav__item--regular"><a class="nav__link"href="/about">About</a></li>
+                <li class="nav__list-item nav__item--regular"><a class="nav__link" href="/blog">Blog</a></li>
+                <li class="nav__list-item nav__item--regular"><a class="nav__link" href="/projects">Projects</a></li>
+                <li class="nav__list-item nav__item--regular"><a class="nav__link" href="/about">About</a></li>
             </ul>
         </nav>
         {% if user.isAuthenticated %}
         <nav class="nav nav--admin">
             <ul class="nav__list">
                 {% if user.hasPermission('delete') %}
-                <li class="nav__list-item nav__item--admin"><a href="/admin">Admin</a></li>
+                <li class="nav__list-item nav__item--admin"><a class="nav__link" href="/admin">Admin</a></li>
                 {% endif %}
-                <li class="nav__list-item nav__item--admin"><a href="/logout">Logout</a></li>
+                <li class="nav__list-item nav__item--admin"><a class="nav__link" href="/logout">Logout</a></li>
             </ul>
         </nav>
         {% endif %}

@@ -29,7 +29,6 @@
 }
 
 .nav__list {
-    border-top: 3px solid $color-bright;
     list-style: none;
     font-size: 120%;
     left: 0;
@@ -53,10 +52,6 @@
 
 .nav--visible {
     transform: translateX(0);
-}
-
-.nav__list-item {
-    border-bottom: 1px solid $color-bright;
 }
 
 @media all and (min-width: $breakpoint) {
@@ -128,18 +123,6 @@
         box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
         border-radius: 3px;
         background: #FFF;
-    }
-    .nav__list:after {
-        width: 0px;
-        height: 0px;
-        position: absolute;
-        top: 0%;
-        left: 22px;
-        content: '';
-        transform: translate(0%, -100%);
-        border-left: 7px solid transparent;
-        border-right: 7px solid transparent;
-        //border-bottom: 7px solid #303030;
     }
     .nav__list-item {
         margin: 5px 0px 5px 0px;
