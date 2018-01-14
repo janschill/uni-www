@@ -1,0 +1,21 @@
+.admin {
+    display: grid;
+    grid-template-columns: 1fr 11fr;
+    grid-template-areas: "aside article"
+}
+
+.admin__article {
+    padding: 1rem;
+    grid-area: article;
+}
+
+.admin__header {
+    padding: 1rem 0;
+    font-size: 26px;
+}
+
+.admin__button {
+    display: inline-block;
+    font-size: 18px;
+    padding: 0.5rem;
+}
