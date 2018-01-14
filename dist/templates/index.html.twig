@@ -23,7 +23,7 @@
                 <h2 class="title">Latest blog posts</h2>
                 <div class="posts-container">
                     {% for post in blog %}
-                        <a class="posts" href="{{ instance.instance }}/{{ post.id }}">
+                        <a class="posts" href="blog/{{ post.id }}">
                             <span class="posts__header">
                                 {% if not post.cover == null %}
                                     <img class="posts__cover" src="{{ post.cover }}" alt="{{ post.title }}">
@@ -45,7 +45,7 @@
                 <h2 class="title">Latest projects</h2>
                 <div class="posts-container">
                     {% for post in projects %}
-                        <a class="posts" href="{{ instance.instance }}/{{ post.id }}">
+                        <a class="posts" href="projects/{{ post.id }}">
                             <div class="posts__header">
                                 {% if not post.cover == null %}
                                     <img class="posts__cover" src="{{ post.cover }}">
