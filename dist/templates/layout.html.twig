@@ -3,8 +3,9 @@
 
 <head>
     {% block head %}
+        <meta charset="UTF-8">
         <link rel="stylesheet" href="/css/combined.min.css"/>
-        <script src="/js/main.js"></script>
+        <script type="text/javascript" src="/js/main.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Karla|Montserrat" rel="stylesheet">
         <title>{% block title %}{% endblock %}</title>
     {% endblock %}
@@ -12,7 +13,7 @@
 
 <body>
 <div class="wrapper">
-    <header>
+    <header class="header">
         <span class="toggle-navigation">
             &#9776;
         </span>
