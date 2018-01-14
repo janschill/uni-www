@@ -27,6 +27,8 @@ Das Routing als Struktur:
     |-- /login
     |-- /logout
     |-- /about
+    |-- /documentation
+    |-- /impressum
     |-- /blog
         |-- /{id}
     |-- /projects
