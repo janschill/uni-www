@@ -9,21 +9,21 @@
         <section class="admin">
             {% include 'admin-aside.html.twig' %}
 
-            <article class="admin__article">
+            <article class="admin__articles">
                 <h2>Most recent</h2>
-                <div class="">
-                    <a href="admin/blog"><h2>Blog</h2></a>
+                <div class="admin__article">
+                    <h2><a class="link link--thick" href="admin/blog">Blog</a></h2>
                     {% for post in blog %}
-                        <a href="/blog/{{ post.title }}" ><h3>{{ post.title }}</h3></a>
-                        <p>{{ post.description }}</p>
+                        <h3><a class="link link--thin" href="/blog/{{ post.title }}">{{ post.title }}</a></h3>
+                        <p class="admin__text">{{ post.description }}</p>
                     {% endfor %}
                 </div>
                 
-                <div class="">
-                    <a href="admin/projects"><h2>Projects</h2></a>
+                <div class="admin__article">
+                   <h2><a class="link link--thick" href="admin/projects">Projects</a></h2>
                     {% for post in projects %}
-                        <a href="/projects/{{ post.title }}" ><h3>{{ post.title }}</h3></a>
-                        <p>{{ post.description }}</p>
+                        <h3><a class="link link--thin" href="/projects/{{ post.title }}">{{ post.title }}</a></h3>
+                        <p class="admin__text">{{ post.description }}</p>
                     {% endfor %}
                 </div>
             </article>

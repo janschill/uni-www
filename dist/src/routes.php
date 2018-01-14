@@ -281,6 +281,16 @@ $routes->add(
 );
 
 $routes->add(
+  'documentation',
+  new Route(
+    '/documentation',
+    ['_controller' => 'Controller\Documentation::showAction'],
+    ['id' => '\d+'],
+    ['_permission' => 'add']
+  )
+);
+
+$routes->add(
   'removetrailingslash',
   new Route(
     '/{url}',

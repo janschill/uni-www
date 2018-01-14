@@ -4,10 +4,16 @@
     grid-template-areas: "aside article"
 }
 
-.admin__article {
+.admin__articles {
     padding: 1rem;
     grid-area: article;
 }
+
+.admin__article {
+    position: relative;
+}
+
+.admin__article+.admin__article {}
 
 .admin__header {
     padding: 1rem 0;
@@ -18,4 +24,13 @@
     display: inline-block;
     font-size: 18px;
     padding: 0.5rem;
+}
+
+.admin__text {
+    padding-top: 10px;
+    padding-left: 0;
+}
+
+.admin__text:not(:last-of-type) {
+    margin-bottom: 20px;
 }

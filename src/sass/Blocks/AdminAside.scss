@@ -3,16 +3,12 @@
     background-color: $bunker;
 }
 
-.adminaside__nav {
-    list-style: none;
-    &:hover {
-        background-color: $blue;
-    }
+.adminaside__list {
+    position: relative;
 }
 
-.adminaside__nav a {
+.adminaside__list-item {
     padding: 1rem 0.5rem;
     display: block;
-    text-decoration: none;
-    color: $black-haze;
+    border-top: 1px solid rgba($black-haze, 0.3);
 }

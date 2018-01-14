@@ -17,6 +17,20 @@
     }
 }
 
+.link--medium {
+    &::before {
+        content: '';
+        width: 100%;
+        left: 0;
+        bottom: -4px;
+        height: 2px;
+        position: absolute;
+        transition: width 200ms ease-in;
+        display: block;
+        background: $blue;
+    }
+}
+
 .link--thin {
     &::before {
         content: '';
@@ -31,8 +45,17 @@
     }
 }
 
+.link--aside {
+    transition: color linear 0.15s;
+    color: $black-haze;
+}
+
+.link--aside:hover {
+    color: $blue;
+}
+
 .link:hover {
-    @media all and (min-width: $break-to-mobile) {
+    @media all and (min-width: $breakpoint) {
         &::before {
             width: 0;
         }
