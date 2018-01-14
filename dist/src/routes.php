@@ -284,7 +284,7 @@ $routes->add(
   'documentation',
   new Route(
     '/documentation',
-    ['_controller' => 'Controller\Documentation::showAction'],
+    ['_controller' => 'Controller\DocumentationController::showAction'],
     ['id' => '\d+'],
     ['_permission' => 'add']
   )
