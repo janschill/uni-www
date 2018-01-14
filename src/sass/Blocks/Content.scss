@@ -1,8 +1,11 @@
-.content {}
+@media all and (max-width: $breakpoint) {
+    .content {
+        margin-top: 20px;
+    }
+}
 
 .content__heading {
     padding-top: 3rem;
     max-width: 600px;
     margin: 0 auto;
-    
 }

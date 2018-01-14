@@ -22,18 +22,14 @@
                 <li class="nav__list-item nav__item--regular"><a class="nav__link" href="/blog">Blog</a></li>
                 <li class="nav__list-item nav__item--regular"><a class="nav__link" href="/projects">Projects</a></li>
                 <li class="nav__list-item nav__item--regular"><a class="nav__link" href="/about">About</a></li>
+                {% if user.isAuthenticated %}
+                    {% if user.hasPermission('delete') %}
+                        <li class="nav__list-item nav__item--regular"><a class="nav__link" href="/admin">Admin</a></li>
+                    {% endif %}
+                    <li class="nav__list-item nav__item--regular"><a class="nav__link" href="/logout">Logout</a></li>
+                {% endif %}                    
             </ul>
         </nav>
-        {% if user.isAuthenticated %}
-            <nav class="nav nav--admin">
-                <ul class="nav__list nav__list--admin">
-                    {% if user.hasPermission('delete') %}
-                        <li class="nav__list-item nav__item--admin"><a class="nav__link" href="/admin">Admin</a></li>
-                    {% endif %}
-                    <li class="nav__list-item nav__item--admin"><a class="nav__link" href="/logout">Logout</a></li>
-                </ul>
-            </nav>
-        {% endif %}
     </header>
 
     <div class="content">
