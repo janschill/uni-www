@@ -24,19 +24,20 @@
           <h2 class="post__heading">Aufbau der Anwendung</h2>
       </div>
       <p class="post__text">
-        Die Anwendung ist nach dem MVC-Softwaremuster aufgebaut. Es gibt das 'Model', welches die Datenbank Verarbeitung übernimmt, 
-        den `View`, welcher per Twig-Templating, den Content an den Browser gibt und den `Controller`, welcher die Kommunikation zwischen 
-        `Model` und `View` übernimmt – also die Daten aus der Datenbank vom `Model` entgegennimmt und dann ans `View` schickt.
-      </p>
+        Die Anwendung ist nach dem MVC-Softwaremuster aufgebaut. Es gibt das <span class="codebox">Model</span>, welches die Datenbank Verarbeitung übernimmt, 
+        den <span class="codebox">View</span>, welcher per Twig-Templating, den Content an den Browser gibt und den <span class="codebox">Controller</span>, welcher die Kommunikation zwischen 
+        <span class="codebox">Model</span> und <span class="codebox">View</span> übernimmt – also die Daten aus der Datenbank vom <span class="codebox">Model</span> entgegennimmt und dann ans <span class="codebox">View</span> schickt.
+        <br>
+        Da es ein Admin-Panel gibt, in dem der Nutzer, mit den nötigen Rechten Einstellungen und Einträge verwalten kann, unterscheiden wir zwischen Controller, welche für das Admin-Panel sind und die Controller die im Frontend, also das was auf der Webseite angezeigt wird.
+        Zwischen den Controllern haben wir auch versucht die auszuteilen, so dass eher mehr Controller haben, um so das doch recht umfangreiche Projekt sinnvoll zu gliedern.
+        Da, dabei viele Redundanzen auftreten, haben wir auch <em>Oberklassen</em> angelegt, die an <em>Unterklassen</em> Methoden und Variablen vererben.
+        <br>      
+        Um in das Backend zu gelangen, haben wir uns an die heutigen CMS angelehnt und es einfach im Pfad unter <span class="codebox">/login</span> versteckt.
+        <br>
+        *** Welcher Teil übernimmt welche Aufgaben?
+        <br>
+        *** Warum wurde diese Aufteilung gewählt?
 
-      <p class="post__text">
-       Da es ein Admin-Panel gibt, in dem der Nutzer, mit den nötigen Rechten Einstellungen und Einträge verwalten kann, unterscheiden wir zwischen Controller, welche für das Admin-Panel sind und die Controller die im Frontend, also das was auf der Webseite angezeigt wird.
-       Zwischen den Controllern haben wir auch versucht die auszuteilen, so dass eher mehr Controller haben, um so das doch recht umfangreiche Projekt sinnvoll zu gliedern.
-       Da, dabei viele Redundanzen auftreten, haben wir auch _Oberklassen_ angelegt, die an _Unterklassen_ Methoden und Variablen vererben.
-      </p>
-
-      <p class="post__text">
-       Um in das Backend zu gelangen, haben wir uns an die heutigen CMS angelehnt und es einfach im Pfad unter `/login` versteckt.
       </p>
     </article>
 
@@ -45,54 +46,116 @@
           <h2 class="post__heading">Überlegungen zu den URIs</h2>
       </div>
       <p class="post__text">
+      Das Routing als Struktur:
       <pre>
-        Das Routing als Struktur:
-        
-        |-- /
-            |-- /login
-            |-- /logout
-            |-- /about
-            |-- /blog
-                |-- /{id}
-            |-- /projects
-                |-- /{id}
-            |-- /admin
-                |-- /about
-                |-- /blog
-                    |-- /new
-                    |-- /delete/{id}
-                    |-- /edit/{id}
-                    |-- /{author}
-                |-- /projects
-                    |-- /new
-                    |-- /delete/{id}
-                    |-- /edit/{id}
-                    |-- /{author}        
-                |-- /media
-                    |-- /new
-                    |-- /delete/{id}
-                |-- /settings
-                    |-- /tag/delete{id}
-                    |-- /category/delete{id}
-        
-        <em>hier ueberlegungen</em>
+<div class="codebox">|-- /
+    |-- /login
+    |-- /logout
+    |-- /about
+    |-- /blog
+        |-- /{id}
+    |-- /projects
+        |-- /{id}
+    |-- /admin
+        |-- /about
+        |-- /blog
+            |-- /new
+            |-- /delete/{id}
+            |-- /edit/{id}
+            |-- /{author}
+        |-- /projects
+            |-- /new
+            |-- /delete/{id}
+            |-- /edit/{id}
+            |-- /{author}        
+        |-- /media
+            |-- /new
+            |-- /delete/{id}
+        |-- /settings
+            |-- /tag/delete{id}
+            |-- /category/delete{id}
+            </div>
+            
+
+<em>hier ueberlegungen</em>
         </pre>
       </p>
     </article>
 
     <article class="post">
       <div class="post__header">
-          <h2 class="post__heading">Externe Komponenten</h2>
+          <h2 class="post__heading">Aufbau der Datenbank</h2>
+      </div>
+      <p class="post__text post__text--nomargin">
+        Folgenden Tabellen sind in der Datenbank enthalten:
+        <details> <summary> about </summary> <p> id, title, image, description </p></details>
+        <details> <summary> blog </summary> <p> id, title, description, text, created, author, cover </p></details>
+        <details> <summary> categories </summary> <p> id, name </p></details>
+        <details> <summary> comments </summary> <p> id, admin, text, created, blogid </p></details>
+        <details> <summary> edited </summary> <p> id, edited, userid </p></details>
+        <details> <summary> permissions </summary> <p> id, permissions </p></details>
+        <details> <summary> projects </summary> <p> id, title, text, created, author, description, cover </p></details>
+        <details> <summary> tags </summary> <p> id, name </p></details>
+        <details> <summary> timeline </summary> <p> id, aboutid, date, title, text, image </p></details>
+        <details> <summary> users </summary> <p> id, username, password </p></details>
+
+
+
+        <p class="post__text post__text--nomargin">
+        Dazu wurden diese Assoziativtabellen erstellt:
+        <details> <summary> category2blog </summary> <p> id, title, image, description </p></details>
+        <details> <summary> category2projects </summary> <p> id, title, description, text, created, author, cover </p></details>
+        <details> <summary> edited2blog </summary> <p> id, name </p></details>
+        <details> <summary> tag2blog </summary> <p> id, admin, text, created, blogid </p></details>
+        <details> <summary> tag2projects </summary> <p> id, edited, userid </p></details>
+        <details> <summary> user2permission </summary> <p> id, permissions </p></details>
+        
+            
+    </article>
+
+    <article class="post">
+      <div class="post__header">
+          <h2 class="post__heading">Nutzung von JS im Frontend</h2>
       </div>
       <p class="post__text">
-        <ul>
-            <li> gulp.js </li>
-            <li> Sass </li>
-            <li> Composer </li>
-            <li> Twig </li>
-            <li> BEM </li>
+        ***TEXT
+        </p>
+    </article>
+
+    <article class="post">
+      <div class="post__header">
+          <h2 class="post__heading">Progressive Enhancement</h2>
+      </div>
+      <p class="post__text">
+        ***TEXT
+        </p>
+    </article>
+
+    <article class="post">
+      <div class="post__header">
+          <h2 class="post__heading">Besonderheiten</h2>
+      </div>
+      <p class="post__text">
+        ***TEXT
+        </p>
+    </article>
+
+    <article class="post">
+      <div class="post__header">
+          <h2 class="post__heading">Externe Komponenten</h2>
+      </div>
+      <p>
+      <ul>
+            <li> <span class="codebox">gulp.js</span> </li>
+            <li> <span class="codebox">Sass</span> </li>
+            <li> <span class="codebox">Composer</span> </li>
+            <li> <span class="codebox">Twig</span> </li>
+            <li> <span class="codebox">BEM</span> </li>
             <li> CKEditor </li>
         </ul>
+        </p>
+      <p class="post__text">
+        *** Warum werden sie verwendet?
       </p>
     </article>
 
@@ -112,7 +175,19 @@
       </div>
       <p class="post__text">
         Wir hatten anfangs Probleme mit dem Verständniss von Twig, Composer und wie PHP dies nutzt.
-        Und auch Probleme PHP richtig anzuwenden, was möglich ist, wie man es dann umsetzt und die _neue_ `->`-Notation zu verwenden und nicht Punktnotation, war wahrscheinlich die häufigste Fehlerquelle.
+        Und auch Probleme PHP richtig anzuwenden, was möglich ist, wie man es dann umsetzt und die <em>neue</em> Notation zu verwenden und nicht Punktnotation, war wahrscheinlich die häufigste Fehlerquelle.
       </p>
+      
     </article>
+
+    <article class="post">
+      <div class="post__header">
+          <h2 class="post__heading">Wer hat was umgesetzt</h2>
+      </div>
+      <p class="post__text">
+        ***TEXT
+        </p>
+    </article>
+
+    
 {% endblock %}
