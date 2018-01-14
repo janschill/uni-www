@@ -1,0 +1,98 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Dokumentation{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    <h1 class="content__heading">Dokumentation</h1>
+
+    <article class="post">
+      <div class="post__header">
+          <h2 class="post__heading">Ziel und Funktionsumfang der Anwendung</h2>
+      </div>
+      <p class="post__text">
+        Wir haben uns entschieden das GOM-Projekt aus dem letzten Semester weiterzuführen, um so ein _komplettes_ Webseiten-Projekt einmal entwickelt zu haben.
+        Die Aufgabe in GOM war es eine statische Webseite mit HTML und CSS umzusetzen, hier wählten wir als Projekt eine persönliche Webseite für Jan Schill, auf der, wie in einem Portfolio, verschiedenste Projekte aufgelistet werden.
+        Nun haben wir dieses Projekt mit PHP so erweitert, dass es möglich ist die Projekte dynamisch anzulegen und zu verwalten. Außerdem können Blogeinträge verfasst werden.
+        Es gibt verschiedene Benutzergruppen, welchen es ermöglicht entweder Einträge zu verfassen oder zu löschen.
+      </p>
+    </article>
+
+    <article class="post">
+      <div class="post__header">
+          <h2 class="post__heading">Aufbau der Anwendung</h2>
+      </div>
+      <p class="post__text">
+        Die Anwendung ist nach dem MVC-Softwaremuster aufgebaut. Es gibt das 'Model', welches die Datenbank Verarbeitung übernimmt, 
+        den `View`, welcher per Twig-Templating, den Content an den Browser gibt und den `Controller`, welcher die Kommunikation zwischen 
+        `Model` und `View` übernimmt – also die Daten aus der Datenbank vom `Model` entgegennimmt und dann ans `View` schickt.
+      </p>
+
+      <p class="post__text">
+       Da es ein Admin-Panel gibt, in dem der Nutzer, mit den nötigen Rechten Einstellungen und Einträge verwalten kann, unterscheiden wir zwischen Controller, welche für das Admin-Panel sind und die Controller die im Frontend, also das was auf der Webseite angezeigt wird.
+       Zwischen den Controllern haben wir auch versucht die auszuteilen, so dass eher mehr Controller haben, um so das doch recht umfangreiche Projekt sinnvoll zu gliedern.
+       Da, dabei viele Redundanzen auftreten, haben wir auch _Oberklassen_ angelegt, die an _Unterklassen_ Methoden und Variablen vererben.
+      </p>
+
+      <p class="post__text">
+       Um in das Backend zu gelangen, haben wir uns an die heutigen CMS angelehnt und es einfach im Pfad unter `/login` versteckt.
+      </p>
+    </article>
+
+    <article class="post">
+      <div class="post__header">
+          <h2 class="post__heading">Überlegungen zu den URIs</h2>
+      </div>
+      <p class="post__text">
+      <pre>
+        Das Routing als Struktur:
+        
+        |-- /
+            |-- /login
+            |-- /logout
+            |-- /about
+            |-- /blog
+                |-- /{id}
+            |-- /projects
+                |-- /{id}
+            |-- /admin
+                |-- /about
+                |-- /blog
+                    |-- /new
+                    |-- /delete/{id}
+                    |-- /edit/{id}
+                    |-- /{author}
+                |-- /projects
+                    |-- /new
+                    |-- /delete/{id}
+                    |-- /edit/{id}
+                    |-- /{author}        
+                |-- /media
+                    |-- /new
+                    |-- /delete/{id}
+                |-- /settings
+                    |-- /tag/delete{id}
+                    |-- /category/delete{id}
+        
+        <em>hier ueberlegungen</em>
+        </pre>
+      </p>
+    </article>
+
+    <article class="post">
+      <div class="post__header">
+          <h2 class="post__heading">Externe Komponenten</h2>
+      </div>
+      <p class="post__text">
+        <ul>
+            <li> gulp.js </li>
+            <li> Sass </li>
+            <li> Composer </li>
+            <li> Twig </li>
+            <li> BEM </li>
+            <li> CKEditor </li>
+        </ul>
+      </p>
+    </article>
+{% endblock %}
