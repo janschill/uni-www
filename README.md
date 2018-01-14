@@ -94,7 +94,7 @@ Wir haben uns entschieden die Hausarbeit aus dem letzten Semester in GOM (Fronte
 - :white_check_mark: Keine Nutzung von globalen Variablen oder Singletons in Klassen und Funktionen
 - :white_check_mark: Aufgabentrennung: z.B. Model (Datenverarbeitung), Kontroller, Template
 - :white_check_mark: Verwendung einer Template-Engine mit Autoescaping (z.B. Twig)
-- Formulare mit Überprüfung der Eingaben und Fehlermeldungen
+- :white_check_mark: Formulare mit Überprüfung der Eingaben und Fehlermeldungen
 - :white_check_mark: Nutzer-Login
 - :white_check_mark: Speicherung der Daten in einer Datenbank
 - :white_check_mark: Datenbank: SQLite (Kein Postgres, MySQL o.ä.)
@@ -117,12 +117,12 @@ Wir haben uns entschieden die Hausarbeit aus dem letzten Semester in GOM (Fronte
 - :white_check_mark: Valides HTML
 - :white_check_mark: Valides CSS
 - :white_check_mark: Semantisches HTML
-- Responsive Webdesign
+- :white_check_mark: Responsive Webdesign
 - :white_check_mark: Progressive Enhancement: Kernfunktionen auch ohne JS
 - :white_check_mark: Progressive Enhancement: Alle Inhalte ohne JS zu erreichen
-- Keine JS-Frameworks
+- :white_check_mark: Keine JS-Frameworks
 - :white_check_mark: Die Nutzung von CSS-Frameworks ist möglich (Bootstrap / Foundation) – aber keine Nutzung der dazugehörigen JS-Komponenten.
-- Impressum
+- :white_check_mark: Impressum
 - :white_check_mark: Dokumentation als HTML-Seite(n)
 
 #### Mögliche Erweiterungen
