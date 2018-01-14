@@ -12,7 +12,7 @@ class DocumentationController extends Controller
   public function showAction($request)
   {
     $user = $request->attributes->get('user');
-    $html = $this->container['twig']->render('docu.html.twig', [
+    $html = $this->container['twig']->render('doc.html.twig', [
       'user' => $user
       ]);
     return new Response($html);
