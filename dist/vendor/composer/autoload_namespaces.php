@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
+    'Aptoma' => array($vendorDir . '/aptoma/twig-markdown/src'),
 );

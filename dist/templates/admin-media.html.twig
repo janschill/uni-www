@@ -9,11 +9,10 @@
         <section class="admin">
             {% include 'admin-aside.html.twig' %}
 
-
-            <article class="admin__article">
+            <article class="admin__articles">
                 <h3 class="admin__header">
                     Add New Media
-                    <span class="admin__button js-Formlink"><a href="/admin/media/new">new Media</a></span>
+                    <span class="admin__button js-Formlink"><a class="link link--thick" href="/admin/media/new">new Media</a></span>
                 </h3>
                 {% if error['format'] %}<p class="form__error form__error--danger">{{ error['format'] }}</p>{% endif %}
 

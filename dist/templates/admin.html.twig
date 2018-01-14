@@ -10,19 +10,19 @@
             {% include 'admin-aside.html.twig' %}
 
             <article class="admin__articles">
-                <h2>Most recent</h2>
+                <h2 class="admin__header">Most recent</h2>
                 <div class="admin__article">
-                    <h2><a class="link link--thick" href="admin/blog">Blog</a></h2>
+                    <h3><a class="link link--thick" href="admin/blog">Blog</a></h3>
                     {% for post in blog %}
-                        <h3><a class="link link--thin" href="/blog/{{ post.title }}">{{ post.title }}</a></h3>
+                        <h4><a class="link link--thin" href="/blog/{{ post.title }}">{{ post.title }}</a></h4>
                         <p class="admin__text">{{ post.description }}</p>
                     {% endfor %}
                 </div>
                 
                 <div class="admin__article">
-                   <h2><a class="link link--thick" href="admin/projects">Projects</a></h2>
+                   <h3><a class="link link--thick" href="admin/projects">Projects</a></h3>
                     {% for post in projects %}
-                        <h3><a class="link link--thin" href="/projects/{{ post.title }}">{{ post.title }}</a></h3>
+                        <h4><a class="link link--thin" href="/projects/{{ post.title }}">{{ post.title }}</a></h4>
                         <p class="admin__text">{{ post.description }}</p>
                     {% endfor %}
                 </div>

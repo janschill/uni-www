@@ -8,68 +8,41 @@
         <section class="admin">
             {% include 'admin-aside.html.twig' %}
 
-            <article class="admin__article">
-                <h3>
+            <article class="admin__articles">
+                <h3 class="admin__header">
                     Settings
                 </h3>
 
-                <h4>Tags</h4>
-                <table class="tags">
-                  {% for tag in tags %}
-                    <tr>
-                      <td>{{ tag.name }}</td>
-                    </tr>
-                  {% endfor %}
-
-                </table>
-
-                <ul>
-                </ul>
-                <form class="" action="" method="post">
-                  <input type="text" name="tag" placeholder="new Tag"></input>
-                  <input type="submit" value="Add"></input>
-                </form>
-
-                <h4>Categories</h4>
-                <ul>
-                {% for category in categories %}
-                  <li>{{ category.name }}</li>
-                {% endfor %}
-                </ul>
-                <form class="" action="" method="post">
-                  <input type="text" name="category" placeholder="new Category"></input>
-                  <input type="submit" value="Add"></input>
-                </form>
-
-
-
-
-
-              {# <table class="users">
-                <tr>
-                  <th>Users</th>
-                  {% for permission in permissions %}
-                  <th>{{ permission.permission }}</th>
-                  {% endfor %}
-                </tr>
-                {% for user in users %}
-                  <tr>
-                    <td>{{ user.username }}</td>
-                    {% for permission in permissions %}
-                      {% set selected = false %}
-                      {% for userpermission in userpermissions if selected == false %}
-                        {% if userpermission.username == user.username and userpermission.permission == permission.permission  %}
-                          {% set selected = true %}
-                        {% endif %}
+                <div class="admin__article">
+                  <div class="admin__article-setting">
+                    <h4 class="table__header">Tags</h4>
+                    <table class="table table--settings">
+                      {% for tag in tags %}
+                        <tr>
+                          <td class="table__row">{{ tag.name }}</td>
+                        </tr>
                       {% endfor %}
+                    </table>
+                    <form class="admin__form" action="" method="post">
+                      <input class="input input--settings" type="text" name="tag" placeholder="new Tag"></input>
+                      <input class="button button--blue" type="submit" value="Add"></input>
+                    </form>
+                  </div>
 
-                      <td><input type="checkbox"{% if selected %}checked{% endif %}></td>
-                    
+                <div class="admin__article-setting">
+                  <h4 class="table__header">Categories</h4>
+                  <table class="table table--settings">
+                    {% for category in categories %}
+                          <tr>
+                            <td class="table__row">{{ category.name }}</td>
+                          </tr>
                     {% endfor %}
-                  </tr>
-                {% endfor %}
-              </table> #}
-              
+                  </table>
+                  <form class="admin__form" action="" method="post">
+                    <input class="input input--settings" type="text" name="category" placeholder="new Category"></input>
+                    <input class="button button--blue" type="submit" value="Add"></input>
+                  </form>
+                </div>              
               </article>
         </section>
 
