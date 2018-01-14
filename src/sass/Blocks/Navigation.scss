@@ -1,59 +1,114 @@
 .nav {
     list-style-type: none;
+    width: 100%;
+}
+
+@media screen and (min-width: 860px) {
+    .nav {
+        padding: 10px 18px;
+    }
 }
 
 .nav--regular {
     background: #FFF;
     opacity: .95;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
-}
-
-.nav--admin {
-    background: $bunker;
-}
-
-.nav__item--admin a {
-    color: white;
-    font-size: 80%;
-}
-
-.nav__home {
-    padding: 0 10rem 0 0;
-}
-
-@media screen and (min-width: 860px) {
-    .nav {
-        width: 100%;
-        padding: 10px 18px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    z-index: 5;
+    transition: transform 200ms ease-in;
+    transform: translateX(-100%);
+    @media all and (min-width: $breakpoint) {
+        position: relative;
+        transform: inherit;
     }
 }
 
 .nav__list {
-    display: inline-block;
-}
-
-.nav__list-item {
-    margin: 0px 50px 0px 0px;
-    float: left;
+    border-top: 3px solid $color-bright;
     list-style: none;
-}
-
-.nav__list-item:last-child {
-    margin-right: 0px;
+    font-size: 120%;
+    left: 0;
+    opacity: 1;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    right: 100%;
+    top: 70px;
+    overflow: hidden;
+    z-index: 2;
 }
 
 .nav__link {
-    transition: color linear 0.15s;
+    position: relative;
     text-decoration: none;
+    color: $color-text;
+    padding: 20px;
+    display: block;
 }
 
-.nav__list-item--regular a {
-    color: $bunker;
+.nav--visible {
+    transform: translateX(0);
 }
 
-.nav__link:hover,
-.nav .current-item a {
-    color: $blue;
+.nav__list-item {
+    border-bottom: 1px solid $color-bright;
+}
+
+@media all and (min-width: $breakpoint) {
+    .nav__list {
+        position: relative;
+        font-size: 100%;
+        background-color: transparent;
+        top: unset;
+        left: unset;
+        right: unset;
+        padding: 0;
+        height: unset;
+        overflow: unset;
+    }
+    .nav__link {
+        padding: 0;
+        display: inline-block;
+    }
+    .nav__list-item {
+        float: left;
+        margin-right: 18px;
+        list-style: none;
+    }
+    .nav--admin {
+        background: $bunker;
+    }
+    .nav__item--admin a {
+        color: white;
+        font-size: 80%;
+    }
+    .nav__list {
+        display: inline-block;
+    }
+    .nav__list-item {
+        margin: 0px 50px 0px 0px;
+        float: left;
+        list-style: none;
+    }
+    .nav__list-item:last-child {
+        margin-right: 0px;
+    }
+    .nav__link {
+        transition: color linear 0.15s;
+        text-decoration: none;
+    }
+    .nav__list-item--regular a {
+        color: $bunker;
+    }
+    .nav__link:hover,
+    .nav .current-item a {
+        color: $blue;
+    }
 }
 
 @media screen and (max-width: 860px) {
