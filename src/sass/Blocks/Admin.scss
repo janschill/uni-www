@@ -94,3 +94,26 @@
 .admin-form__list {
     list-style-type: none;
 }
+
+.admin-form__submit {
+    font-family: $font-family-serif;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    font-size: 30px;
+    border: 0;
+    font-weight: bold;
+    cursor: pointer;
+    &::before {
+        content: '';
+        width: 100%;
+        left: 0;
+        bottom: -4px;
+        height: 4px;
+        position: absolute;
+        transition: width 200ms ease-in;
+        display: block;
+        background: $blue;
+    }
+}
