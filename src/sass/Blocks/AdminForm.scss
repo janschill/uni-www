@@ -26,13 +26,12 @@
 }
 
 .admin-form__input {
+    margin-bottom: 10px;
     width: 100%;
     padding: 5px;
     border: 1px solid;
     border-color: rgba(0, 0, 255, 0.15);
     outline: none;
-    -webkit-box-shadow: inset 0px 1px 7px -3px rgba(125, 125, 125, 0.39);
-    -moz-box-shadow: inset 0px 1px 7px -3px rgba(125, 125, 125, 0.39);
     box-shadow: inset 0px 1px 7px -3px rgba(125, 125, 125, 0.39);
 }
 
@@ -46,6 +45,10 @@
 
 .admin-tags__heading {
     padding-bottom: 0.5rem;
+}
+
+.admin-category__heading {
+    margin-top: 0;
 }
 
 .admin-form__textarea {
