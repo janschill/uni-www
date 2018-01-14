@@ -107,7 +107,6 @@ class PostModel extends Model
     return $row;
   }
 
-
   public function getCategoryById($instance, $id)
   {
     $instanceId = $instance . 'id';
@@ -122,6 +121,7 @@ class PostModel extends Model
     $sql->bindParam(':id', $id);
     $sql->execute();
     $row = $sql->fetchAll(\PDO::FETCH_COLUMN, 0);
+
     return $row;
   }
 

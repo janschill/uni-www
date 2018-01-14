@@ -115,8 +115,8 @@ class PostController extends \Controller\FormController
   {
     if ($instance['edit']) {
       $post = $this->postModel->getOnePost($instance['instance'], $id);
-      $categories = $this->postModel->getCategoryById($instance['instance'], $post['id']);
-      $tags = $this->postModel->getTagsById($instance['instance'], $post['id']);
+      $categories = $this->postModel->getCategoryById($instance['instance'], $id);
+      $tags = $this->postModel->getTagsById($instance['instance'], $id);
 
       $formData['title'] = $post['title'];
       $formData['description'] = $post['description'];

@@ -6,6 +6,7 @@
     <script src="/js/ckeditor/ckeditor.js"></script>
 {% endblock %}
 {% block content %}
+
     <section class="admin">
         {% include 'admin-aside.html.twig' %}
 
@@ -13,7 +14,7 @@
 
             <form enctype="multipart/form-data" class="admin-form admin-form__form--box" action="#" method="post">
                 <div class="admin-form__form">
-                    <h2 class="admin-form__heading">New Project</h2>
+                    <h2 class="admin__header">New Project</h2>
                     <input type="hidden" name="form[token]" value="{{ form['token'] }}">
                     <input type="hidden" name="form[author]" value="{{ form['author'] }}">
                     <input type="hidden" name="form[created]" value="{{ form['created'] }}">
@@ -40,12 +41,13 @@
                     </script>
                     </div>
 
-                    <input class="form__submit" type="submit" id="form_submit" value="Post">
+                    <input class="admin-form__submit" type="submit" id="form_submit" value="Post">
                 </div>
 
+
                 <aside class="admin-form__aside">
-                    <ul class="admin-form__category">
-                        <h3 class="admin-category__heading">categories</h3>
+                    <ul class="admin-form__list admin-form__list--category">
+                        <h3 class="admin-category__heading">Categories</h3>
                         {% for category in categories %}
                             {% set selected = false %}
                             {% for formCategory in form['categories'] if selected == false %}
@@ -53,12 +55,12 @@
                                     {% set selected = true %}
                                 {% endif %}
                             {% endfor %}
-                            <li><input type="checkbox" name="form[category][]" value="{{ category.name }}" {% if selected %}checked{% endif %}>{{ category.name }}</input></li>
+                            <li class="admin-form__list-item"><input class="input__checkbox input__checkbox--category" type="checkbox" name="form[category][]" value="{{ category.name }}" {% if selected %}checked{% endif %}>{{ category.name }}</input></li>
                         {% endfor %}
                     </ul>
 
-                    <ul class="admin-form__tags">
-                        <h3 class="admin-tags__heading">tags</h3>
+                    <ul class="admin-form__list admin-form__list--tags">
+                        <h3 class="admin-tags__heading">Tags</h3>
                         {% for tag in tags %}
                             {% set selected = false %}
                             {% for formTag in form['tags'] if selected == false %}
@@ -66,7 +68,7 @@
                                     {% set selected = true %}
                                 {% endif %}
                             {% endfor %}
-                            <li><input type="checkbox" name="form[tags][]" value="{{ tag.name }}"{% if selected %}checked{% endif %}>{{ tag.name }}</input></li>
+                            <li class="admin-form__list-item"><input class="input__checkbox input__checkbox--tag" type="checkbox" name="form[tags][]" value="{{ tag.name }}"{% if selected %}checked{% endif %}>{{ tag.name }}</input></li>
                         {% endfor %}
                     </ul>
                 </aside>                
