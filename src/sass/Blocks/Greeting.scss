@@ -1,0 +1,28 @@
+.greeting {
+    height: 200px;
+    width: 100%;
+}
+
+.greeting--bunker {
+    background-color: $bunker;
+}
+
+.greeting--blackhaze {
+    background-color: $black-haze;
+}
+
+.greeting__article {
+    padding: 50px;
+    max-width: 450px;
+    margin-left: 100px;
+}
+
+.greeting__header {
+    margin-top: 0;
+    color: $black-haze;
+}
+
+.greeting__text {
+    color: $black-haze;
+    padding: 0;
+}
