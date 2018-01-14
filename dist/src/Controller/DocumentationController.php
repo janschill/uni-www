@@ -2,6 +2,9 @@
 
 namespace Controller;
 
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
 class DocumentationController extends Controller 
 {
   public function __construct($container)
