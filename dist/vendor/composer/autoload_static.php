@@ -126,6 +126,13 @@ class ComposerStaticInitd18db539d96be834813a5a886a729344
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
             ),
         ),
+        'A' => 
+        array (
+            'Aptoma' => 
+            array (
+                0 => __DIR__ . '/..' . '/aptoma/twig-markdown/src',
+            ),
+        ),
     );
 
     public static function getInitializer(ClassLoader $loader)
