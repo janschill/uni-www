@@ -1,27 +1,27 @@
 .post {
-    max-width: 600px;
-    margin: 0 auto;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .post__header {
-    border-bottom: 1px solid gray;
+  border-bottom: 1px solid gray;
 }
 
 .post__heading {
-    font-size: 26px;
-    padding: 3rem 0 1rem 0;
+  font-size: 26px;
+  padding: 3rem 0 1rem 0;
 }
 
 .post__text {
-    padding: 1rem 0;
+  padding: 1rem 0;
 }
 
 .post__cover {
-    height: 100px;
-    width: auto;
+  height: 100px;
+  width: auto;
 }
 
-.post__text--nomargin:not(:last-of-type){
-    margin-bottom: 0;
+.post__text--nomargin:not(:last-of-type) {
+  margin-bottom: 0;
 
 }

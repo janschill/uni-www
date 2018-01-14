@@ -18,21 +18,21 @@
         </span>
         <nav class="nav nav--regular">
             <ul class="nav__list nav__list--regular">
-                <li class="nav__list-item current-item nav__item--regular"><a class="nav__link"href="/">JS</a></li>
+                <li class="nav__list-item current-item nav__item--regular"><a class="nav__link" href="/">JS</a></li>
                 <li class="nav__list-item nav__item--regular"><a class="nav__link" href="/blog">Blog</a></li>
                 <li class="nav__list-item nav__item--regular"><a class="nav__link" href="/projects">Projects</a></li>
                 <li class="nav__list-item nav__item--regular"><a class="nav__link" href="/about">About</a></li>
             </ul>
         </nav>
         {% if user.isAuthenticated %}
-        <nav class="nav nav--admin">
-            <ul class="nav__list nav__list--admin">
-                {% if user.hasPermission('delete') %}
-                <li class="nav__list-item nav__item--admin"><a class="nav__link" href="/admin">Admin</a></li>
-                {% endif %}
-                <li class="nav__list-item nav__item--admin"><a class="nav__link" href="/logout">Logout</a></li>
-            </ul>
-        </nav>
+            <nav class="nav nav--admin">
+                <ul class="nav__list nav__list--admin">
+                    {% if user.hasPermission('delete') %}
+                        <li class="nav__list-item nav__item--admin"><a class="nav__link" href="/admin">Admin</a></li>
+                    {% endif %}
+                    <li class="nav__list-item nav__item--admin"><a class="nav__link" href="/logout">Logout</a></li>
+                </ul>
+            </nav>
         {% endif %}
     </header>
 
@@ -43,11 +43,12 @@
     <footer class="footer">
         {% block footer %}
             <ul class="social">
-                <li class="social__item"><a href="https://www.twitter.com/schill_jan" class="social__link">Twitter</a></li>
+                <li class="social__item"><a href="https://www.twitter.com/schill_jan" class="social__link">Twitter</a>
+                </li>
                 <li class="social__item"><a href="https://www.github.com/janschill" class="social__link">Github</a></li>
-                <li class="social__item"><a href="/impressum" class="social__link">Impressum</a></li>    
+                <li class="social__item"><a href="/impressum" class="social__link">Impressum</a></li>
                 {% if user.isAuthenticated %}
-                <li class="social__item"><a href="/documentation" class="social__link">Documentation</a></li>
+                    <li class="social__item"><a href="/documentation" class="social__link">Documentation</a></li>
                 {% endif %}
             </ul>
 

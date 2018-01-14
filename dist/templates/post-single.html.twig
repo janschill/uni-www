@@ -5,51 +5,58 @@
     {{ parent() }}
 {% endblock %}
 {% block content %}
-  <article class="post">
-      <div class="post__header">
-          <h2 class="post__heading">{{ post.title }}</h2>
-          <p class="post__created">{{ post.created }} {{ post.username }}</p>
-      </div>
-      <p class="post__text">
-          {{ post.text | raw }}
-      </p>
-    
-    <aside class="comments">
-    
-        {% if user.isAuthenticated and instance.instance == 'blog' %}
-        <div class="formholder formholder--small">
-            <h3 class="form__header">Leave a message</h3>
-            <form class="" action="/blog/{{ id }}/new" method="post">
-                <input type="hidden" name="form[token]" value="{{ form['token'] }}">
-                {% if error['name'] %}<p class="form__error form__error--danger">{{ error['name'] }}</p>{% endif %}
-                {% if error['token'] %}<p class="form__error form__error--danger">{{ error['token'] }}</p>{% endif %}
-                  <div>
-                    <label class="form__label" for="msg">Message:</label>
-                    <textarea class="input input--simple" id="msg" name="form[text]"></textarea>
-                  </div>
-
-                  <div class="">
-                    <button class="button button--blue button--float" type="submit">Post</button>
-                  </div>
-            </form>
+    <article class="post">
+        <div class="post__header">
+            <h2 class="post__heading">{{ post.title }}</h2>
+            <p class="post__created">{{ post.created }} {{ post.username }}</p>
         </div>
-        {% endif %}
+        <p class="post__text">
+            {{ post.text | raw }}
+        </p>
 
-        {% if instance.instance == 'blog' %}
-        <h3>Comments</h3>
-        <div class="comments">
-            {% for comment in comments %}
-                <div class="comment">
-                    <h4 class="comment__header">{{ comment.username }}</h4>
-                    <p class="comment__date">{{ comment.created }}</p>
-                    <p class="comment__text">{{ comment.text | raw }}</p>
+        <aside class="comments">
+
+            {% if user.isAuthenticated and instance.instance == 'blog' %}
+                <div class="formholder formholder--small">
+                    <h3 class="form__header">Leave a message</h3>
+                    <form class="" action="/blog/{{ id }}/new" method="post">
+                        <input type="hidden" name="form[token]" value="{{ form['token'] }}">
+                        {% if error['name'] %}<p
+                                class="form__error form__error--danger">{{ error['name'] }}</p>{% endif %}
+                        {% if error['token'] %}<p
+                                class="form__error form__error--danger">{{ error['token'] }}</p>{% endif %}
+                         
+                        <div>
+                                <label class="form__label" for="msg">Message:</label>
+                                <textarea class="input input--simple" id="msg" name="form[text]"></textarea>
+                             
+                        </div>
+
+                         
+                        <div class="">
+                               
+                            <button class="button button--blue button--float" type="submit">Post</button>
+                             
+                        </div>
+                    </form>
                 </div>
-            {% endfor %}
-        <div>
-        {% endif %}
+            {% endif %}
 
-    </aside>
-  </article>
+            {% if instance.instance == 'blog' %}
+            <h3>Comments</h3>
+            <div class="comments">
+                {% for comment in comments %}
+                    <div class="comment">
+                        <h4 class="comment__header">{{ comment.username }}</h4>
+                        <p class="comment__date">{{ comment.created }}</p>
+                        <p class="comment__text">{{ comment.text | raw }}</p>
+                    </div>
+                {% endfor %}
+                <div>
+                    {% endif %}
+
+        </aside>
+    </article>
 
 
 {% endblock %}

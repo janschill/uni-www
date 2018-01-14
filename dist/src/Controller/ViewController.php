@@ -22,7 +22,7 @@ class ViewController extends FormController
       'user' => $user,
       'blog' => $blog,
       'projects' => $projects
-      ]);
+    ]);
     return new Response($html);
   }
 
@@ -31,7 +31,7 @@ class ViewController extends FormController
     $user = $request->attributes->get('user');
     $html = $this->container['twig']->render('impressum.html.twig', [
       'user' => $user
-      ]);
+    ]);
     return new Response($html);
   }
 
