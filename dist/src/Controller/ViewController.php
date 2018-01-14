@@ -26,6 +26,15 @@ class ViewController extends FormController
     return new Response($html);
   }
 
+  public function showImpressum($request)
+  {
+    $user = $request->attributes->get('user');
+    $html = $this->container['twig']->render('impressum.html.twig', [
+      'user' => $user
+      ]);
+    return new Response($html);
+  }
+
   public function showAbout($request)
   {
     $user = $request->attributes->get('user');
