@@ -1,0 +1,16 @@
+.admin-posts {
+    width: 100%;
+}
+
+.admin-posts th {
+    text-align: left;
+}
+
+.admin-posts td {
+    padding: 1rem 0;
+    border-bottom: 1px solid $black-haze;
+}
+
+.admin-posts__description {
+    padding: 0;
+}

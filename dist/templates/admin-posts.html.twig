@@ -12,7 +12,7 @@
             <article class="admin__article">
                 <h3 class="admin__header">
                     {{ instance.instance | capitalize  }}
-                    <span class="admin__button"><a href="{{ instance.instance }}/new">new Post</a></span>
+                    <span class="admin__button"><a class="link link--thick" href="{{ instance.instance }}/new">new Post</a></span>
                 </h3>
                 <table class="admin-posts admin-posts--blog">
                     <tr>
@@ -25,10 +25,10 @@
                     {% for post in posts %}
                         <tr class="admin-posts__post">
                             <td class="admin-posts__title">
-                                <a href="{{ instance.instance }}/edit/{{ post.id }}">{{ post.title }}</a>
-                                <p>{{ post.description }}</p>
+                                <a class="link link--thin" href="{{ instance.instance }}/edit/{{ post.id }}">{{ post.title }}</a>
+                                <p class="admin-posts__description" >{{ post.description }}</p>
                             </td>
-                            <td class="admin-posts__author"><a href="{{ instance.instance }}/{{ post.author }}">{{ post.author }}</a></td>
+                            <td class="admin-posts__author"><a class="link link--thin" href="{{ instance.instance }}/{{ post.author }}">{{ post.author }}</a></td>
                             <td class="admin-posts__category">
                                 {% for category in post.category %}
                                     {{ category }}
@@ -46,7 +46,7 @@
                                 {% endfor %}
                             </td>
                             <td>{{ post.created|date("Y/m/d") }}</td>
-                            <td><a class="admin-posts__delete" href="{{ instance.instance }}/delete/{{ post.id }}">Delete</a></td>
+                            <td><a class="link link--thin" href="{{ instance.instance }}/delete/{{ post.id }}">Delete</a></td>
                         </tr>
                     {% endfor %}
                 </table>

@@ -1,9 +1,3 @@
-.admin {
-    display: grid;
-    grid-template-columns: 1fr 11fr;
-    grid-template-areas: "aside article"
-}
-
 .adminaside {
     grid-area: aside;
     background-color: $bunker;
@@ -21,12 +15,4 @@
     display: block;
     text-decoration: none;
     color: $black-haze;
-}
-
-.admin__article {
-    grid-area: article;
-}
-
-.blogpost {
-    padding: 1rem;
 }
