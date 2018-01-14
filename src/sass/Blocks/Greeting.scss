@@ -3,6 +3,18 @@
     width: 100%;
 }
 
+.greeting__articles {
+    padding: 30px 0;
+}
+
+.greeting__articles--blackhaze {
+    background-color: $black-haze;
+}
+
+.greeting__articles--bright {
+    background-color: $color-bright;
+}
+
 .greeting--bunker {
     background-color: $bunker;
 }
@@ -11,18 +23,32 @@
     background-color: $black-haze;
 }
 
+.greeting--white {
+    background-color: $color-bright;
+}
+
 .greeting__article {
     padding: 50px;
     max-width: 450px;
     margin-left: 100px;
 }
 
-.greeting__header {
+.greeting__header--blackhaze {
     margin-top: 0;
     color: $black-haze;
 }
 
-.greeting__text {
+.greeting__header--bunker {
+    margin-top: 0;
+    color: $bunker;
+}
+
+.greeting__text--blackhaze {
     color: $black-haze;
+    padding: 0;
+}
+
+.greeting__text--bunker {
+    color: $bunker;
     padding: 0;
 }

@@ -9,6 +9,7 @@ html {
 body {
     line-height: $line-height-standard;
     text-rendering: optimizeLegibility;
+    min-width: 100vh;
 }
 
 a {

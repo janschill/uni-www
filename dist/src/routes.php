@@ -291,6 +291,16 @@ $routes->add(
 );
 
 $routes->add(
+  'impressum',
+  new Route(
+    '/impressum',
+    ['_controller' => 'Controller\ViewController::showImpressum'],
+    ['id' => '\d+'],
+    ['_permission' => 'add']
+  )
+);
+
+$routes->add(
   'removetrailingslash',
   new Route(
     '/{url}',

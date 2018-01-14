@@ -8,57 +8,60 @@
     <main>
         <section class="greeting greeting--bunker">
             <article class="greeting__article">
-                <h1 class="greeting__header">I am a web developer</h1>
-                <p class="greeting__text">My name is Jan. I like computers</p>
+                <h1 class="greeting__header--blackhaze">I am a web developer</h1>
+                <p class="greeting__text--blackhaze">My name is Jan. I like computers</p>
             </article>
         </section>
-        <section class="greeting greeting--blackhaze">
+        <section class="greeting greeting--white">
             <article class="greeting__article">
-                <h1 class="greeting__header">I am a web developer</h1>
-                <p class="greeting__text">My name is Jan. I like computers</p>
+                <blockquote>Nothing happens until something moves.</blockquote>
             </article>
         </section>
 
         <section class="latest">
-            <h2>Latest blog posts</h2>
-            <article class="posts-container">
-                {% for post in blog %}
-                    <a class="posts" href="{{ instance.instance }}/{{ post.id }}">
-                        <span class="posts__header">
-                            {% if not post.cover == null %}
-                                <img class="posts__cover" src="{{ post.cover }}" alt="{{ post.title }}">
-                            {% endif %}
-                            <span class="posts__title">
-                                <h2 class="">{{ post.title }}</h2>
+            <article class="greeting__articles greeting__articles--blackhaze">
+                <h2 class="title">Latest blog posts</h2>
+                <div class="posts-container">
+                    {% for post in blog %}
+                        <a class="posts" href="{{ instance.instance }}/{{ post.id }}">
+                            <span class="posts__header">
+                                {% if not post.cover == null %}
+                                    <img class="posts__cover" src="{{ post.cover }}" alt="{{ post.title }}">
+                                {% endif %}
+                                <span class="posts__title">
+                                    <h2 class="">{{ post.title }}</h2>
+                                </span>
                             </span>
-                        </span>
-                        <span class="posts__description">
-                            <p>
-                                {{ post.description }}
-                            </p>
-                        </span>
-                    </a>
-                {% endfor %}
+                            <span class="posts__description">
+                                <p>
+                                    {{ post.description }}
+                                </p>
+                            </span>
+                        </a>
+                    {% endfor %}
+                </div>
             </article>
-            <h2>Latest projects</h2>
-            <article class="posts-container">
-                {% for post in projects %}
-                    <a class="posts" href="{{ instance.instance }}/{{ post.id }}">
-                        <div class="posts__header">
-                            {% if not post.cover == null %}
-                                <img class="posts__cover" src="{{ post.cover }}">
-                            {% endif %}
-                            <div class="posts__title">
-                                <h2 class="">{{ post.title }}</h2>
+            <article class="greeting__articles greeting__articles--bright">
+                <h2 class="title">Latest projects</h2>
+                <div class="posts-container">
+                    {% for post in projects %}
+                        <a class="posts" href="{{ instance.instance }}/{{ post.id }}">
+                            <div class="posts__header">
+                                {% if not post.cover == null %}
+                                    <img class="posts__cover" src="{{ post.cover }}">
+                                {% endif %}
+                                <div class="posts__title">
+                                    <h2 class="">{{ post.title }}</h2>
+                                </div>
                             </div>
-                        </div>
-                        <div class="posts__description">
-                            <p>
-                                {{ post.description }}
-                            </p>
-                        </div>
-                    </a>
-                {% endfor %}
+                            <div class="posts__description">
+                                <p>
+                                    {{ post.description }}
+                                </p>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
             </article>
         </section>
     </main>

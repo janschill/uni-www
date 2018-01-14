@@ -43,8 +43,12 @@
     <footer class="footer">
         {% block footer %}
             <ul class="social">
-                <li class="social__item"><a href="" class="social__link">Twitter</a></li>
-                <li class="social__item"><a href="" class="social__link">Github</a></li>
+                <li class="social__item"><a href="https://www.twitter.com/schill_jan" class="social__link">Twitter</a></li>
+                <li class="social__item"><a href="https://www.github.com/janschill" class="social__link">Github</a></li>
+                <li class="social__item"><a href="/impressum" class="social__link">Impressum</a></li>    
+                {% if user.isAuthenticated %}
+                <li class="social__item"><a href="/documentation" class="social__link">Documentation</a></li>
+                {% endif %}
             </ul>
 
         {% endblock %}

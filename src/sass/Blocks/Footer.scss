@@ -1,7 +1,17 @@
+.wrapper {
+    position: relative;
+    min-width: 100vh;
+    padding-bottom: 140px;
+}
+
 .footer {
-    grid-area: footer;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $bunker;
     margin: 0 auto;
-    padding: 40px 0;
+    padding: 15px 0;
 }
 
 .social {
@@ -12,7 +22,7 @@
 .social__item {
     list-style: none;
     padding: 0 15px;
-    border-right: 2px solid $blue;
+    border-right: 1px solid rgba($color-bright, 1);
     &:last-child {
         border: none;
     }
@@ -20,8 +30,8 @@
 
 .social__link {
     text-decoration: none;
-    color: $endeavour;
-    font-weight: 500;
+    color: rgba($color-bright, 1);
+    font-weight: 400;
     -o-transition: .2s;
     -ms-transition: .2s;
     -moz-transition: .2s;
