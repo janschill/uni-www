@@ -6,7 +6,7 @@
 {% endblock %}
 {% block content %}
     <section class="blog">
-        <h1 class="content__heading">{{ instance.instance | capitalize}}</h1>
+        <h1 class="title title--padding">{{ instance.instance | capitalize}}</h1>
         
         <article class="posts-container">
             {% for post in posts %}
