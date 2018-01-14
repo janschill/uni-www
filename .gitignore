@@ -90,4 +90,4 @@ composer.phar
 
 .code-workspace
 
-.db
+dist/data/
