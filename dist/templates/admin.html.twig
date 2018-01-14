@@ -14,7 +14,7 @@
                 <div class="admin__article">
                     <h3><a class="link link--thick" href="admin/blog">Blog</a></h3>
                     {% for post in blog %}
-                        <h4><a class="link link--thin" href="/blog/{{ post.title }}">{{ post.title }}</a></h4>
+                        <h4><a class="link link--thin" href="/blog/{{ post.id }}">{{ post.title }}</a></h4>
                         <p class="admin__text">{{ post.description }}</p>
                     {% endfor %}
                 </div>
@@ -22,7 +22,7 @@
                 <div class="admin__article">
                    <h3><a class="link link--thick" href="admin/projects">Projects</a></h3>
                     {% for post in projects %}
-                        <h4><a class="link link--thin" href="/projects/{{ post.title }}">{{ post.title }}</a></h4>
+                        <h4><a class="link link--thin" href="/projects/{{ post.id }}">{{ post.title }}</a></h4>
                         <p class="admin__text">{{ post.description }}</p>
                     {% endfor %}
                 </div>
