@@ -14,23 +14,25 @@
           {{ post.text | raw }}
       </p>
     
-    <aside>
+    <aside class="comments">
     
         {% if user.isAuthenticated and instance.instance == 'blog' %}
-        <h3>Leave a message</h3>
-        <form action="/blog/{{ id }}/new" method="post">
-            <input type="hidden" name="form[token]" value="{{ form['token'] }}">
-            {% if error['name'] %}<p class="form__error form__error--danger">{{ error['name'] }}</p>{% endif %}
-            {% if error['token'] %}<p class="form__error form__error--danger">{{ error['token'] }}</p>{% endif %}
-              <div>
-                <label for="msg">Message:</label>
-                <textarea id="msg" name="form[text]"></textarea>
-              </div>
+        <div class="formholder formholder--small">
+            <h3 class="form__header">Leave a message</h3>
+            <form class="" action="/blog/{{ id }}/new" method="post">
+                <input type="hidden" name="form[token]" value="{{ form['token'] }}">
+                {% if error['name'] %}<p class="form__error form__error--danger">{{ error['name'] }}</p>{% endif %}
+                {% if error['token'] %}<p class="form__error form__error--danger">{{ error['token'] }}</p>{% endif %}
+                  <div>
+                    <label class="form__label" for="msg">Message:</label>
+                    <textarea class="input input--simple" id="msg" name="form[text]"></textarea>
+                  </div>
 
-              <div class="button">
-                <button type="submit">Post</button>
-              </div>
-        </form>
+                  <div class="">
+                    <button class="button button--blue button--float" type="submit">Post</button>
+                  </div>
+            </form>
+        </div>
         {% endif %}
 
         {% if instance.instance == 'blog' %}
