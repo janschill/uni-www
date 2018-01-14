@@ -5,45 +5,46 @@
     {{ parent() }}
 {% endblock %}
 {% block content %}
-        <section class="admin">
-            {% include 'admin-aside.html.twig' %}
+    <section class="admin">
+        {% include 'admin-aside.html.twig' %}
 
-            <article class="admin__articles">
-                <h3 class="admin__header">
-                    Settings
-                </h3>
+        <article class="admin__articles">
+            <h3 class="admin__header">
+                Settings
+            </h3>
 
-                <div class="admin__article">
-                  <div class="admin__article-setting">
+            <div class="admin__article">
+                <div class="admin__article-setting">
                     <h4 class="table__header">Tags</h4>
                     <table class="table table--settings">
-                      {% for tag in tags %}
-                        <tr>
-                          <td class="table__row">{{ tag.name }}</td>
-                        </tr>
-                      {% endfor %}
+                        {% for tag in tags %}
+                            <tr>
+                                <td class="table__row">{{ tag.name }}</td>
+                            </tr>
+                        {% endfor %}
                     </table>
                     <form class="admin__form" action="" method="post">
-                      <input class="input input--settings" type="text" name="tag" placeholder="new Tag"></input>
-                      <input class="button button--blue" type="submit" value="Add"></input>
+                        <input class="input input--settings" type="text" name="tag" placeholder="new Tag"></input>
+                        <input class="button button--blue" type="submit" value="Add"></input>
                     </form>
-                  </div>
+                </div>
 
                 <div class="admin__article-setting">
-                  <h4 class="table__header">Categories</h4>
-                  <table class="table table--settings">
-                    {% for category in categories %}
-                          <tr>
-                            <td class="table__row">{{ category.name }}</td>
-                          </tr>
-                    {% endfor %}
-                  </table>
-                  <form class="admin__form" action="" method="post">
-                    <input class="input input--settings" type="text" name="category" placeholder="new Category"></input>
-                    <input class="button button--blue" type="submit" value="Add"></input>
-                  </form>
-                </div>              
-              </article>
-        </section>
+                    <h4 class="table__header">Categories</h4>
+                    <table class="table table--settings">
+                        {% for category in categories %}
+                            <tr>
+                                <td class="table__row">{{ category.name }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                    <form class="admin__form" action="" method="post">
+                        <input class="input input--settings" type="text" name="category"
+                               placeholder="new Category"></input>
+                        <input class="button button--blue" type="submit" value="Add"></input>
+                    </form>
+                </div>
+        </article>
+    </section>
 
 {% endblock %}

@@ -129,7 +129,7 @@ class PostModel extends Model
   {
     $instanceId = $instance . 'id';
     $tag2Instance = 'tag2' . $instance;
-    
+
     $query = "SELECT tags.name FROM tags
     JOIN $tag2Instance ON tags.id = $tag2Instance.tagsid
     JOIN $instance ON $instance.id = $tag2Instance.$instanceId
@@ -153,8 +153,7 @@ class PostModel extends Model
 
   public function addComment($formData, $id)
   {
-    if (date_default_timezone_get() != 'CET') 
-    {
+    if (date_default_timezone_get() != 'CET') {
       date_default_timezone_set('CET');
     }
     $formData['created'] = date('m/d/Y h:i:s a', time());
@@ -165,7 +164,7 @@ class PostModel extends Model
     $sql->bindParam(':text', $formData['text']);
     $sql->bindParam(':created', $formData['created']);
     $sql->bindParam(':blogid', $id);
-        
+
     $sql->execute();
   }
 

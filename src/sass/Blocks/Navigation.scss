@@ -1,153 +1,153 @@
 .nav {
-    list-style-type: none;
-    width: 100%;
+  list-style-type: none;
+  width: 100%;
 }
 
 @media screen and (min-width: 860px) {
-    .nav {
-        padding: 10px 18px;
-    }
+  .nav {
+    padding: 10px 18px;
+  }
 }
 
 .nav--regular {
-    background: #FFF;
-    opacity: 1;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    display: block;
-    z-index: 5;
-    transition: transform 200ms ease-in;
-    transform: translateX(-100%);
-    @media all and (min-width: $breakpoint) {
-        position: relative;
-        transform: inherit;
-    }
+  background: #FFF;
+  opacity: 1;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: block;
+  z-index: 5;
+  transition: transform 200ms ease-in;
+  transform: translateX(-100%);
+  @media all and (min-width: $breakpoint) {
+    position: relative;
+    transform: inherit;
+  }
 }
 
 .nav__list {
-    list-style: none;
-    font-size: 120%;
-    left: 0;
-    opacity: 1;
-    width: 100%;
-    height: auto;
-    position: fixed;
-    right: 100%;
-    top: 70px;
-    overflow: hidden;
-    z-index: 2;
+  list-style: none;
+  font-size: 120%;
+  left: 0;
+  opacity: 1;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  right: 100%;
+  top: 70px;
+  overflow: hidden;
+  z-index: 2;
 }
 
 .nav__link {
-    position: relative;
-    text-decoration: none;
-    color: $color-text;
-    padding: 20px;
-    display: block;
+  position: relative;
+  text-decoration: none;
+  color: $color-text;
+  padding: 20px;
+  display: block;
 }
 
 .nav--visible {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 @media all and (min-width: $breakpoint) {
-    .nav__list {
-        position: relative;
-        font-size: 100%;
-        background-color: transparent;
-        top: unset;
-        left: unset;
-        right: unset;
-        padding: 50;
-        height: unset;
-        overflow: unset;
-    }
-    .nav__link {
-        padding: 0;
-        display: inline-block;
-    }
-    .nav__list-item {
-        float: left;
-        margin-right: 18px;
-        list-style: none;
-    }
-    .nav--admin {
-        background: $bunker;
-    }
-    .nav__item--admin a {
-        color: white;
-    }
-    .nav__list {
-        display: inline-block;
-    }
-    .nav__list-item {
-        margin: 0px 50px 0px 0px;
-        float: left;
-        list-style: none;
-    }
-    .nav__list-item:last-child {
-        margin-right: 0px;
-    }
-    .nav__link {
-        transition: color linear 0.15s;
-        text-decoration: none;
-    }
-    .nav__list-item--regular a {
-        color: $bunker;
-    }
-    .nav__link:hover,
-    .nav .current-item a {
-        color: $blue;
-    }
+  .nav__list {
+    position: relative;
+    font-size: 100%;
+    background-color: transparent;
+    top: unset;
+    left: unset;
+    right: unset;
+    padding: 50;
+    height: unset;
+    overflow: unset;
+  }
+  .nav__link {
+    padding: 0;
+    display: inline-block;
+  }
+  .nav__list-item {
+    float: left;
+    margin-right: 18px;
+    list-style: none;
+  }
+  .nav--admin {
+    background: $bunker;
+  }
+  .nav__item--admin a {
+    color: white;
+  }
+  .nav__list {
+    display: inline-block;
+  }
+  .nav__list-item {
+    margin: 0px 50px 0px 0px;
+    float: left;
+    list-style: none;
+  }
+  .nav__list-item:last-child {
+    margin-right: 0px;
+  }
+  .nav__link {
+    transition: color linear 0.15s;
+    text-decoration: none;
+  }
+  .nav__list-item--regular a {
+    color: $bunker;
+  }
+  .nav__link:hover,
+  .nav .current-item a {
+    color: $blue;
+  }
 }
 
 @media screen and (max-width: 860px) {
-    .nav--regular {
-        position: relative;
-        display: inline-block;
-    }
-    .nav__list--regular {
-        //width: 100%;
-        position: absolute;
-        top: 120%;
-        left: 0px;
-        padding: 5px 18px;
-        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
-        border-radius: 3px;
-        background: #FFF;
-    }
-    .nav__list-item--regular {
-        margin: 5px 0px 5px 0px;
-        float: none;
-        display: block;
-    }
-    .nav__list-item--regular {
-        padding: 7px;
-    }
-    .nav__list-item--admin {
-        padding: 4px;
-    }
-    .nav--regular a {
-        display: block;
-    }
-    .nav--toggle {
-        padding: 20px;
-        float: left;
-        //display: inline-block;
-        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
-        text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
-        color: #777;
-        font-size: 20px;
-        transition: color linear 0.15s;
-        background: #FFF;
-        opacity: .95;
-    }
-    .nav--toggle:hover,
-    .nav--toggle.nav--nav--active {
-        color: #66a992;
-    }
+  .nav--regular {
+    position: relative;
+    display: inline-block;
+  }
+  .nav__list--regular {
+    //width: 100%;
+    position: absolute;
+    top: 120%;
+    left: 0px;
+    padding: 5px 18px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    background: #FFF;
+  }
+  .nav__list-item--regular {
+    margin: 5px 0px 5px 0px;
+    float: none;
+    display: block;
+  }
+  .nav__list-item--regular {
+    padding: 7px;
+  }
+  .nav__list-item--admin {
+    padding: 4px;
+  }
+  .nav--regular a {
+    display: block;
+  }
+  .nav--toggle {
+    padding: 20px;
+    float: left;
+    //display: inline-block;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
+    color: #777;
+    font-size: 20px;
+    transition: color linear 0.15s;
+    background: #FFF;
+    opacity: .95;
+  }
+  .nav--toggle:hover,
+  .nav--toggle.nav--nav--active {
+    color: #66a992;
+  }
 }

@@ -7,15 +7,6 @@ abstract class Model
 
   protected $db;
 
-  // abstract public function addPost($post, $id);
-  // abstract protected function addTagToPost($lastId, $tags);
-  // abstract protected function addCategoryToPost($lastId, $categories);
-  // abstract public function getOnePost($id);
-  // abstract public function getFewPosts();
-  // abstract public function getAllPosts();
-  // abstract public function getCategoryById($id);
-  // abstract public function getTagsById($id);
-
   public function __construct($db)
   {
     $this->db = $db;

@@ -4,47 +4,50 @@
     <list default="true" id="31cdeece-f300-4236-b4ca-f4e1e3d88a12" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/dist/data/website.db" afterPath="$PROJECT_DIR$/dist/data/website.db" />
-      <change beforePath="$PROJECT_DIR$/dist/public/css/basic.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/Karla-Bold.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/Karla-BoldItalic.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/Karla-Italic.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/Karla-Italic.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/Karla-Italic.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/Karla-Regular.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/Karla-Regular.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/Karla-Regular.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/Karla-Regurlar.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/OFL.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Karla/desktop.ini" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-Black.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-BlackItalic.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-Bold.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-Bold.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-BoldItalic.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-ExtraBold.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-ExtraBoldItalic.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-ExtraLight.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-ExtraLightItalic.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-Italic.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-Light.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-LightItalic.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-Medium.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-MediumItalic.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-Regular.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-SemiBold.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-SemiBoldItalic.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-Thin.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/Montserrat-ThinItalic.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/OFL.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/public/fonts/Montserrat/desktop.ini" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/src/Controller/Admin/PostController.php" afterPath="$PROJECT_DIR$/dist/src/Controller/Admin/PostController.php" />
-      <change beforePath="$PROJECT_DIR$/dist/src/Controller/Controller.php" afterPath="$PROJECT_DIR$/dist/src/Controller/Controller.php" />
-      <change beforePath="$PROJECT_DIR$/dist/src/Controller/LoginController.php" afterPath="$PROJECT_DIR$/dist/src/Controller/LoginController.php" />
-      <change beforePath="$PROJECT_DIR$/src/sass/Configuration/BrowserReset.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sass/Configuration/Mixins.scss" afterPath="$PROJECT_DIR$/src/sass/Configuration/Mixins.scss" />
-      <change beforePath="$PROJECT_DIR$/src/sass/Configuration/Reset.scss" afterPath="$PROJECT_DIR$/src/sass/Configuration/Reset.scss" />
-      <change beforePath="$PROJECT_DIR$/src/sass/Configuration/Typography.scss" afterPath="$PROJECT_DIR$/src/sass/Configuration/Typography.scss" />
-      <change beforePath="$PROJECT_DIR$/src/sass/Configuration/Variables.scss" afterPath="$PROJECT_DIR$/src/sass/Configuration/Variables.scss" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Karla-BoldItalic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Karla-Italic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Karla-Regular.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Montserrat-Black.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Montserrat-BlackItalic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Montserrat-Bold.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Montserrat-BoldItalic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Montserrat-ExtraBold.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Montserrat-ExtraBoldItalic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Montserrat-ExtraLight.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Montserrat-ExtraLightItalic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Montserrat-Italic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Montserrat-Light.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Montserrat-LightItalic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Montserrat-Medium.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Montserrat-MediumItalic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Montserrat-Regular.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Montserrat-SemiBold.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Montserrat-SemiBoldItalic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Montserrat-Thin.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/public/fonts/convert/Montserrat-ThinItalic.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/src/Controller/ViewController.php" afterPath="$PROJECT_DIR$/dist/src/Controller/ViewController.php" />
+      <change beforePath="$PROJECT_DIR$/dist/src/Model/Model.php" afterPath="$PROJECT_DIR$/dist/src/Model/Model.php" />
+      <change beforePath="$PROJECT_DIR$/dist/src/Model/PostModel.php" afterPath="$PROJECT_DIR$/dist/src/Model/PostModel.php" />
+      <change beforePath="$PROJECT_DIR$/dist/src/routes.php" afterPath="$PROJECT_DIR$/dist/src/routes.php" />
+      <change beforePath="$PROJECT_DIR$/dist/templates/about.html.twig" afterPath="$PROJECT_DIR$/dist/templates/about.html.twig" />
+      <change beforePath="$PROJECT_DIR$/dist/templates/admin-settings.html.twig" afterPath="$PROJECT_DIR$/dist/templates/admin-settings.html.twig" />
+      <change beforePath="$PROJECT_DIR$/dist/templates/doc.html.twig" afterPath="$PROJECT_DIR$/dist/templates/doc.html.twig" />
+      <change beforePath="$PROJECT_DIR$/dist/templates/impressum.html.twig" afterPath="$PROJECT_DIR$/dist/templates/impressum.html.twig" />
+      <change beforePath="$PROJECT_DIR$/dist/templates/layout.html.twig" afterPath="$PROJECT_DIR$/dist/templates/layout.html.twig" />
+      <change beforePath="$PROJECT_DIR$/dist/templates/post-single.html.twig" afterPath="$PROJECT_DIR$/dist/templates/post-single.html.twig" />
+      <change beforePath="$PROJECT_DIR$/dist/templates/posts.html.twig" afterPath="$PROJECT_DIR$/dist/templates/posts.html.twig" />
+      <change beforePath="$PROJECT_DIR$/src/sass/Blocks/Footer.scss" afterPath="$PROJECT_DIR$/src/sass/Blocks/Footer.scss" />
+      <change beforePath="$PROJECT_DIR$/src/sass/Blocks/Link.scss" afterPath="$PROJECT_DIR$/src/sass/Blocks/Link.scss" />
+      <change beforePath="$PROJECT_DIR$/src/sass/Blocks/Navigation.scss" afterPath="$PROJECT_DIR$/src/sass/Blocks/Navigation.scss" />
+      <change beforePath="$PROJECT_DIR$/src/sass/Blocks/Post.scss" afterPath="$PROJECT_DIR$/src/sass/Blocks/Post.scss" />
+      <change beforePath="$PROJECT_DIR$/src/sass/Blocks/Posts.scss" afterPath="$PROJECT_DIR$/src/sass/Blocks/Posts.scss" />
+      <change beforePath="$PROJECT_DIR$/src/sass/Blocks/ProjectItem.scss" afterPath="$PROJECT_DIR$/src/sass/Blocks/ProjectItem.scss" />
+      <change beforePath="$PROJECT_DIR$/src/sass/Blocks/Table.scss" afterPath="$PROJECT_DIR$/src/sass/Blocks/Table.scss" />
+      <change beforePath="$PROJECT_DIR$/src/sass/Blocks/Text.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/sass/Blocks/Timeline.scss" afterPath="$PROJECT_DIR$/src/sass/Blocks/Timeline.scss" />
+      <change beforePath="$PROJECT_DIR$/src/sass/Blocks/Title.scss" afterPath="$PROJECT_DIR$/src/sass/Blocks/Title.scss" />
+      <change beforePath="$PROJECT_DIR$/src/sass/Blocks/ToggleNavigation.scss" afterPath="$PROJECT_DIR$/src/sass/Blocks/ToggleNavigation.scss" />
+      <change beforePath="$PROJECT_DIR$/src/sass/Configuration/Doc.scss" afterPath="$PROJECT_DIR$/src/sass/Configuration/Doc.scss" />
       <change beforePath="$PROJECT_DIR$/src/sass/main.scss" afterPath="$PROJECT_DIR$/src/sass/main.scss" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,7 +70,15 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>wrapper</find>
+    </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/src/sass</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -75,32 +86,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dist/src/App/FrontController.php" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a0693b25-0dcd-4a44-b813-f9c15ff32e5d/console.sql" />
-        <option value="$PROJECT_DIR$/dist/src/Admin/LoginFormController.php" />
-        <option value="$PROJECT_DIR$/dist/src/Controller/AdminController.php" />
-        <option value="$PROJECT_DIR$/dist/src/Controller/ViewController.php" />
-        <option value="$PROJECT_DIR$/dist/src/Controller/ProjectController.php" />
         <option value="$PROJECT_DIR$/dist/src/Controller/FrontControllerInterface.php" />
         <option value="$PROJECT_DIR$/dist/src/Controller/FrontController.php" />
         <option value="$PROJECT_DIR$/dist/src/Controller/AdminLoginController.php" />
         <option value="$PROJECT_DIR$/dist/src/Controller/BlogController.php" />
-        <option value="$PROJECT_DIR$/dist/src/Model/Model.php" />
         <option value="$PROJECT_DIR$/dist/templates/admin.html.twig" />
         <option value="$PROJECT_DIR$/dist/templates/adminblog.html.twig" />
         <option value="$PROJECT_DIR$/dist/templates/projects.html.twig" />
-        <option value="$PROJECT_DIR$/dist/templates/layout.html.twig" />
         <option value="$PROJECT_DIR$/dist/templates/formtoolbar.html.twig" />
         <option value="$PROJECT_DIR$/dist/templates/config.html.twig" />
         <option value="$PROJECT_DIR$/dist/templates/blog.html.twig" />
         <option value="$PROJECT_DIR$/dist/public/index.php" />
-        <option value="$PROJECT_DIR$/dist/src/routes.php" />
-        <option value="$PROJECT_DIR$/dist/src/container.php" />
-        <option value="$PROJECT_DIR$/dist/src/User/UserModel.php" />
-        <option value="$PROJECT_DIR$/dist/src/User/User.php" />
         <option value="$PROJECT_DIR$/dist/src/Service/ShowImagesFromFolder.php" />
-        <option value="$PROJECT_DIR$/dist/src/Service/FileUploader.php" />
-        <option value="$PROJECT_DIR$/dist/src/Controller/LoginController.php" />
         <option value="$PROJECT_DIR$/dist/src/Controller/Controller.php" />
         <option value="$PROJECT_DIR$/dist/src/Controller/AdminController2.php" />
         <option value="$PROJECT_DIR$/dist/src/Controller/Helper/RedirectingController.php" />
@@ -111,8 +108,35 @@
         <option value="$PROJECT_DIR$/dist/src/Controller/Admin/ProjectsController.php" />
         <option value="$PROJECT_DIR$/dist/src/Model/BlogModel.php" />
         <option value="$PROJECT_DIR$/dist/src/Model/Projects.php" />
-        <option value="$PROJECT_DIR$/dist/src/Controller/FormController.php" />
         <option value="$PROJECT_DIR$/dist/src/Controller/Admin/PostController.php" />
+        <option value="$PROJECT_DIR$/src/sass/Blocks/Footer.scss" />
+        <option value="$PROJECT_DIR$/dist/src/User/UserModel.php" />
+        <option value="$PROJECT_DIR$/dist/src/User/User.php" />
+        <option value="$PROJECT_DIR$/dist/src/Service/FileUploader.php" />
+        <option value="$PROJECT_DIR$/dist/src/Model/PostModel.php" />
+        <option value="$PROJECT_DIR$/dist/src/Model/Model.php" />
+        <option value="$PROJECT_DIR$/dist/src/Controller/ViewController.php" />
+        <option value="$PROJECT_DIR$/dist/src/Controller/SignUpController.php" />
+        <option value="$PROJECT_DIR$/dist/src/Controller/LoginController.php" />
+        <option value="$PROJECT_DIR$/dist/src/Controller/FormController.php" />
+        <option value="$PROJECT_DIR$/dist/src/container.php" />
+        <option value="$PROJECT_DIR$/dist/src/routes.php" />
+        <option value="$PROJECT_DIR$/dist/templates/posts.html.twig" />
+        <option value="$PROJECT_DIR$/dist/templates/post-single.html.twig" />
+        <option value="$PROJECT_DIR$/dist/templates/layout.html.twig" />
+        <option value="$PROJECT_DIR$/dist/templates/impressum.html.twig" />
+        <option value="$PROJECT_DIR$/dist/templates/doc.html.twig" />
+        <option value="$PROJECT_DIR$/dist/templates/admin-settings.html.twig" />
+        <option value="$PROJECT_DIR$/src/sass/Blocks/ToggleNavigation.scss" />
+        <option value="$PROJECT_DIR$/src/sass/Blocks/Title.scss" />
+        <option value="$PROJECT_DIR$/src/sass/Blocks/Timeline.scss" />
+        <option value="$PROJECT_DIR$/src/sass/main.scss" />
+        <option value="$PROJECT_DIR$/src/sass/Blocks/Table.scss" />
+        <option value="$PROJECT_DIR$/src/sass/Blocks/ProjectItem.scss" />
+        <option value="$PROJECT_DIR$/src/sass/Blocks/Posts.scss" />
+        <option value="$PROJECT_DIR$/src/sass/Blocks/Post.scss" />
+        <option value="$PROJECT_DIR$/src/sass/Blocks/Navigation.scss" />
+        <option value="$PROJECT_DIR$/src/sass/Blocks/Link.scss" />
       </list>
     </option>
   </component>
@@ -151,7 +175,7 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="3360" />
     <option name="height" value="1867" />
@@ -174,6 +198,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -195,51 +221,12 @@
             <path>
               <item name="janschill" type="b2602c69:ProjectViewProjectNode" />
               <item name="janschill" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="dist" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="janschill" type="b2602c69:ProjectViewProjectNode" />
-              <item name="janschill" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="dist" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="janschill" type="b2602c69:ProjectViewProjectNode" />
-              <item name="janschill" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="dist" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="janschill" type="b2602c69:ProjectViewProjectNode" />
-              <item name="janschill" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="dist" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Model" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="janschill" type="b2602c69:ProjectViewProjectNode" />
-              <item name="janschill" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="dist" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Service" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="janschill" type="b2602c69:ProjectViewProjectNode" />
-              <item name="janschill" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="dist" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="User" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -298,35 +285,36 @@
       <workItem from="1514728681953" duration="70000" />
       <workItem from="1515850774619" duration="16000" />
       <workItem from="1515850906940" duration="63000" />
+      <workItem from="1515953586310" duration="414000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3395000" />
+    <option name="totallyTimeSpent" value="3809000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="3360" height="1867" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20205656" sideWeight="0.40833333" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20205656" sideWeight="0.40833333" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2166968" sideWeight="0.59166664" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21790235" sideWeight="0.59166664" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27727547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295711" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27079484" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -341,201 +329,26 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/FormController.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/ProjectController.php" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a0693b25-0dcd-4a44-b813-f9c15ff32e5d/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/App/FrontController.php" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a0693b25-0dcd-4a44-b813-f9c15ff32e5d/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/Admin/LoginFormController.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/Admin/LoginFormModel.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/App/FrontController.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/App/FrontControllerInterface.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/App/Model.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/App/Controller.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/AdminController.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/FrontControllerInterface.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/FrontController.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/AdminLoginController.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/BlogController.php" />
-    <entry file="file://$PROJECT_DIR$/dist/templates/about.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/templates/admin.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/templates/adminblog.html.twig" />
-    <entry file="file://$PROJECT_DIR$/dist/templates/projects.html.twig" />
-    <entry file="file://$PROJECT_DIR$/dist/templates/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/templates/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/templates/formtoolbar.html.twig" />
-    <entry file="file://$PROJECT_DIR$/dist/templates/config.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/templates/blog.html.twig" />
-    <entry file="file://$PROJECT_DIR$/dist/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="71" column="16" lean-forward="false" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/container.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/User/UserModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="3" lean-forward="false" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/User/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/Service/ShowImagesFromFolder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/Service/FileUploader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/src/Controller/ViewController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="255">
           <caret line="19" column="3" lean-forward="false" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/ProjectController.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/AdminController2.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/Helper/RedirectingController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/Front/FrontController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/Admin/SettingsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/Admin/MediaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/Admin/AdminController.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/Admin/PostsInterface.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/Admin/ProjectsController.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/Model/Projects.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/Model/BlogModel.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/Admin/BlogController.php" />
-    <entry file="file://$PROJECT_DIR$/dist/src/Service/PathChecker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/Model/Model.php">
+    <entry file="file://$PROJECT_DIR$/dist/src/Controller/SignUpController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="59" lean-forward="false" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
-          <folding>
-            <marker date="1514673500811" expanded="true" signature="803:827" ph="SELECT * FRO... categories" />
-            <marker date="1514673500811" expanded="true" signature="900:966" ph="SELECT categ... categories" />
-            <marker date="1514673500811" expanded="true" signature="1194:1212" ph="SELECT * FRO... tags" />
-            <marker date="1514673500811" expanded="true" signature="1277:1325" ph="SELECT tags.... tags" />
-            <marker date="1514673500811" expanded="true" signature="1550:1592" ph="INSERT INTO ${$table}... " />
-            <marker date="1514673500811" expanded="true" signature="1766:1797" ph="DELETE FROM tags... " />
-            <marker date="1514673500811" expanded="true" signature="1944:1989" ph="SELECT * FRO... ${$table}" />
-            <marker date="1514673500811" expanded="true" signature="2231:2236" ph="{...}" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/Admin/PostController.php">
+    <entry file="file://$PROJECT_DIR$/dist/src/Controller/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="39" column="7" lean-forward="false" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -543,12 +356,380 @@
     <entry file="file://$PROJECT_DIR$/dist/src/Controller/FormController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
-          <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+          <caret line="38" column="1" lean-forward="false" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/Controller/LoginController.php">
+    <entry file="file://$PROJECT_DIR$/dist/src/container.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/src/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="71" column="7" lean-forward="false" selection-start-line="71" selection-start-column="7" selection-end-line="71" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/about.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/admin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/admin-aside.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/admin-blog-new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/admin-media.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/admin-media-form.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/admin-media-formAndList.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/admin-posts.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/admin-project-new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/posts.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/signup.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/post-single.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/impressum.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/doc.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/config.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/templates/admin-settings.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/Admin.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/AdminAside.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/AdminForm.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/AdminImageEnlarge.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/AdminPosts.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/AdminSettings.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/Blog.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/Button.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/Checkbox.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/Comments.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/Content.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/Footer.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/Form.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/Greeting.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/Input.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/ToggleNavigation.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/Title.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/Timeline.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/Text.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="18" lean-forward="false" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/Table.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/ProjectItem.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/Posts.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/Post.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/Navigation.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/Blocks/Link.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />

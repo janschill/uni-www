@@ -1,43 +1,43 @@
 .wrapper {
-    position: relative;
-    min-width: 100vh;
-    padding-bottom: 140px;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 140px;
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: $bunker;
-    margin: 0 auto;
-    padding: 15px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $bunker;
+  margin: 0 auto;
+  padding: 15px 0;
 }
 
 .social {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .social__item {
-    list-style: none;
-    padding: 0 15px;
-    border-right: 1px solid rgba($color-bright, 1);
-    &:last-child {
-        border: none;
-    }
+  list-style: none;
+  padding: 0 15px;
+  border-right: 1px solid rgba($color-bright, 1);
+  &:last-child {
+    border: none;
+  }
 }
 
 .social__link {
-    text-decoration: none;
-    color: rgba($color-bright, 1);
-    font-weight: 400;
-    -o-transition: .2s;
-    -ms-transition: .2s;
-    -moz-transition: .2s;
-    -webkit-transition: .2s;
-    transition: .2s;
-    &:hover {
-        color: $blue;
-    }
+  text-decoration: none;
+  color: rgba($color-bright, 1);
+  font-weight: 400;
+  -o-transition: .2s;
+  -ms-transition: .2s;
+  -moz-transition: .2s;
+  -webkit-transition: .2s;
+  transition: .2s;
+  &:hover {
+    color: $blue;
+  }
 }
