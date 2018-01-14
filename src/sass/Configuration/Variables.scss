@@ -1,8 +1,26 @@
+$font-size-standard: 16px;
 $font-family-standard: 'Karla';
 $font-family-serif: 'Montserrat';
+$line-height-standard: 1.5;
+$line-height-headlines: 1.2;
+$container-width-small: 860px;
+$container-width-large: 1120px;
+$break-to-mobile: 920px;
+$font-weight-semibold: 500;
+$font-weight-regular: 400;
+$spacing-small: 40px;
+$spacing-medium: 60px;
+$spacing-large: 80px;
+$spacing-huge: 100px;
+$spacing-standard: $spacing-medium;
 
 /* colors */
 
+$color-primary:#B4B4B4;
+$color-secondary:#F7F7F7;
+$color-bright:#FFF;
+$color-dark:#000;
+$color-text:#2D2D2D;
 $magnesium: #B4B4B4;
 $black-haze: #F7F7F7; // textcolor on hover
 $bunker: #2D2D2D;

@@ -5,14 +5,10 @@
     {{ parent() }}
 {% endblock %}
 {% block content %}
-{{ dump() }}
   <article class="post">
       <div class="post__header">
           <h2 class="post__heading">{{ post.title }}</h2>
           <p class="post__created">{{ post.created }} {{ post.username }}</p>
-          {% if not post.cover == null %}
-          <img class="post__cover" src="{{ post.cover }}">
-          {% endif %}
       </div>
       <p class="post__text">
           {{ post.text | raw }}

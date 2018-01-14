@@ -2,14 +2,6 @@
     list-style-type: none;
 }
 
-.nav a {
-    text-decoration: none;
-}
-
-.nav--toggle {
-    display: none;
-}
-
 .nav--regular {
     background: #FFF;
     opacity: .95;
@@ -36,29 +28,30 @@
     }
 }
 
-.nav ul {
+.nav__list {
     display: inline-block;
 }
 
-.nav__item {
+.nav__list-item {
     margin: 0px 50px 0px 0px;
     float: left;
     list-style: none;
 }
 
-.nav__item:last-child {
+.nav__list-item:last-child {
     margin-right: 0px;
 }
 
-.nav a {
+.nav__link {
     transition: color linear 0.15s;
+    text-decoration: none;
 }
 
-.nav__item--regular a {
+.nav__list-item--regular a {
     color: $bunker;
 }
 
-.nav a:hover,
+.nav__link:hover,
 .nav .current-item a {
     color: $blue;
 }
@@ -71,7 +64,7 @@
     .nav ul.nav--active {
         display: none;
     }
-    .nav ul {
+    .nav__list {
         //width: 100%;
         position: absolute;
         top: 120%;
@@ -82,7 +75,7 @@
         background: #FFF;
         opacity: .95;
     }
-    .nav ul:after {
+    .nav__list:after {
         width: 0px;
         height: 0px;
         position: absolute;
@@ -94,15 +87,15 @@
         border-right: 7px solid transparent;
         //border-bottom: 7px solid #303030;
     }
-    .nav__item {
+    .nav__list-item {
         margin: 5px 0px 5px 0px;
         float: none;
         display: block;
     }
-    .nav__item--regular {
+    .nav__list-item--regular {
         padding: 7px;
     }
-    .nav__item--admin {
+    .nav__list-item--admin {
         padding: 4px;
     }
     .nav a {

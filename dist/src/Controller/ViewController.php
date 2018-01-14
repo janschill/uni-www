@@ -16,7 +16,13 @@ class ViewController extends FormController
   public function showIndex($request)
   {
     $user = $request->attributes->get('user');
-    $html = $this->container['twig']->render('index.html.twig', ['user' => $user]);
+    $blog = $this->postModel->getFewPosts('blog');
+    $projects = $this->postModel->getFewPosts('projects');
+    $html = $this->container['twig']->render('index.html.twig', [
+      'user' => $user,
+      'blog' => $blog,
+      'projects' => $projects
+      ]);
     return new Response($html);
   }
 

@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="/css/combined.min.css"/>
         <script src="/js/jquery-3.2.1.min.js"></script>
         <script src="/js/main.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Karla|Montserrat" rel="stylesheet">
         <title>{% block title %}{% endblock %}</title>
     {% endblock %}
 </head>
@@ -14,22 +14,24 @@
 <body>
 <div class="wrapper">
     <header>
+        <span class="toggle-navigation">
+            &#9776;
+        </span>
         <nav class="nav nav--regular">
-            <ul class="nav--active">
-                <li class="nav__item current-item nav__item--regular" class="nav__home"><a href="/">JS</a></li>
-                <li class="nav__item nav__item--regular"><a href="/blog">Blog</a></li>
-                <li class="nav__item nav__item--regular"><a href="/projects">Projects</a></li>
-                <li class="nav__item nav__item--regular"><a href="/about">About</a></li>
+            <ul class="nav__list">
+                <li class="nav__list-item current-item nav__item--regular"><a class="nav__link"href="/">JS</a></li>
+                <li class="nav__list-item nav__item--regular"><a class="nav__link"href="/blog">Blog</a></li>
+                <li class="nav__list-item nav__item--regular"><a class="nav__link"href="/projects">Projects</a></li>
+                <li class="nav__list-item nav__item--regular"><a class="nav__link"href="/about">About</a></li>
             </ul>
-            <a href="#" class="nav--toggle">&#9776;</a>
         </nav>
         {% if user.isAuthenticated %}
         <nav class="nav nav--admin">
-            <ul class="nav--active">
+            <ul class="nav__list">
                 {% if user.hasPermission('delete') %}
-                <li class="nav__item nav__item--admin"><a href="/admin">Admin</a></li>
+                <li class="nav__list-item nav__item--admin"><a href="/admin">Admin</a></li>
                 {% endif %}
-                <li class="nav__item nav__item--admin"><a href="/logout">Logout</a></li>
+                <li class="nav__list-item nav__item--admin"><a href="/logout">Logout</a></li>
             </ul>
         </nav>
         {% endif %}

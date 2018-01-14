@@ -1,10 +1,56 @@
 {% extends "layout.html.twig" %}
 
-{% block title %}Index{% endblock %}
+{% block title %}Home{% endblock %}
 {% block head %}
     {{ parent() }}
 {% endblock %}
 {% block content %}
-    <h1>Index</h1>
-
+    <main>
+        <section class="greeting">
+            <h1>I am a web developer</h1>
+            <p>My name is Jan. I like computers</p>
+        </section>
+        <section class="latest">
+            <h2>Latest blog posts</h2>
+            <article class="posts-container">
+                {% for post in blog %}
+                    <a class="posts" href="{{ instance.instance }}/{{ post.id }}">
+                        <div class="posts__header">
+                            {% if not post.cover == null %}
+                                <img class="posts__cover" src="{{ post.cover }}">
+                            {% endif %}
+                            <div class="posts__title">
+                                <h2 class="">{{ post.title }}</h2>
+                            </div>
+                        </div>
+                        <div class="posts__description">
+                            <p>
+                                {{ post.description }}
+                            </p>
+                        </div>
+                    </a>
+                {% endfor %}
+            </article>
+            <h2>Latest projects</h2>
+            <article class="posts-container">
+                {% for post in projects %}
+                    <a class="posts" href="{{ instance.instance }}/{{ post.id }}">
+                        <div class="posts__header">
+                            {% if not post.cover == null %}
+                                <img class="posts__cover" src="{{ post.cover }}">
+                            {% endif %}
+                            <div class="posts__title">
+                                <h2 class="">{{ post.title }}</h2>
+                            </div>
+                        </div>
+                        <div class="posts__description">
+                            <p>
+                                {{ post.description }}
+                            </p>
+                        </div>
+                    </a>
+                {% endfor %}
+            </article>
+        </section>
+    </main>
 {% endblock %}

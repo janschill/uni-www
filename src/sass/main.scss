@@ -1,4 +1,5 @@
-@import '../fonts';
+@import 'Vendor/Fonts.scss';
+@import '../../node_modules/minireset.css/minireset.sass';
 @import "Configuration/Variables",
 "Configuration/Reset",
 "Configuration/General",
@@ -17,4 +18,7 @@
 "Blocks/AdminForm",
 "Blocks/AdminImage",
 "Blocks/AdminImageEnlarge",
+"Blocks/Content",
+"Blocks/Timeline",
+"Blocks/ToggleNavigation",
 "Blocks/Text";

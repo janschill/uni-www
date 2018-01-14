@@ -1,42 +1,55 @@
 @mixin hide-element() {
-  display: none;
+    display: none;
 }
 
 @mixin show-element() {
-  display: inherit;
+    display: inherit;
 }
 
 @mixin hide-text() {
-  text-indent: -9999px;
+    text-indent: -9999px;
 }
 
 @mixin show-text() {
-  text-indent: 0;
+    text-indent: 0;
 }
 
 @mixin clearfix() {
-  zoom: 1;
-
-  &::before,
-  &::after {
-    content: "\0020";
-    display: block;
-    height: 0;
-    overflow: hidden;
-  }
-
-  &::after {
-    clear: both;
-  }
+    zoom: 1;
+    &::before,
+    &::after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    &::after {
+        clear: both;
+    }
 }
 
 @mixin icon($icon) {
-  content: $icon;
-  font-family: $icon-font-family;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
+    content: $icon;
+    font-family: $icon-font-family;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+}
+
+@mixin placeholder {
+     ::-webkit-input-placeholder {
+        @content
+    }
+     :-moz-placeholder {
+        @content
+    }
+     ::-moz-placeholder {
+        @content
+    }
+     :-ms-input-placeholder {
+        @content
+    }
 }

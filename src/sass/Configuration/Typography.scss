@@ -1,59 +1,87 @@
-@font-face {
-	font-family: "Karla";
-    src: 
-    url(../fonts/Karla/Karla-Regular.ttf) format("truetype"),
-	url(../fonts/Karla/Karla-Regular.woff) format("woff"),
-	url(../fonts/Karla/Karla-Regular.woff2) format("woff2"),
-	url(../fonts/Karla/Karla-Regular.eot)	format("eot"),
-    url(../fonts/Karla/Karla-Italic.ttf) format("truetype"),
-	url(../fonts/Karla/Karla-Italic.woff) format("woff"),
-	url(../fonts/Karla/Karla-Italic.eot) format("eot");
-}
-@font-face {
-	font-family: "Montserrat";
-    src: 
-    url(../fonts/Montserrat/Montserrat-Bold.ttf) format("truetype"),
-	url(../fonts/Montserrat/Montserrat-Bold.woff) format("woff"),
-	url(../fonts/Montserrat/Montserrat-Light.ttf) format("truetype"),
-	url(../fonts/Montserrat/Montserrat-Regular.ttf) format("truetype");
-}
-
 body {
-    font-family: "Karla";
+    font-family: $font-family-standard;
     line-height: 140%;
 }
-h1, h2, h3, h4, h5, h6 {
-    font-family: "Montserrat";
-	font-weight: bold;
-	font-size: 200%;
-	margin-top: 1em;
-	margin-bottom: 0.5em;
-}
-h3, h4, h5 {
-	margin-bottom: 0em;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-family-serif;
+    font-weight: bold;
+    font-size: 200%;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
 }
 
-h2{
+h3,
+h4,
+h5 {
+    margin-bottom: 0em;
+}
+
+h2 {
     font-size: 130%;
 }
 
 h3 {
-	font-size: 150%;
+    font-size: 150%;
 }
 
 h4 {
-	font-size: 100%;
-	color: #626262;
+    font-size: 100%;
+    color: #626262;
 }
 
 h5 {
-	font-size: 85%;
-	color: hsla(220,100%,59%,0.7);
+    font-size: 85%;
+    color: hsla(220, 100%, 59%, 0.7);
 }
 
 h6 {
-	font-size: 75%;
-	color: hsla(220,100%,59%,0.7);
+    font-size: 75%;
+    color: hsla(220, 100%, 59%, 0.7);
+}
+
+p {
+    font-family: $font-family-standard;
+    color: $bunker;
+    max-width: 30em;
+    padding-left: 1em;
+    /* 0.938em-1.563 / 15px-25px */
+    font-size: 0.938em;
+    /* 120%-145% */
+    line-height: 130%;
+}
+
+.initial {
+    float: left;
+    padding: 2px 7px 0 0;
+    /* check line height */
+    font-size: 335%;
+    font-weight: bold;
+    line-height: 1;
+}
+
+p+p {
+    text-indent: 1em;
+    margin: 0;
+}
+
+h2+p {
+    text-indent: 0;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+@media screen and (min-width: 800px) {
+    h1 {
+        font-size: 2rem;
+    }
 }
 
 strong {

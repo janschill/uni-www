@@ -1,38 +1,38 @@
 html {
-  font-size: $font-size-standard;
-  line-height: 1.6;
-  background: $color-bright;
-  color: $color-text;
-  font-family: $font-family-standard;
+    font-size: $font-size-standard;
+    line-height: 1.6;
+    background: $color-bright;
+    color: $color-text;
+    font-family: $font-family-standard;
 }
 
 body {
-  line-height: $line-height-standard;
-  text-rendering: optimizeLegibility;
+    line-height: $line-height-standard;
+    text-rendering: optimizeLegibility;
 }
 
 a {
-  text-decoration: underline;
-  color: $color-dark;
+    text-decoration: underline;
+    color: $color-dark;
 }
 
 a[href^=tel] {
-  text-decoration: none;
-  color: inherit;
-  cursor: default;
+    text-decoration: none;
+    color: inherit;
+    cursor: default;
 }
 
 a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 p {
-  font-size: $font-size-standard;
-  line-height: 1.6;
+    font-size: $font-size-standard;
+    line-height: 1.6;
 }
 
 p:not(:last-of-type) {
-  margin-bottom: $spacing-small;
+    margin-bottom: $spacing-small;
 }
 
 h1,
@@ -41,17 +41,17 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: $line-height-headlines;
+    line-height: $line-height-headlines;
 }
 
 b,
 strong {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 i,
 em {
-  font-style: italic;
+    font-style: italic;
 }
 
 strong em,
@@ -62,49 +62,49 @@ em strong,
 em b,
 i strong,
 i b {
-  font-weight: bold;
-  font-style: italic;
+    font-weight: bold;
+    font-style: italic;
 }
 
 hr {
-  margin-bottom: $spacing-standard;
-  padding-bottom: $spacing-standard;
-  display: block;
-  border-top: 1px solid;
+    margin-bottom: $spacing-standard;
+    padding-bottom: $spacing-standard;
+    display: block;
+    border-top: 1px solid;
 }
 
 iframe,
 img {
-  border: 0;
-  max-width: 100%;
-  display: inline-block;
+    border: 0;
+    max-width: 100%;
+    display: inline-block;
 }
 
 audio,
 canvas,
 video,
 img {
-  height: auto;
-  vertical-align: bottom;
+    height: auto;
+    vertical-align: bottom;
 }
 
 address {
-  font-style: normal;
+    font-style: normal;
 }
 
 ul {
-  list-style: square inside;
+    list-style: square inside;
 }
 
 ol {
-  list-style: decimal inside;
+    list-style: decimal inside;
 }
 
 ul ol,
 ol ul,
 ul ul,
 ol ol {
-  margin-left: $spacing-standard;
+    margin-left: $spacing-standard;
 }
 
 //// sass-lint:disable no-vendor-prefixes
