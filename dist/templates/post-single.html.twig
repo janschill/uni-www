@@ -16,7 +16,7 @@
     
     <aside>
     
-        {% if user.isAuthenticated %}
+        {% if user.isAuthenticated and instance.instance == 'blog' %}
         <h3>Leave a message</h3>
         <form action="/blog/{{ id }}/new" method="post">
             <input type="hidden" name="form[token]" value="{{ form['token'] }}">
@@ -33,6 +33,7 @@
         </form>
         {% endif %}
 
+        {% if instance.instance == 'blog' %}
         <h3>Comments</h3>
         <div class="comments">
             {% for comment in comments %}
@@ -43,6 +44,7 @@
                 </div>
             {% endfor %}
         <div>
+        {% endif %}
 
     </aside>
   </article>
