@@ -5,7 +5,6 @@
     {{ parent() }}
 {% endblock %}
 {% block content %}
-{{}}
     <section class="blog">
         <h1 class="content__heading">{{ instance.instance | capitalize}}</h1>
         
@@ -14,7 +13,7 @@
                 <a class="posts" href="{{ instance.instance }}/{{ post.id }}">
                     <span class="posts__header">
                         {% if not post.cover == null %}
-                            <img class="posts__cover" src="{{ post.cover }}" alt="{{}}">
+                            <img class="posts__cover" src="{{ post.cover }}" alt="{{ post.title }}">
                         {% endif %}
                         <span class="posts__title">
                             <h2 class="">{{ post.title }}</h2>
