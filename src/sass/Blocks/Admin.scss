@@ -4,6 +4,12 @@
     grid-template-areas: "aside article"
 }
 
+.admin__header {
+    margin-top: 0;
+    font-size: 40px;
+    margin: 0 0 35px 0;
+}
+
 .admin__articles {
     padding: 1rem;
     grid-area: article;
@@ -13,11 +19,9 @@
     position: relative;
 }
 
-.admin__article+.admin__article {}
-
-.admin__header {
-    padding: 1rem 0;
-    font-size: 26px;
+.admin__article+.admin__article {
+    margin-top: 20px;
+    border-top: 1px solid $blue;
 }
 
 .admin__button {
@@ -33,4 +37,47 @@
 
 .admin__text:not(:last-of-type) {
     margin-bottom: 20px;
+}
+
+.admin__media-form {
+    margin-bottom: 20px;
+}
+
+.admin__image {
+    cursor: pointer;
+    &:hover {
+        opacity: .5;
+    }
+}
+
+.admin__image--small {
+    height: 100px;
+    width: auto;
+    max-width: 300px;
+}
+
+.admin__media-input-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.admin__media-input--button {
+    position: absolute;
+    margin-left: 15px;
+}
+
+.admin__media-input--hidden {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 200ms ease-in;
+    &:hover {
+        opacity: 1;
+        background-color: $blue;
+        color: $black-haze;
+    }
 }

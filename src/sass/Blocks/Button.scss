@@ -1,0 +1,15 @@
+.button {
+    border: 2px solid transparent;
+    padding: 7px;
+    cursor: pointer;
+    transition: background-color 200ms ease-in;
+}
+
+.button--blue:hover {
+    background-color: $blue;
+    color: $black-haze;
+}
+
+.button--blue {
+    border: 2px solid $blue;
+}
